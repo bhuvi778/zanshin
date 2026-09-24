@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition} from 'remotion';
 import {CampaignFilm} from './CampaignFilm';
+import {HeroFilm} from './HeroFilm';
 
 const films=[
   {id:'FocusedCampaign',identity:'focused',accent:'#8ab5ca'},
@@ -9,4 +10,7 @@ const films=[
   {id:'MagnetizedCampaign',identity:'magnetized',accent:'#bf6a78'}
 ];
 
-export const RemotionRoot=()=>films.map((film)=><Composition key={film.id} id={film.id} component={CampaignFilm} width={1280} height={720} fps={24} durationInFrames={240} defaultProps={film}/>);
+export const RemotionRoot=()=>films.flatMap((film)=>[
+  <Composition key={film.id} id={film.id} component={CampaignFilm} width={1280} height={720} fps={24} durationInFrames={240} defaultProps={film}/>,
+  <Composition key={`${film.id}Hero`} id={`${film.id.replace('Campaign','')}Hero`} component={HeroFilm} width={1280} height={720} fps={24} durationInFrames={216} defaultProps={film}/>
+]);

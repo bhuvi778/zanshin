@@ -35,3 +35,34 @@
   .brand-hero-copy>.brand-kicker{display:block}
   .brand-hero-copy>h1{display:block}
 }
+
+/* Light sensory hero: the product films use daylight, ivory and identity colour. */
+.site-header.home-header{background:linear-gradient(180deg,rgba(250,247,239,.93),rgba(250,247,239,.5) 62%,transparent);color:#1c211d}
+.home-header .wordmark,.home-header .site-nav a,.home-header .bag-button{color:#171c18}
+.home-header .bag-button{border-color:#171c1870;background:#fff3}
+.home-header .bag-count{background:#171c18;color:#fff}
+.home-header .menu-toggle span{background:#171c18}
+.brand-hero{background:#f2eee5;color:#1b211d}
+.brand-hero-wash{background:linear-gradient(90deg,rgba(249,247,241,.96) 0%,rgba(249,247,241,.83) 28%,rgba(249,247,241,.18) 54%,transparent 73%),linear-gradient(0deg,rgba(249,247,241,.48),transparent 30%)}
+.brand-hero-wash:after{opacity:.055;mix-blend-mode:multiply}
+.brand-hero-copy h1{color:#1b211d}
+.brand-hero-copy h1 em{color:var(--identity)}
+.brand-hero-copy p{color:#505650}
+.brand-hero .brand-kicker,.brand-hero-side strong,.brand-hero-tabs button span{color:var(--identity)}
+.brand-hero .brand-text-link,.brand-hero-side,.brand-motion{color:#1e2520}
+.brand-hero .brand-primary{background:var(--identity);border-color:var(--identity);color:#fff}
+.brand-hero .brand-primary:hover{background:transparent;color:#1b211d}
+.brand-hero-tabs button{color:#525952;border-top-color:#27312945}
+.brand-hero-tabs button.active{color:#151a17}
+@media(min-width:721px){
+  .brand-hero-copy{top:50%;bottom:auto;transform:translateY(-42%);width:min(610px,48vw)}
+  .brand-hero-copy>.brand-kicker,.brand-hero-copy>h1{display:block}
+  .brand-hero-copy>p{margin:0;max-width:465px;padding-left:0;border-left:0;font:400 14px/1.85 Poppins,sans-serif;color:#505650}
+  .brand-hero-actions{margin-top:32px}
+}
+@media(max-width:850px){.home-header .site-nav.open{background:#f5f0e7}.home-header .site-nav.open a{color:#171c18}}
+@media(max-width:720px){
+  .brand-hero-wash{background:linear-gradient(0deg,rgba(249,247,241,.98) 8%,rgba(249,247,241,.78) 45%,rgba(249,247,241,.08) 76%),linear-gradient(180deg,rgba(249,247,241,.32),transparent 25%)}
+  .brand-hero-copy p{color:#4d554e}
+  .brand-hero-tabs button{border-top-color:#27312945}
+}
