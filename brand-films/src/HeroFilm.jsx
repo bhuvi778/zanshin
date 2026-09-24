@@ -1,37 +1,14 @@
 import React from 'react';
-import {Video} from '@remotion/media';
 import {AbsoluteFill,Img,interpolate,staticFile,useCurrentFrame} from 'remotion';
 
-const scenes={
-  focused:{name:'Focused',src:'focused-work.mp4',line:'Make room for what matters.',tone:'#e5eceb'},
-  energised:{name:'Energised',src:'energised-run.mp4',line:'A new rhythm. A new beginning.',tone:'#e8edf3'},
-  connected:{name:'Connected',src:'connected-together.mp4',line:'Be here. With them.',tone:'#e8ece2'},
-  magnetized:{name:'Magnetized',src:'magnetized-mirror.mp4',line:'Arrive as yourself.',tone:'#f0e5e2'}
-};
-const clamp={extrapolateLeft:'clamp',extrapolateRight:'clamp'};
-
-// One continuous human moment, followed by a quiet branded pack shot.
-// Avoid fabricated hands, floating caps and mismatched before/after actors.
+// Original AI campaign photographs animated locally; no paid video service.
+// These are motion photographs, not generated live-action actor footage.
 export const HeroFilm=({identity})=>{
  const frame=useCurrentFrame();
- const scene=scenes[identity];
- const reveal=interpolate(frame,[136,160],[0,1],clamp);
- return <AbsoluteFill style={{background:scene.tone,overflow:'hidden'}}>
-  <AbsoluteFill style={{opacity:1-reveal}}>
-   <Video src={staticFile(scene.src)} muted loop style={{width:'100%',height:'100%',objectFit:'cover'}}/>
-   <AbsoluteFill style={{background:'linear-gradient(0deg,rgba(15,22,19,.48),transparent 45%)'}}/>
-   <div style={{position:'absolute',left:64,bottom:62,color:'#fff',fontFamily:'Georgia,serif',fontSize:38,letterSpacing:-.5}}>{scene.line}</div>
-  </AbsoluteFill>
-  <AbsoluteFill style={{opacity:reveal,background:`linear-gradient(115deg,#faf8f3,${scene.tone})`}}>
-   <div style={{position:'absolute',left:90,top:244,color:'#28332c'}}>
-    <div style={{fontFamily:'Arial,sans-serif',fontSize:18,letterSpacing:9}}>ZANSHIN</div>
-    <div style={{fontFamily:'Georgia,serif',fontSize:68,marginTop:28}}>{scene.name}</div>
-    <div style={{fontFamily:'Arial,sans-serif',fontSize:13,letterSpacing:3,marginTop:24}}>BEGIN WITH THE MOMENT</div>
-   </div>
-   <div style={{position:'absolute',width:360,height:544,right:110,top:88,scale:interpolate(frame,[136,215],[.97,1],clamp)}}>
-    <Img src={staticFile('concept-bottle.webp')} style={{width:'100%',height:'100%',objectFit:'contain',filter:'drop-shadow(12px 22px 18px #41331d26)'}}/>
-    <Img src={staticFile(`${identity}-label.png`)} style={{position:'absolute',left:'24.2%',top:'35.5%',width:'53.6%',height:'49.8%'}}/>
-   </div>
-  </AbsoluteFill>
+ const progress=frame/215;
+ const drift=Math.sin(progress*Math.PI);
+ return <AbsoluteFill style={{background:'#efece5',overflow:'hidden'}}>
+   <Img src={staticFile(`original-${identity}.png`)} style={{width:'100%',height:'100%',objectFit:'cover',transformOrigin:'70% 48%',scale:1+drift*.055,translate:`${drift*-12}px 0`}}/>
+   <AbsoluteFill style={{pointerEvents:'none',background:'linear-gradient(115deg,transparent 35%,rgba(255,246,218,.12) 58%,transparent 77%)',translate:`${interpolate(frame,[0,215],[-180,180])}px 0`,opacity:Math.sin(progress*Math.PI)*.6}}/>
  </AbsoluteFill>;
 };

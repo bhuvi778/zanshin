@@ -8,6 +8,7 @@ const project=resolve(here,'..');
 const output=resolve(project,'../client/public/films');
 const publicDir=resolve(project,'source-footage');
 mkdirSync(output,{recursive:true});
+for(const slug of ['focused','energised','connected','magnetized']) copyFileSync(resolve(project,'artwork',`original-${slug}.png`),resolve(publicDir,`original-${slug}.png`));
 for(const asset of ['concept-bottle.webp','focused-label.png','energised-label.png','connected-label.png','magnetized-label.png']){
   copyFileSync(resolve(project,'../client/public/assets',asset),resolve(publicDir,asset));
 }
@@ -16,8 +17,8 @@ for(const id of ['Focused','Energised','Connected','Magnetized']){
   const target=resolve(output,`${id.toLowerCase()}-campaign.mp4`);
   const poster=resolve(output,`${id.toLowerCase()}-poster.png`);
   const heroComposition=`${id}Hero`;
-  const heroTarget=resolve(output,`${id.toLowerCase()}-hero.mp4`);
-  const heroPoster=resolve(output,`${id.toLowerCase()}-hero-poster.png`);
+  const heroTarget=resolve(output,`${id.toLowerCase()}-original-motion.mp4`);
+  const heroPoster=resolve(output,`${id.toLowerCase()}-original-poster.png`);
   const args=['remotion','render','src/index.jsx',composition,target,'--public-dir','source-footage','--codec','h264','--crf','23','--concurrency','50%','--log','error'];
   console.log(`Rendering ${composition}...`);
   const cli=resolve(project,'node_modules/@remotion/cli/remotion-cli.js');

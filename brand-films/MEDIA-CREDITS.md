@@ -14,3 +14,7 @@ The final Zanshin campaign films are original edits created for this project fro
 | Magnetized | [Woman Walking on the City Street at Night](https://www.pexels.com/video/woman-walking-on-the-city-street-at-night-7062425/) | PNW Production |
 
 All source clips are marked “Free to use” on their Pexels pages. The downloadable source files are intentionally ignored by Git. Run `npm run footage:download` inside `brand-films` before re-rendering.
+
+## Implemented free motion-photograph edition
+The hero now uses four original AI-generated campaign photographs, rendered locally with gentle camera movement and a moving light layer. These are animated still-image MP4s, not live-action generative video. No paid Weave generation was run. The product depictions are AI concept interpretations, not exact approved pack photography.
+Sources are tracked in brand-films/artwork. Render entry: brand-films/src/HeroFilm.jsx. Nine seconds, 24 fps, 1280x720, silent H.264. Web assets use new original-motion filenames to avoid reusing cached stock clips.

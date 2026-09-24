@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import {asset} from '../data';
 
 const films=[
-  {slug:'focused',name:'Focused',number:'01',accent:'#5d91aa',film:'/films/focused-campaign.mp4',poster:'/films/focused-poster.png',heroFilm:'/films/focused-hero.mp4',heroPoster:'/films/focused-hero-poster.png',kicker:'Clarity / Discipline / Deep work',hero:'When the noise leaves,<br/><em>you remain.</em>',heroCopy:'A quiet return to the one thing that deserves your full attention.',before:'Too many voices. Too many open loops.',after:'One clear intention.',beforeShort:'Scattered attention',intention:'Clear intention',title:'Attention is a form of presence.',story:'The world does not have to become quiet before you begin. Focused marks the shift from carrying every demand to choosing the one thing that matters now.',moment:'For the morning you need to come back to yourself.'},
-  {slug:'energised',name:'Energised',number:'02',accent:'#536fc1',film:'/films/energised-campaign.mp4',poster:'/films/energised-poster.png',heroFilm:'/films/energised-hero.mp4',heroPoster:'/films/energised-hero-poster.png',kicker:'Energy / Momentum / Vitality',hero:'When stillness becomes<br/><em>forward.</em>',heroCopy:'The instant your body remembers that the day can still move with you.',before:'The day feels heavier than it has begun.',after:'The first real breath changes its direction.',beforeShort:'A heavy start',intention:'Forward energy',title:'Energy begins before speed.',story:'Energised is the feeling of saying yes to movement: the first step outside, the air against your face, the moment your energy stops waiting for permission.',moment:'For the morning that needs a beginning, not a push.'},
-  {slug:'connected',name:'Connected',number:'03',accent:'#6d815b',film:'/films/connected-campaign.mp4',poster:'/films/connected-poster.png',heroFilm:'/films/connected-hero.mp4',heroPoster:'/films/connected-hero-poster.png',kicker:'Harmony / Relationships / Belonging',hero:'When the day ends,<br/><em>presence begins.</em>',heroCopy:'Leave the weight of work at the door. Arrive for the person in front of you.',before:'He carries the whole day into the evening.',after:'A familiar face makes the moment lighter.',beforeShort:'Carrying the day',intention:'Fully present',title:'Connection begins with arrival.',story:'A difficult day can follow you everywhere. Connected is the small ritual between leaving work and meeting someone who matters—the breath, the reset, the choice to be fully there.',moment:'For the evening when being present means more than having the right words.'},
-  {slug:'magnetized',name:'Magnetized',number:'04',accent:'#a6485d',film:'/films/magnetized-campaign.mp4',poster:'/films/magnetized-poster.png',heroFilm:'/films/magnetized-hero.mp4',heroPoster:'/films/magnetized-hero-poster.png',kicker:'Confidence / Presence / Attraction',hero:'When you stop asking<br/><em>to be seen.</em>',heroCopy:'Presence becomes magnetic when it no longer needs to perform.',before:'One last moment of hesitation.',after:'Then her own presence becomes enough.',beforeShort:'Quiet hesitation',intention:'Own your presence',title:'Confidence can be quiet.',story:'Magnetized begins when you stop measuring yourself through the room and move through it as entirely your own. Quiet certainty becomes a presence people can feel.',moment:'For the night when you want to feel unmistakably yourself.'}
+  {slug:'focused',name:'Focused',number:'01',accent:'#5d91aa',film:'/films/focused-campaign.mp4',poster:'/films/focused-poster.png',heroFilm:'/films/focused-original-motion.mp4',heroPoster:'/films/focused-original-poster.png',kicker:'Clarity / Discipline / Deep work',hero:'When the noise leaves,<br/><em>you remain.</em>',heroCopy:'A quiet return to the one thing that deserves your full attention.',before:'Too many voices. Too many open loops.',after:'One clear intention.',beforeShort:'Scattered attention',intention:'Clear intention',title:'Attention is a form of presence.',story:'The world does not have to become quiet before you begin. Focused marks the shift from carrying every demand to choosing the one thing that matters now.',moment:'For the morning you need to come back to yourself.'},
+  {slug:'energised',name:'Energised',number:'02',accent:'#536fc1',film:'/films/energised-campaign.mp4',poster:'/films/energised-poster.png',heroFilm:'/films/energised-original-motion.mp4',heroPoster:'/films/energised-original-poster.png',kicker:'Energy / Momentum / Vitality',hero:'When stillness becomes<br/><em>forward.</em>',heroCopy:'The instant your body remembers that the day can still move with you.',before:'The day feels heavier than it has begun.',after:'The first real breath changes its direction.',beforeShort:'A heavy start',intention:'Forward energy',title:'Energy begins before speed.',story:'Energised is the feeling of saying yes to movement: the first step outside, the air against your face, the moment your energy stops waiting for permission.',moment:'For the morning that needs a beginning, not a push.'},
+  {slug:'connected',name:'Connected',number:'03',accent:'#6d815b',film:'/films/connected-campaign.mp4',poster:'/films/connected-poster.png',heroFilm:'/films/connected-original-motion.mp4',heroPoster:'/films/connected-original-poster.png',kicker:'Harmony / Relationships / Belonging',hero:'When the day ends,<br/><em>presence begins.</em>',heroCopy:'Leave the weight of work at the door. Arrive for the person in front of you.',before:'He carries the whole day into the evening.',after:'A familiar face makes the moment lighter.',beforeShort:'Carrying the day',intention:'Fully present',title:'Connection begins with arrival.',story:'A difficult day can follow you everywhere. Connected is the small ritual between leaving work and meeting someone who matters—the breath, the reset, the choice to be fully there.',moment:'For the evening when being present means more than having the right words.'},
+  {slug:'magnetized',name:'Magnetized',number:'04',accent:'#a6485d',film:'/films/magnetized-campaign.mp4',poster:'/films/magnetized-poster.png',heroFilm:'/films/magnetized-original-motion.mp4',heroPoster:'/films/magnetized-original-poster.png',kicker:'Confidence / Presence / Attraction',hero:'When you stop asking<br/><em>to be seen.</em>',heroCopy:'Presence becomes magnetic when it no longer needs to perform.',before:'One last moment of hesitation.',after:'Then her own presence becomes enough.',beforeShort:'Quiet hesitation',intention:'Own your presence',title:'Confidence can be quiet.',story:'Magnetized begins when you stop measuring yourself through the room and move through it as entirely your own. Quiet certainty becomes a presence people can feel.',moment:'For the night when you want to feel unmistakably yourself.'}
 ];
 
 function EmotionFilm({film,className=''}){
@@ -28,7 +28,6 @@ function EmotionFilm({film,className=''}){
 export default function Home(){
   const [slide,setSlide]=useState(0);
   const [paused,setPaused]=useState(false);
-  const [packshot,setPackshot]=useState(false);
   const heroVideo=useRef(null);
   const active=films[slide];
 
@@ -43,21 +42,20 @@ export default function Home(){
   useEffect(()=>{
     const video=heroVideo.current;
     if(!video)return;
-    setPackshot(video.currentTime>=5.7);
     if(paused)video.pause();else video.play().catch(()=>{});
   },[paused,slide]);
 
   return <div className="brand-home">
-    <section className={`brand-hero full-cover-hero ${packshot?'show-packshot':''}`} style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
+    <section className="brand-hero full-cover-hero" style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
       <div className="hero-editorial-copy">
-        <span className="hero-eyebrow">The art of being present</span>
-        <h1>A fragrance.<br/>A feeling.<br/><em>Your moment.</em></h1>
-        <p>For who you are. For how you want to feel.<br/>Discover four expressions of Zanshin.</p>
+        <span className="hero-eyebrow">Zanshin / {active.name}</span>
+        <h1 dangerouslySetInnerHTML={{__html:active.hero}}/>
+        <p>{active.heroCopy}</p>
         <Link className="hero-discover" to="/find-your-moment">Find your moment <span>↗</span></Link>
         <div className="hero-identity-note"><span>{active.number} / {active.name}</span><p>{active.heroCopy}</p></div>
       </div>
       <div className="hero-cinema">
-        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" onTimeUpdate={event=>setPackshot(event.currentTarget.currentTime>=5.7)} poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
+        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
         <div className="hero-cinema-caption"><span>THE ZANSHIN MOMENTS</span><span>{active.number} — 04</span></div>
       </div>
       <div className="brand-hero-nav">
