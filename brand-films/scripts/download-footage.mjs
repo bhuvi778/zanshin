@@ -10,6 +10,8 @@ mkdirSync(output,{recursive:true});
 
 const footage={
   'focused-work.mp4':'https://videos.pexels.com/video-files/6337301/6337301-uhd_3840_2160_25fps.mp4',
+  'focused-stress.mp4':'https://videos.pexels.com/video-files/6189264/6189264-hd_1096_720_25fps.mp4',
+  'energised-morning.mp4':'https://videos.pexels.com/video-files/4049556/4049556-hd_1920_1080_30fps.mp4',
   'energised-run.mp4':'https://videos.pexels.com/video-files/3191933/3191933-hd_1920_1080_25fps.mp4',
   'connected-work.mp4':'https://videos.pexels.com/video-files/8939327/8939327-hd_1920_1080_25fps.mp4',
   'connected-together.mp4':'https://videos.pexels.com/video-files/5101161/5101161-hd_1920_1080_25fps.mp4',

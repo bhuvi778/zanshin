@@ -4,6 +4,8 @@ The final Zanshin campaign films are original edits created for this project fro
 
 | Zanshin film | Source footage | Creator |
 | --- | --- | --- |
+| Focused hero — scattered attention | [A Stressed Woman Using Laptop](https://www.pexels.com/video/a-stressed-woman-using-laptop-6189264/) | Anna Tarazevich |
+| Energised hero — morning beginning | [A Woman Getting Out of Bed](https://www.pexels.com/video/a-woman-getting-out-of-bed-4049556/) | Martina Tomšič |
 | Focused | [Man Typing On Laptop](https://www.pexels.com/video/man-typing-on-laptop-6337301/) | Tima Miroshnichenko |
 | Energised | [A Man Running In The Beach Shoreline](https://www.pexels.com/video/a-man-running-in-the-beach-shoreline-3191933/) | Pressmaster |
 | Connected | [A Tired Man Taking a Rest After Folding His Laptop](https://www.pexels.com/video/a-tired-man-taking-a-rest-after-folding-his-laptop-8939327/) | Mikhail Nilov |

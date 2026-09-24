@@ -1,14 +1,37 @@
 import React from 'react';
+import {Video} from '@remotion/media';
 import {AbsoluteFill,Easing,Img,interpolate,staticFile,useCurrentFrame} from 'remotion';
 
 const clamp={extrapolateLeft:'clamp',extrapolateRight:'clamp'};
 const ease={...clamp,easing:Easing.bezier(.16,1,.3,1)};
 
 const worlds={
-  focused:{name:'FOCUSED',number:'01',label:'focused-label.png',base:'#edf4f1',wash:'#c9e3eb',warm:'#f6e8d3'},
-  energised:{name:'ENERGISED',number:'02',label:'energised-label.png',base:'#eef2fb',wash:'#c9d5f6',warm:'#fae6c6'},
-  connected:{name:'CONNECTED',number:'03',label:'connected-label.png',base:'#eff1e7',wash:'#cfdcc1',warm:'#f6e7d5'},
-  magnetized:{name:'MAGNETIZED',number:'04',label:'magnetized-label.png',base:'#f7e9e8',wash:'#e8bdc6',warm:'#f5dfc9'}
+  focused:{name:'FOCUSED',number:'01',label:'focused-label.png',base:'#edf4f1',wash:'#c9e3eb',warm:'#f6e8d3',before:'SCATTERED ATTENTION',after:'CLEAR INTENTION',beforeSrc:'focused-stress.mp4',afterSrc:'focused-work.mp4'},
+  energised:{name:'ENERGISED',number:'02',label:'energised-label.png',base:'#eef2fb',wash:'#c9d5f6',warm:'#fae6c6',before:'A HEAVY START',after:'FORWARD ENERGY',beforeSrc:'energised-morning.mp4',afterSrc:'energised-run.mp4'},
+  connected:{name:'CONNECTED',number:'03',label:'connected-label.png',base:'#eff1e7',wash:'#cfdcc1',warm:'#f6e7d5',before:'CARRYING THE DAY',after:'FULLY PRESENT',beforeSrc:'connected-work.mp4',afterSrc:'connected-together.mp4'},
+  magnetized:{name:'MAGNETIZED',number:'04',label:'magnetized-label.png',base:'#f7e9e8',wash:'#e8bdc6',warm:'#f5dfc9',before:'QUIET HESITATION',after:'OWN YOUR PRESENCE',beforeSrc:'magnetized-mirror.mp4',afterSrc:'magnetized-night.mp4'}
+};
+
+const StoryLayer=({data,accent})=>{
+  const frame=useCurrentFrame();
+  const introOpacity=interpolate(frame,[0,10,45,62],[0,.82,.82,0],clamp);
+  const outcomeOpacity=interpolate(frame,[138,158,204,215],[0,.72,.72,0],clamp);
+  const introText=interpolate(frame,[8,18,43,55],[0,1,1,0],clamp);
+  const outcomeText=interpolate(frame,[150,164,204,214],[0,1,1,0],clamp);
+  const mediaStyle={position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center',filter:'saturate(.7) contrast(.96) brightness(1.08)'};
+  return <div style={{position:'absolute',right:0,top:0,bottom:0,width:'66%',overflow:'hidden',maskImage:'linear-gradient(90deg,transparent 0%,#000 24%,#000 100%)'}}>
+    <Video src={staticFile(data.beforeSrc)} muted loop durationInFrames={66} style={{...mediaStyle,opacity:introOpacity}}/>
+    <Video src={staticFile(data.afterSrc)} muted loop from={136} trimBefore={54} durationInFrames={80} style={{...mediaStyle,opacity:outcomeOpacity,filter:'saturate(.84) contrast(.96) brightness(1.1)'}}/>
+    <div style={{position:'absolute',inset:0,background:`linear-gradient(90deg,${data.base} 0%,transparent 38%),linear-gradient(0deg,${data.base}99,transparent 52%)`}}/>
+    <div style={{position:'absolute',right:66,top:112,textAlign:'right',fontFamily:'Arial,sans-serif',color:'#28302a',opacity:introText}}>
+      <div style={{fontSize:9,letterSpacing:5,color:accent}}>THE FEELING BEFORE</div>
+      <div style={{marginTop:10,fontFamily:'Georgia,serif',fontSize:26,letterSpacing:1}}>{data.before}</div>
+    </div>
+    <div style={{position:'absolute',right:66,top:112,textAlign:'right',fontFamily:'Arial,sans-serif',color:'#28302a',opacity:outcomeText}}>
+      <div style={{fontSize:9,letterSpacing:5,color:accent}}>THE INTENTION</div>
+      <div style={{marginTop:10,fontFamily:'Georgia,serif',fontSize:26,letterSpacing:1}}>{data.after}</div>
+    </div>
+  </div>;
 };
 
 const LightWorld=({identity,accent,data})=>{
@@ -43,11 +66,11 @@ const SprayMist=({accent})=>{
 
 const HeroBottle=({data,accent})=>{
   const frame=useCurrentFrame();
-  const opacity=interpolate(frame,[0,14,204,215],[0,1,1,0],clamp);
-  const x=interpolate(frame,[0,45,170,215],[125,0,-6,-22],ease);
-  const y=interpolate(frame,[0,50,170,215],[20,0,-8,-18],ease);
-  const scale=interpolate(frame,[0,54,170,215],[.9,1,1.025,1.045],ease);
-  const rotateY=interpolate(frame,[0,52,148,205],[14,-3,2,0],ease);
+  const opacity=interpolate(frame,[36,55,204,215],[0,1,1,0],clamp);
+  const x=interpolate(frame,[36,66,138,172,215],[125,0,0,148,130],ease);
+  const y=interpolate(frame,[36,70,138,172,215],[20,0,-5,158,140],ease);
+  const scale=interpolate(frame,[36,70,138,172,215],[.9,1,1.02,.61,.64],ease);
+  const rotateY=interpolate(frame,[36,68,138,175],[14,-3,2,0],ease);
   const capLift=interpolate(frame,[60,82,118,140],[0,-78,-78,0],ease);
   const press=interpolate(frame,[79,88,96],[0,7,0],clamp);
   const sheen=interpolate(frame,[20,110,196],[-170,100,350],clamp);
@@ -69,6 +92,7 @@ export const HeroFilm=({identity,accent})=>{
   const markOpacity=interpolate(frame,[8,28,190,214],[0,.1,.1,0],clamp);
   return <AbsoluteFill style={{overflow:'hidden',background:data.base,color:'#202521'}}>
     <LightWorld identity={identity} accent={accent} data={data}/>
+    <StoryLayer data={data} accent={accent}/>
     <div style={{position:'absolute',right:495,top:120,fontFamily:'Georgia,serif',fontSize:270,lineHeight:1,color:accent,opacity:markOpacity}}>残心</div>
     <HeroBottle data={data} accent={accent}/>
     <div style={{position:'absolute',inset:0,opacity:.035,backgroundImage:'url("data:image/svg+xml,%3Csvg viewBox=%270 0 160 160%27 xmlns=%27http://www.w3.org/2000/svg%27%3E%3Cfilter id=%27n%27%3E%3CfeTurbulence type=%27fractalNoise%27 baseFrequency=%27.8%27 numOctaves=%273%27/%3E%3C/filter%3E%3Crect width=%27100%25%27 height=%27100%25%27 filter=%27url(%23n)%27/%3E%3C/svg%3E")',mixBlendMode:'multiply'}}/>
