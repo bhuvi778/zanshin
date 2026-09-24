@@ -2,6 +2,7 @@ import React from 'react';
 import {Composition} from 'remotion';
 import {CampaignFilm} from './CampaignFilm';
 import {HeroFilm} from './HeroFilm';
+import {EmotionEdit} from './EmotionEdit';
 
 const films=[
   {id:'FocusedCampaign',identity:'focused',accent:'#8ab5ca'},
@@ -10,7 +11,7 @@ const films=[
   {id:'MagnetizedCampaign',identity:'magnetized',accent:'#bf6a78'}
 ];
 
-export const RemotionRoot=()=>films.flatMap((film)=>[
+export const RemotionRoot=()=>[...films.flatMap((film)=>[
   <Composition key={film.id} id={film.id} component={CampaignFilm} width={1280} height={720} fps={24} durationInFrames={240} defaultProps={film}/>,
   <Composition key={`${film.id}Hero`} id={`${film.id.replace('Campaign','')}Hero`} component={HeroFilm} width={1280} height={720} fps={24} durationInFrames={216} defaultProps={film}/>
-]);
+] ),...['Focused','Energised'].map(name=><Composition key={name+'Emotion'} id={name+'Emotion'} component={EmotionEdit} width={1280} height={720} fps={24} durationInFrames={192} defaultProps={{identity:name.toLowerCase()}}/>)];

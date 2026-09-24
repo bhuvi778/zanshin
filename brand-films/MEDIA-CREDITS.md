@@ -24,3 +24,6 @@ Actual image-to-video clips were successfully downloaded and verified for Focuse
 The generated outputs are stored as client/public/films/*-emotion-video.mp4. Reproduction script: brand-films/scripts/generate-free-emotions.mjs (run from repository root). Free demo availability and quota are not guaranteed.
 
 Connected generation returned a result but its download failed with File not allowed. Magnetized generation returned an unspecified service error twice. Those two hero slides retain the original motion photographs until valid outputs are available.
+
+### Eight-second edits
+At the user's request, Focused and Energised now use eight-second slow-motion edits of the verified 3.5625-second generated takes (playback rate 0.4453125). The longer duration is an edit of existing motion, not additional generated action. Source composition: EmotionEdit.jsx, 192 frames at 24 fps. Connected and Magnetized remain pending by user choice. The public demo reported anonymous ZeroGPU quota exceeded; no quota workaround was attempted.
