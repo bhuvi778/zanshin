@@ -12,35 +12,53 @@ const SingleScene=({src,tone})=>{
   return <Video src={staticFile(src)} loop muted style={{...footageStyle,opacity:fade,filter:`saturate(${tone}) contrast(${contrast}) brightness(.84)`}}/>;
 };
 
+const RitualScene=({identity,accent,start=52,end=118})=>{
+  const frame=useCurrentFrame();
+  const opacity=interpolate(frame,[start,start+10,end-12,end],[0,1,1,0],clamp);
+  const copyOpacity=interpolate(frame,[start+7,start+18,end-16,end-7],[0,1,1,0],clamp);
+  const copyY=interpolate(frame,[start+6,start+22],[24,0],clamp);
+  return <>
+    <Video name="Zanshin fragrance ritual" src={staticFile('fragrance-ritual.mp4')} loop muted from={start} durationInFrames={end-start} style={{...footageStyle,opacity,filter:'saturate(.55) contrast(1.15) brightness(.62)'}}/>
+    <AbsoluteFill style={{opacity,background:`linear-gradient(90deg,rgba(5,7,6,.86),rgba(5,7,6,.12) 66%),radial-gradient(circle at 66% 48%,${accent}66,transparent 34%)`}}/>
+    <div style={{position:'absolute',left:68,top:54,opacity:copyOpacity,transform:`translateY(${copyY}px)`,color:'#f5efe5',fontFamily:'Arial,sans-serif'}}>
+      <div style={{fontSize:12,letterSpacing:6}}>ZANSHIN / EAU DE PARFUM</div>
+      <div style={{marginTop:120,fontFamily:'Georgia,serif',fontSize:76,lineHeight:1,letterSpacing:-3,textTransform:'uppercase'}}>{identity}</div>
+      <div style={{marginTop:22,width:365,height:1,background:accent}}/>
+      <div style={{marginTop:18,fontSize:12,letterSpacing:5,color:accent}}>SPRAY · PAUSE · ENTER THE MOMENT</div>
+    </div>
+  </>;
+};
+
 const ConnectedScenes=()=>{
   const frame=useCurrentFrame();
-  const workOpacity=interpolate(frame,[0,12,84,108],[0,1,1,0],clamp);
-  const togetherOpacity=interpolate(frame,[82,112,226,239],[0,1,1,0],clamp);
+  const workOpacity=interpolate(frame,[0,12,62,82],[0,1,1,0],clamp);
+  const togetherOpacity=interpolate(frame,[106,128,226,239],[0,1,1,0],clamp);
   return <>
-    <Video name="The weight of the day" src={staticFile('connected-work.mp4')} loop muted durationInFrames={112} style={{...footageStyle,opacity:workOpacity,filter:'saturate(.52) contrast(1.13) brightness(.68)'}}/>
-    <Video name="Arrival and connection" src={staticFile('connected-together.mp4')} loop muted from={82} durationInFrames={158} style={{...footageStyle,opacity:togetherOpacity,filter:'saturate(.9) contrast(1.06) brightness(.78)'}}/>
+    <Video name="The weight of the day" src={staticFile('connected-work.mp4')} loop muted durationInFrames={84} style={{...footageStyle,opacity:workOpacity,filter:'saturate(.52) contrast(1.13) brightness(.68)'}}/>
+    <Video name="Arrival and connection" src={staticFile('connected-together.mp4')} loop muted from={106} durationInFrames={134} style={{...footageStyle,opacity:togetherOpacity,filter:'saturate(.9) contrast(1.06) brightness(.78)'}}/>
   </>;
 };
 
 const MagnetizedScenes=()=>{
   const frame=useCurrentFrame();
-  const mirrorOpacity=interpolate(frame,[0,12,88,110],[0,1,1,0],clamp);
-  const nightOpacity=interpolate(frame,[82,110,226,239],[0,1,1,0],clamp);
+  const mirrorOpacity=interpolate(frame,[0,12,62,82],[0,1,1,0],clamp);
+  const nightOpacity=interpolate(frame,[106,128,226,239],[0,1,1,0],clamp);
   return <>
-    <Video name="Quiet preparation" src={staticFile('magnetized-mirror.mp4')} loop muted durationInFrames={112} style={{...footageStyle,opacity:mirrorOpacity,filter:'saturate(.72) contrast(1.08) brightness(.74)'}}/>
-    <Video name="Owning the night" src={staticFile('magnetized-night.mp4')} loop muted from={82} durationInFrames={158} style={{...footageStyle,opacity:nightOpacity,filter:'saturate(.82) contrast(1.12) brightness(.67)'}}/>
+    <Video name="Quiet preparation" src={staticFile('magnetized-mirror.mp4')} loop muted durationInFrames={84} style={{...footageStyle,opacity:mirrorOpacity,filter:'saturate(.72) contrast(1.08) brightness(.74)'}}/>
+    <Video name="Owning the night" src={staticFile('magnetized-night.mp4')} loop muted from={106} durationInFrames={134} style={{...footageStyle,opacity:nightOpacity,filter:'saturate(.82) contrast(1.12) brightness(.67)'}}/>
   </>;
 };
 
 export const CampaignFilm=({identity,accent})=>{
   const frame=useCurrentFrame();
-  const transitionGlow=interpolate(frame,[76,98,118],[0,.28,0],clamp);
+  const transitionGlow=interpolate(frame,[48,84,128],[0,.24,0],clamp);
   const pulse=.05+Math.max(0,Math.sin(frame/34))*.045;
   return <AbsoluteFill style={{background:'#070908',overflow:'hidden'}}>
     {identity==='focused'&&<SingleScene src="focused-work.mp4" tone={.62}/>}
     {identity==='energised'&&<SingleScene src="energised-run.mp4" tone={.88}/>}
     {identity==='connected'&&<ConnectedScenes/>}
     {identity==='magnetized'&&<MagnetizedScenes/>}
+    <RitualScene identity={identity} accent={accent}/>
     <AbsoluteFill style={{background:`linear-gradient(90deg,rgba(5,8,7,.72),rgba(5,8,7,.1) 56%,rgba(5,8,7,.18)),radial-gradient(circle at 72% 44%,${accent},transparent 48%)`,mixBlendMode:'multiply',opacity:.36}}/>
     <AbsoluteFill style={{background:accent,opacity:pulse,mixBlendMode:'color'}}/>
     <AbsoluteFill style={{background:'white',opacity:transitionGlow,mixBlendMode:'soft-light'}}/>
