@@ -28,6 +28,7 @@ function EmotionFilm({film,className=''}){
 export default function Home(){
   const [slide,setSlide]=useState(0);
   const [paused,setPaused]=useState(false);
+  const [packshot,setPackshot]=useState(false);
   const heroVideo=useRef(null);
   const active=films[slide];
 
@@ -42,11 +43,12 @@ export default function Home(){
   useEffect(()=>{
     const video=heroVideo.current;
     if(!video)return;
+    setPackshot(video.currentTime>=5.7);
     if(paused)video.pause();else video.play().catch(()=>{});
   },[paused,slide]);
 
   return <div className="brand-home">
-    <section className="brand-hero" style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
+    <section className={`brand-hero full-cover-hero ${packshot?'show-packshot':''}`} style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
       <div className="hero-editorial-copy">
         <span className="hero-eyebrow">The art of being present</span>
         <h1>A fragrance.<br/>A feeling.<br/><em>Your moment.</em></h1>
@@ -55,7 +57,7 @@ export default function Home(){
         <div className="hero-identity-note"><span>{active.number} / {active.name}</span><p>{active.heroCopy}</p></div>
       </div>
       <div className="hero-cinema">
-        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
+        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" onTimeUpdate={event=>setPackshot(event.currentTarget.currentTime>=5.7)} poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
         <div className="hero-cinema-caption"><span>THE ZANSHIN MOMENTS</span><span>{active.number} — 04</span></div>
       </div>
       <div className="brand-hero-nav">
