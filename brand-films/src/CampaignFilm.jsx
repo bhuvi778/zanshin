@@ -37,8 +37,8 @@ export const CampaignFilm=({identity,accent})=>{
   const transitionGlow=interpolate(frame,[76,98,118],[0,.28,0],clamp);
   const pulse=.05+Math.max(0,Math.sin(frame/34))*.045;
   return <AbsoluteFill style={{background:'#070908',overflow:'hidden'}}>
-    {identity==='focused'&&<SingleScene src="focused-work.mp4" tone={.62}/>} 
-    {identity==='energised'&&<SingleScene src="energised-run.mp4" tone={.88}/>} 
+    {identity==='focused'&&<SingleScene src="focused-work.mp4" tone={.62}/>}
+    {identity==='energised'&&<SingleScene src="energised-run.mp4" tone={.88}/>}
     {identity==='connected'&&<ConnectedScenes/>}
     {identity==='magnetized'&&<MagnetizedScenes/>}
     <AbsoluteFill style={{background:`linear-gradient(90deg,rgba(5,8,7,.72),rgba(5,8,7,.1) 56%,rgba(5,8,7,.18)),radial-gradient(circle at 72% 44%,${accent},transparent 48%)`,mixBlendMode:'multiply',opacity:.36}}/>
