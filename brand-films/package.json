@@ -1,0 +1,16 @@
+{
+  "name": "zanshin-brand-films",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.jsx --no-open --public-dir ../client/public",
+    "render:all": "node scripts/render-all.mjs"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.506",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
+    "remotion": "4.0.506"
+  }
+}

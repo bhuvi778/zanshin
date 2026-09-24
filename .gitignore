@@ -4,3 +4,5 @@ client/dist/
 server/.env
 npm-debug.log*
 coverage/
+brand-films/temp-*.png
+mobile-home*.png
