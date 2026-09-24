@@ -30,7 +30,7 @@ for(const id of ['Focused','Energised','Connected','Magnetized']){
   const hero=spawnSync(process.execPath,[cli,'render','src/index.jsx',heroComposition,heroTarget,'--public-dir','source-footage','--codec','h264','--crf','22','--concurrency','50%','--log','error'],{cwd:project,stdio:'inherit'});
   if(hero.error)console.error(hero.error.message);
   if(hero.status!==0)process.exit(hero.status??1);
-  const heroStill=spawnSync(process.execPath,[cli,'still','src/index.jsx',heroComposition,heroPoster,'--public-dir','source-footage','--frame','164','--log','error'],{cwd:project,stdio:'inherit'});
+  const heroStill=spawnSync(process.execPath,[cli,'still','src/index.jsx',heroComposition,heroPoster,'--public-dir','source-footage','--frame','48','--log','error'],{cwd:project,stdio:'inherit'});
   if(heroStill.error)console.error(heroStill.error.message);
   if(heroStill.status!==0)process.exit(heroStill.status??1);
 }

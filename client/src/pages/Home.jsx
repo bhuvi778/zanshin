@@ -32,11 +32,12 @@ export default function Home(){
   const active=films[slide];
 
   useEffect(()=>{
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){setPaused(true);return;}
-    if(paused)return;
-    const timer=setInterval(()=>setSlide(value=>(value+1)%films.length),9000);
-    return()=>clearInterval(timer);
-  },[paused]);
+    const preference=window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update=()=>setPaused(preference.matches);
+    update();
+    preference.addEventListener('change',update);
+    return()=>preference.removeEventListener('change',update);
+  },[]);
 
   useEffect(()=>{
     const video=heroVideo.current;
@@ -46,18 +47,19 @@ export default function Home(){
 
   return <div className="brand-home">
     <section className="brand-hero" style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
-      <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted loop playsInline poster={active.heroPoster}><source src={active.heroFilm} type="video/mp4"/></video>
-      <div className="brand-hero-wash"/>
-      <div className="brand-hero-copy">
-        <span className="brand-kicker">Zanshin / {active.number} / {active.name}</span>
-        <h1 dangerouslySetInnerHTML={{__html:active.hero}}/>
-        <p>{active.heroCopy}</p>
-        <div className="brand-hero-arc"><span><small>Before</small>{active.beforeShort}</span><i>→</i><span><small>Intention</small>{active.intention}</span></div>
-        <div className="brand-hero-actions"><a className="brand-primary" href={`#${active.slug}`}>Enter this feeling <span>↓</span></a><Link className="brand-text-link" to="/find-your-moment">Find your moment ↗</Link></div>
+      <div className="hero-editorial-copy">
+        <span className="hero-eyebrow">The art of being present</span>
+        <h1>A fragrance.<br/>A feeling.<br/><em>Your moment.</em></h1>
+        <p>For who you are. For how you want to feel.<br/>Discover four expressions of Zanshin.</p>
+        <Link className="hero-discover" to="/find-your-moment">Find your moment <span>↗</span></Link>
+        <div className="hero-identity-note"><span>{active.number} / {active.name}</span><p>{active.heroCopy}</p></div>
       </div>
-      <div className="brand-hero-side"><span>{active.kicker}</span><strong>0{slide+1} / 04</strong></div>
+      <div className="hero-cinema">
+        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
+        <div className="hero-cinema-caption"><span>THE ZANSHIN MOMENTS</span><span>{active.number} — 04</span></div>
+      </div>
       <div className="brand-hero-nav">
-        <div className="brand-hero-tabs">{films.map((film,index)=><button key={film.slug} className={slide===index?'active':''} onClick={()=>setSlide(index)} style={{'--tab-accent':film.accent}}><span>0{index+1}</span>{film.name}</button>)}</div>
+        <div className="brand-hero-tabs">{films.map((film,index)=><button key={film.slug} className={slide===index?'active':''} aria-pressed={slide===index} onClick={()=>setSlide(index)} style={{'--tab-accent':film.accent}}><span>0{index+1}</span>{film.name}</button>)}</div>
         <button className="brand-motion" onClick={()=>setPaused(value=>!value)} aria-pressed={paused}>{paused?'Play films':'Pause films'}</button>
       </div>
     </section>
