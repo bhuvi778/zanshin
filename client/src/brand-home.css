@@ -20,3 +20,18 @@
 @media(max-width:850px){.site-header.home-header{top:25px}.home-header .site-nav.open{background:var(--paper)}.home-header .site-nav.open a{color:var(--ink)}.brand-hero-copy{width:min(610px,66vw)}}
 @media(max-width:720px){.site-header.home-header{top:24px}.brand-hero{height:calc(100svh - 24px);min-height:700px}.brand-hero-copy{left:7vw;right:7vw;bottom:145px;width:auto;max-width:86vw}.brand-hero-copy h1{font-size:clamp(39px,10.2vw,55px);margin:14px 0 17px}.brand-hero-copy p{font-size:11px;line-height:1.75}.brand-hero-actions{margin-top:19px;gap:16px}.brand-home .brand-primary{min-width:230px;padding:15px 18px}.brand-hero-nav{bottom:19px}.brand-motion{display:none}.brand-film-intro{display:block;padding-top:95px;padding-bottom:75px}.brand-film-intro h2{margin:20px 0 25px}.film-chapter,.film-chapter.film-reverse{padding-top:70px}.film-media{aspect-ratio:4/5}.identity-card{min-height:500px}}
 @media(prefers-reduced-motion:reduce){.identity-card-film{transition:none!important}}
+
+/* Product-film integration: let the branded film own the desktop headline. */
+@media(min-width:721px){
+  .brand-hero-copy{top:auto;bottom:92px;transform:none;width:min(540px,46vw)}
+  .brand-hero-copy>.brand-kicker,.brand-hero-copy>h1{display:none}
+  .brand-hero-copy>p{margin:0 0 17px;max-width:430px;padding-left:15px;border-left:1px solid var(--identity);font:italic 13px/1.65 Georgia,serif;color:#d8d6d0}
+  .brand-hero-actions{margin-top:0}
+}
+.identity-card-film{object-position:72% center}
+.brand-invitation-film video{object-position:70% center}
+@media(max-width:720px){
+  .brand-hero-film{object-position:72% center}
+  .brand-hero-copy>.brand-kicker{display:block}
+  .brand-hero-copy>h1{display:block}
+}
