@@ -18,3 +18,9 @@ All source clips are marked “Free to use” on their Pexels pages. The downloa
 ## Implemented free motion-photograph edition
 The hero now uses four original AI-generated campaign photographs, rendered locally with gentle camera movement and a moving light layer. These are animated still-image MP4s, not live-action generative video. No paid Weave generation was run. The product depictions are AI concept interpretations, not exact approved pack photography.
 Sources are tracked in brand-films/artwork. Render entry: brand-films/src/HeroFilm.jsx. Nine seconds, 24 fps, 1280x720, silent H.264. Web assets use new original-motion filenames to avoid reusing cached stock clips.
+
+## Generated image-to-video edition
+Actual image-to-video clips were successfully downloaded and verified for Focused and Energised from their original campaign images using the public Wan2.2 14B Lightning demo at https://huggingface.co/spaces/zerogpu-aoti/wan2-2-fp8da-aoti-faster . Six inference steps, 3.5 seconds requested, fixed seed 42, no audio. No paid service or credits used. Human expression, hand and fabric movement are model-generated; source labels may soften or vary during movement. These are concept campaign visuals, not verified exact product pack footage.
+The generated outputs are stored as client/public/films/*-emotion-video.mp4. Reproduction script: brand-films/scripts/generate-free-emotions.mjs (run from repository root). Free demo availability and quota are not guaranteed.
+
+Connected generation returned a result but its download failed with File not allowed. Magnetized generation returned an unspecified service error twice. Those two hero slides retain the original motion photographs until valid outputs are available.

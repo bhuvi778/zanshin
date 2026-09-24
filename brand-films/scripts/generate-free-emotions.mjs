@@ -1,0 +1,14 @@
+// Run from repository root. Uses the public free demo; availability and quotas may change.
+import {writeFile} from 'node:fs/promises';
+const base='https://zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space';
+const jobs={focused:'The man gently presses the perfume atomizer once, lowers the bottle and brings his wrist closer to breathe in the fragrance. Natural breathing, blinking and calm expression. Preserve face, fingers, bottle and room. Locked camera, no zoom.',energised:'The woman breathes in the fresh morning air, naturally turns her face toward the sunshine and smiles softly. She gently draws the curtain with her raised hand, fabric moves in a light breeze. Keep her other hand holding the same perfume bottle steadily. Subtle real human motion, breathing, blinking and expression. Preserve identity, clothes, bottle and fingers. Locked camera, no zoom.',connected:'The couple look into each others eyes, blink naturally and their smiles gradually warm. The woman gently leans toward the man and he softly squeezes her hand. Natural small head movements and breathing. Perfume bottle stays completely still on the table. Preserve their faces and hands, all objects and bright lighting. Locked camera, no zoom.',magnetized:'The woman gently lifts her chin, naturally blinks and turns her gaze toward someone just off camera. A small confident smile forms. She relaxes her shoulders and lowers the perfume bottle very slightly while keeping it upright. Subtle breathing and silky fabric motion. Preserve her face, hands, label, bottle geometry and outfit. Locked camera, no zoom.'};
+for(const [slug,prompt] of Object.entries(jobs)){
+ const data=[{path:`https://raw.githubusercontent.com/bhuvi778/zanshin/main/brand-films/artwork/original-${slug}.png`,meta:{_type:'gradio.FileData'}},prompt,6,'static still image, slideshow, zoom only, deformed fingers, distorted faces, warped bottle, camera shake, captions',3.5,1,1,42,false];
+ const job=await (await fetch(base+'/gradio_api/call/generate_video',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({data})})).json();
+ console.log(slug,JSON.stringify(job));if(!job.event_id)throw Error('No event id');
+ const stream=await fetch(base+'/gradio_api/call/generate_video/'+job.event_id);let buffer='';
+ for await(const c of stream.body){buffer+=Buffer.from(c).toString();}
+
+ const match=buffer.match(/event: complete\s+data: (.+)/);if(!match){console.log(buffer);throw Error('Generation failed: '+slug);}
+ const out=JSON.parse(match[1])[0];const download=await fetch(out.url);if(!download.ok)throw Error('Download failed '+download.status+': '+await download.text());const bytes=Buffer.from(await download.arrayBuffer());if(bytes.subarray(4,8).toString()!=='ftyp')throw Error('Invalid MP4 response');await writeFile(`client/public/films/${slug}-emotion-video.mp4`,bytes);console.log('Saved',slug);
+}
