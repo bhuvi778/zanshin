@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "studio": "remotion studio src/index.jsx --no-open --public-dir ../client/public",
+    "footage:download": "node scripts/download-footage.mjs",
     "render:all": "node scripts/render-all.mjs"
   },
   "dependencies": {
     "@remotion/cli": "4.0.506",
+    "@remotion/media": "4.0.506",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "remotion": "4.0.506"

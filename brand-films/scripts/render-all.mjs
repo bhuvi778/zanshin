@@ -8,13 +8,12 @@ const project=resolve(here,'..');
 const output=resolve(project,'../client/public/films');
 mkdirSync(output,{recursive:true});
 for(const id of ['Focused','Energised','Connected','Magnetized']){
-  for(const variant of ['', 'Hero']){
-    const target=resolve(output,`${id.toLowerCase()}${variant?'-hero':''}.mp4`);
-    const composition=`${id}${variant}`;
-    const args=['remotion','render','src/index.jsx',composition,target,'--public-dir','../client/public','--codec','h264','--crf','24','--concurrency','50%','--log','error'];
-    console.log(`Rendering ${composition}...`);
-    const result=spawnSync('npx',args,{cwd:project,stdio:'inherit',shell:process.platform==='win32'});
-    if(result.error)console.error(result.error.message);
-    if(result.status!==0)process.exit(result.status??1);
-  }
+  const composition=`${id}Campaign`;
+  const target=resolve(output,`${id.toLowerCase()}-campaign.mp4`);
+  const args=['remotion','render','src/index.jsx',composition,target,'--public-dir','source-footage','--codec','h264','--crf','23','--concurrency','50%','--log','error'];
+  console.log(`Rendering ${composition}...`);
+  const cli=resolve(project,'node_modules/@remotion/cli/remotion-cli.js');
+  const result=spawnSync(process.execPath,[cli,...args.slice(1)],{cwd:project,stdio:'inherit'});
+  if(result.error)console.error(result.error.message);
+  if(result.status!==0)process.exit(result.status??1);
 }
