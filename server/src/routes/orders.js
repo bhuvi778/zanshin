@@ -1,0 +1,10 @@
+import {Router} from 'express';
+import {z} from 'zod';
+import Product from '../models/Product.js';
+import Order from '../models/Order.js';
+const router=Router();
+const createSchema=z.object({customer:z.object({name:z.string().trim().min(2).max(80),email:z.string().email().max(160)}),items:z.array(z.object({slug:z.string().min(1),quantity:z.number().int().min(1).max(20)})).min(1).max(20)});
+const number=()=>`ZAN-${Date.now().toString(36).toUpperCase()}-${Math.random().toString(36).slice(2,6).toUpperCase()}`;
+router.post('/orders',async(req,res,next)=>{try{const parsed=createSchema.safeParse(req.body);if(!parsed.success)return res.status(400).json({message:'Please check order details',issues:parsed.error.issues});const slugs=[...new Set(parsed.data.items.map(x=>x.slug))],products=await Product.find({slug:{$in:slugs},active:true});if(products.length!==slugs.length)return res.status(400).json({message:'One or more products are unavailable'});const bySlug=new Map(products.map(p=>[p.slug,p]));const items=parsed.data.items.map(x=>{const p=bySlug.get(x.slug);return{product:p._id,slug:p.slug,name:p.name,quantity:x.quantity,unitPrice:p.price}});const subtotal=items.reduce((sum,x)=>sum+x.quantity*x.unitPrice,0);const order=await Order.create({orderNumber:number(),customer:parsed.data.customer,items,subtotal});res.status(201).json({orderNumber:order.orderNumber,status:order.status,paymentStatus:order.paymentStatus,subtotal:order.subtotal})}catch(e){next(e)}});
+router.get('/orders/:orderNumber',async(req,res,next)=>{try{const email=String(req.query.email||'').toLowerCase();if(!email)return res.status(400).json({message:'Email is required'});const order=await Order.findOne({orderNumber:req.params.orderNumber,'customer.email':email}).select('orderNumber status paymentStatus subtotal createdAt items.name items.quantity').lean();if(!order)return res.status(404).json({message:'Order not found for this email'});res.json(order)}catch(e){next(e)}});
+export default router;
