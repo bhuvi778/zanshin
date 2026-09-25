@@ -13,3 +13,9 @@
 .editorial-home .ed-story{border:1px solid color-mix(in srgb,var(--identity) 12%,transparent);background:color-mix(in srgb,var(--identity) 5%,var(--paper))}
 .editorial-home .ed-showcase{background:radial-gradient(ellipse at 75% 20%,#fff9,transparent 55%),linear-gradient(130deg,color-mix(in srgb,var(--identity) 9%,#fffaf3),color-mix(in srgb,var(--identity) 16%,#f7f6ee))}
 .editorial-home .ed-kicker{color:#657368}.editorial-home .ed-ritual .ed-kicker{color:#e1e5d7}
+
+/* Original full brand mark, quietly printed into the editorial background. */
+.editorial-home{background:radial-gradient(ellipse at 0 30%,#dfe9df99,transparent 43%),radial-gradient(ellipse at 100% 78%,#eee0cb80,transparent 42%),var(--paper)}
+.editorial-home:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;mix-blend-mode:multiply;background-image:url('/assets/zanshin-logo-full.png'),url('/assets/zanshin-logo-full.png');background-repeat:no-repeat;background-size:clamp(240px,35vw,520px) auto,clamp(240px,32vw,460px) auto;background-position:right 2vw top calc(100svh + 20px),left 2vw bottom 10px}
+.editorial-home .ed-hero{margin-top:0;height:calc(100svh - var(--header,96px));min-height:530px}
+@media(max-width:720px){.editorial-home:after{opacity:.10;background-size:230px auto,210px auto;background-position:right 3vw top calc(100svh + 40px),right 3vw bottom 12px}.editorial-home .ed-hero{height:calc(100svh - var(--header,84px));min-height:560px}}
