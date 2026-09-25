@@ -14,3 +14,8 @@ const changed=journeyReducer(review,{type:'space',value:'Family'});assert.equal(
 assert.deepEqual(journeyReducer(changed,{type:'moment',value:'Deep Work'}),changed);
 const finder=readFileSync(new URL('../src/pages/Finder.jsx',import.meta.url),'utf8');assert.ok(!finder.includes('api.categories'));assert.ok(!finder.includes('api.recommendation'));
 console.log('PASS all 121 complete finder journeys, all 4 results, required selections, invalid pairs, back/edit/reset, and API-independent discovery');
+for(const row of rows){let s=journeyReducer(initialJourney,{type:'select-space',value:row.category});assert.equal(s.step,1);s=journeyReducer(s,{type:'select-moment',value:row.moment});assert.equal(s.step,2);s=journeyReducer(s,{type:'reveal'});assert.equal(s.step,3);assert.equal(matchMoment(s.space,s.moment),row.fragrance.toLowerCase())}
+assert.deepEqual(journeyReducer(initialJourney,{type:'select-space',value:'invented'}),initialJourney);
+assert.deepEqual(journeyReducer(initialJourney,{type:'select-moment',value:'Deep Work'}),initialJourney);
+assert.ok(!finder.includes('01 /'));assert.ok(!finder.includes('02 /'));assert.ok(!finder.includes('03 /'));
+console.log('PASS 121 automatic selection journeys and invalid-selection guards');
