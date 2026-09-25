@@ -1,122 +1,51 @@
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {asset} from '../data';
 
-const films=[
-  {slug:'focused',name:'Focused',number:'01',accent:'#5d91aa',film:'/films/focused-campaign.mp4',poster:'/films/focused-poster.png',heroFilm:'/films/focused-emotion-8s.mp4',heroPoster:'/films/focused-original-poster.png',kicker:'Clarity / Discipline / Deep work',hero:'When the noise leaves,<br/><em>you remain.</em>',heroCopy:'A quiet return to the one thing that deserves your full attention.',before:'Too many voices. Too many open loops.',after:'One clear intention.',beforeShort:'Scattered attention',intention:'Clear intention',title:'Attention is a form of presence.',story:'The world does not have to become quiet before you begin. Focused marks the shift from carrying every demand to choosing the one thing that matters now.',moment:'For the morning you need to come back to yourself.'},
-  {slug:'energised',name:'Energised',number:'02',accent:'#536fc1',film:'/films/energised-campaign.mp4',poster:'/films/energised-poster.png',heroFilm:'/films/energised-emotion-8s.mp4',heroPoster:'/films/energised-original-poster.png',kicker:'Energy / Momentum / Vitality',hero:'When stillness becomes<br/><em>forward.</em>',heroCopy:'The instant your body remembers that the day can still move with you.',before:'The day feels heavier than it has begun.',after:'The first real breath changes its direction.',beforeShort:'A heavy start',intention:'Forward energy',title:'Energy begins before speed.',story:'Energised is the feeling of saying yes to movement: the first step outside, the air against your face, the moment your energy stops waiting for permission.',moment:'For the morning that needs a beginning, not a push.'},
-  {slug:'connected',name:'Connected',number:'03',accent:'#6d815b',film:'/films/connected-campaign.mp4',poster:'/films/connected-poster.png',heroFilm:'/films/connected-original-motion.mp4',heroPoster:'/films/connected-original-poster.png',kicker:'Harmony / Relationships / Belonging',hero:'When the day ends,<br/><em>presence begins.</em>',heroCopy:'Leave the weight of work at the door. Arrive for the person in front of you.',before:'He carries the whole day into the evening.',after:'A familiar face makes the moment lighter.',beforeShort:'Carrying the day',intention:'Fully present',title:'Connection begins with arrival.',story:'A difficult day can follow you everywhere. Connected is the small ritual between leaving work and meeting someone who matters—the breath, the reset, the choice to be fully there.',moment:'For the evening when being present means more than having the right words.'},
-  {slug:'magnetized',name:'Magnetized',number:'04',accent:'#a6485d',film:'/films/magnetized-campaign.mp4',poster:'/films/magnetized-poster.png',heroFilm:'/films/magnetized-original-motion.mp4',heroPoster:'/films/magnetized-original-poster.png',kicker:'Confidence / Presence / Attraction',hero:'When you stop asking<br/><em>to be seen.</em>',heroCopy:'Presence becomes magnetic when it no longer needs to perform.',before:'One last moment of hesitation.',after:'Then her own presence becomes enough.',beforeShort:'Quiet hesitation',intention:'Own your presence',title:'Confidence can be quiet.',story:'Magnetized begins when you stop measuring yourself through the room and move through it as entirely your own. Quiet certainty becomes a presence people can feel.',moment:'For the night when you want to feel unmistakably yourself.'}
+const moments=[
+ {slug:'focused',name:'Focused',tone:'#718a93',word:'Clarity',title:'A little quieter.\nA little more you.',copy:'Make space for the thought, the craft, the moment that deserves your attention.',story:'A quiet morning. An open notebook. One thing worth giving your attention to. Meet a fragrance identity made for the moments you choose to be fully here.',occasion:'Slow mornings · Deep work · Your own company',alt:'A man writing thoughtfully in a sunlit studio',position:'70% center'},
+ {slug:'energised',name:'Energised',tone:'#6b8590',word:'Possibility',title:'A fresh breath.\nA new beginning.',copy:'For open windows, unhurried first steps and the possibility of a new day.',story:'Step outside the familiar. Feel the air, take the longer route and welcome whatever comes next. Energised is an invitation to meet your day with a fresh sense of possibility.',occasion:'First light · New places · Days in motion',alt:'A woman enjoying the breeze on a bright coastal terrace',position:'70% center'},
+ {slug:'connected',name:'Connected',tone:'#7c896e',word:'Belonging',title:'Less of the day.\nMore of this moment.',copy:'Set the day down. Make room for a familiar face, an easy laugh, a little closeness.',story:'The laptop closes. The conversation begins. A small fragrance ritual marks the space between a busy day and time with someone who matters. Arrive as yourself. Stay for the moment.',occasion:'Easy evenings · Shared tables · People you love',alt:'A couple sharing an affectionate moment across a terrace table',position:'72% center'},
+ {slug:'magnetized',name:'Magnetized',tone:'#a27d7d',word:'Self-assurance',title:'Quiet confidence.\nAn unmistakable you.',copy:'For the moments you arrive comfortably, completely, as yourself.',story:'An invitation, a favourite dress, a moment to yourself before you leave. Magnetized celebrates a presence that feels natural: expressive, assured and entirely your own.',occasion:'Gallery afternoons · Dinner dates · Your next entrance',alt:'A confident woman in dusty rose silk in a daylight gallery',position:'70% center'}
 ];
-
-function EmotionFilm({film,className=''}){
-  const videoRef=useRef(null);
-  useEffect(()=>{
-    const video=videoRef.current;
-    if(!video)return;
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(reduced){video.pause();return;}
-    const observer=new IntersectionObserver(([entry])=>{
-      if(entry.isIntersecting)video.play().catch(()=>{});else video.pause();
-    },{threshold:.28});
-    observer.observe(video);
-    return()=>observer.disconnect();
-  },[]);
-  return <video ref={videoRef} className={className} muted loop playsInline preload="metadata" poster={film.poster} aria-label={`${film.name} emotional short film`}><source src={film.film} type="video/mp4"/></video>;
-}
+const photo=slug=>`/assets/editorial/${slug}.webp`;
+const Arrow=()=> <span aria-hidden="true">↗</span>;
 
 export default function Home(){
-  const [slide,setSlide]=useState(0);
-  const [paused,setPaused]=useState(false);
-  const heroVideo=useRef(null);
-  const active=films[slide];
-
-  useEffect(()=>{
-    const preference=window.matchMedia('(prefers-reduced-motion: reduce)');
-    const update=()=>setPaused(preference.matches);
-    update();
-    preference.addEventListener('change',update);
-    return()=>preference.removeEventListener('change',update);
-  },[]);
-
-  useEffect(()=>{
-    const video=heroVideo.current;
-    if(!video)return;
-    if(paused)video.pause();else video.play().catch(()=>{});
-  },[paused,slide]);
-
-  return <div className="brand-home">
-    <section className="brand-hero full-cover-hero" style={{'--identity':active.accent}} aria-label="Four Zanshin emotional identities">
-      <div className="hero-editorial-copy">
-        <span className="hero-eyebrow">Zanshin / {active.name}</span>
-        <h1 dangerouslySetInnerHTML={{__html:active.hero}}/>
-        <p>{active.heroCopy}</p>
-        <Link className="hero-discover" to="/find-your-moment">Find your moment <span>↗</span></Link>
-        <div className="hero-identity-note"><span>{active.number} / {active.name}</span><p>{active.heroCopy}</p></div>
-      </div>
-      <div className="hero-cinema">
-        <video key={active.slug} ref={heroVideo} className="brand-hero-film" autoPlay={!paused} muted playsInline preload="metadata" poster={active.heroPoster} onEnded={()=>{if(!paused)setSlide(value=>(value+1)%films.length);}} aria-label={active.name+' — a Zanshin moment'}><source src={active.heroFilm} type="video/mp4"/></video>
-        <div className="hero-cinema-caption"><span>THE ZANSHIN MOMENTS</span><span>{active.number} — 04</span></div>
-      </div>
-      <div className="brand-hero-nav">
-        <div className="brand-hero-tabs">{films.map((film,index)=><button key={film.slug} className={slide===index?'active':''} aria-pressed={slide===index} onClick={()=>setSlide(index)} style={{'--tab-accent':film.accent}}><span>0{index+1}</span>{film.name}</button>)}</div>
-        <button className="brand-motion" onClick={()=>setPaused(value=>!value)} aria-pressed={paused}>{paused?'Play films':'Pause films'}</button>
-      </div>
-    </section>
-
-    <section className="brand-manifesto">
-      <div className="brand-manifesto-mark">残心</div>
-      <div className="brand-manifesto-copy">
-        <span className="brand-kicker">Begin with the moment</span>
-        <h2>Fragrance is not the story.<br/><em>You are.</em></h2>
-        <p>Zanshin begins before the bottle—with the weight you are carrying, the person you are becoming, and the feeling you want to take into what comes next.</p>
-      </div>
-      <div className="brand-manifesto-note"><span>Our belief</span><p>Scent can become a private cue: pause, breathe, choose how you enter the moment.</p></div>
-    </section>
-
-    <section className="brand-film-intro" id="brand-films">
-      <span className="brand-kicker">Four short films / four inner shifts</span>
-      <h2>Four emotional identities.<br/><em>Four ways to return to yourself.</em></h2>
-      <p>Each Zanshin identity begins with a real human tension and follows the quiet shift that changes what happens next.</p>
-    </section>
-
-    <div className="brand-film-series">
-      {films.map((film,index)=><section className={`film-chapter ${index%2?'film-reverse':''}`} id={film.slug} key={film.slug} style={{'--identity':film.accent}}>
-        <div className="film-media"><EmotionFilm film={film}/><div className="film-grain"/><span className="film-duration">Zanshin film / 00:10</span><span className="film-play-mark" aria-hidden="true">▶</span></div>
-        <div className="film-copy">
-          <span className="brand-kicker">{film.number} / {film.kicker}</span>
-          <h2>{film.title}</h2>
-          <div className="film-shift"><div><small>Before</small><strong>{film.before}</strong></div><span>→</span><div><small>The shift</small><strong>{film.after}</strong></div></div>
-          <p>{film.story}</p>
-          <blockquote>{film.moment}</blockquote>
-          <Link className="brand-text-link" to={`/collection/${film.slug}`}>Discover the {film.name} identity ↗</Link>
-        </div>
-      </section>)}
-    </div>
-
-    <section className="brand-memory">
-      <div className="brand-memory-heading"><span className="brand-kicker">Why scent can stay</span><h2>Some moments pass.<br/><em>Some become part of us.</em></h2></div>
-      <div className="brand-memory-grid">
-        <article><span>01</span><h3>Emotional</h3><p>Scent is closely tied to emotion. Zanshin stories begin with a feeling, because that is often where memory begins.</p></article>
-        <article><span>02</span><h3>Vivid</h3><p>A familiar scent can bring back the texture of a place, a person or an evening with unusual clarity.</p></article>
-        <article><span>03</span><h3>Personal</h3><p>The same fragrance can hold a different meaning for every person. The moment completes it.</p></article>
-      </div>
-    </section>
-
-    <section className="brand-invitation">
-      <div className="brand-invitation-film"><EmotionFilm film={films[2]}/></div>
-      <div className="brand-invitation-copy"><span className="brand-kicker">Your story starts here</span><h2>What do you need<br/><em>from this moment?</em></h2><p>Begin with the way you want to feel when you arrive. Your purpose, mood and occasion lead the experience.</p><Link className="brand-primary light" to="/find-your-moment">Begin the experience <span>↗</span></Link></div>
-    </section>
-
-    <section className="identity-index">
-      <div className="identity-index-head"><span className="brand-kicker">The Zanshin identities</span><h2>Choose the feeling.<br/><em>Meet the fragrance after.</em></h2><Link className="brand-text-link" to="/collection">Explore all four identities ↗</Link></div>
-      <div className="identity-grid">{films.map((film,index)=><Link to={`/collection/${film.slug}`} className="identity-card" key={film.slug} style={{'--identity':film.accent}}><EmotionFilm film={film} className="identity-card-film"/><div><span>0{index+1}</span><h3>{film.name}</h3><p>{film.kicker}</p></div></Link>)}</div>
-    </section>
-
-    <section className="brand-closing">
-      <img src={asset('zanshin-logo-full.png')} alt="Zanshin — Begin with the Moment"/>
-      <p>A presence that does not end when the moment does.</p>
-      <Link className="brand-text-link" to="/our-story">Read the Zanshin philosophy ↗</Link>
-    </section>
-  </div>;
+ const [slide,setSlide]=useState(0),[paused,setPaused]=useState(false),[hovered,setHovered]=useState(false);
+ const active=moments[slide];
+ useEffect(()=>{const media=window.matchMedia('(prefers-reduced-motion: reduce)'); const update=()=>setPaused(media.matches);update();media.addEventListener('change',update);return()=>media.removeEventListener('change',update);},[]);
+ useEffect(()=>{if(paused||hovered)return;const timer=setInterval(()=>{if(!document.hidden)setSlide(s=>(s+1)%moments.length);},7000);return()=>clearInterval(timer);},[paused,hovered,slide]);
+ return <div className="quiet-home">
+  <section className="quiet-hero" aria-label="Zanshin moments" aria-roledescription="carousel" onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} onFocusCapture={()=>setHovered(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setHovered(false);}} style={{'--moment-tone':active.tone}}>
+   <div className="quiet-hero-images">{moments.map((m,i)=><img key={m.slug} src={photo(m.slug)} alt={i===slide?m.alt:''} aria-hidden={i!==slide} className={i===slide?'is-current':''} fetchPriority={i===0?'high':'auto'} loading={i===0?'eager':'lazy'} style={{objectPosition:m.position}}/>)}</div>
+   <div className="quiet-hero-shade"/>
+   <div className="quiet-hero-copy">
+    <span className="quiet-eyebrow">Zanshin · Begin with the moment</span>
+    <p className="quiet-identity">0{slide+1} / {active.name}</p>
+    <h1>{active.title.split('\n')[0]}<br/><em>{active.title.split('\n')[1]}</em></h1>
+    <p className="quiet-lead">{active.copy}</p>
+    <Link className="quiet-button" to={`/collection/${active.slug}`}>Discover {active.name}<Arrow/></Link>
+   </div>
+   <div className="quiet-hero-controls">
+    <div className="quiet-tabs" aria-label="Choose a fragrance moment">{moments.map((m,i)=><button key={m.slug} onClick={()=>setSlide(i)} aria-pressed={slide===i} className={slide===i?'selected':''}><small>0{i+1}</small>{m.name}</button>)}</div>
+    <button className="quiet-pause" onClick={()=>setPaused(p=>!p)} aria-label={paused?'Resume slideshow':'Pause slideshow'}>{paused?'Play':'Pause'} <span aria-hidden="true">{paused?'▷':'Ⅱ'}</span></button>
+   </div>
+  </section>
+  <section className="quiet-philosophy quiet-section">
+   <span className="quiet-eyebrow">The Zanshin philosophy</span>
+   <h2>Not every moment asks for more.<br/><em>Some ask you to be here.</em></h2>
+   <p>Fragrance is a personal ritual. A pause before the day. A way to arrive. Zanshin begins with how you want to feel, and the moments you want to make your own.</p>
+   <Link className="quiet-link" to="/our-story">Our story <Arrow/></Link>
+  </section>
+  <section className="quiet-discover quiet-section">
+   <div className="quiet-section-heading"><div><span className="quiet-eyebrow">Begin with a feeling</span><h2>What feels like <em>you, today?</em></h2></div><Link className="quiet-link" to="/find-your-moment">Find your moment <Arrow/></Link></div>
+   <div className="quiet-mood-grid">{moments.map((m,i)=><Link className="quiet-mood" to={`/collection/${m.slug}`} key={m.slug}><div className="quiet-mood-photo"><img src={photo(m.slug)} alt={m.alt} loading="lazy" style={{objectPosition:m.position}}/><span>0{i+1} / {m.word}</span></div><div className="quiet-mood-label"><h3>{m.name}</h3><Arrow/></div></Link>)}</div>
+  </section>
+  <section className="quiet-finder quiet-section"><div><span className="quiet-eyebrow">A fragrance, on your terms</span><h2>Your mood.<br/>Your moment.<br/><em>Your Zanshin.</em></h2></div><div><p>Start with who you want to be and where the day is taking you. A few thoughtful questions will help you meet your fragrance.</p><Link className="quiet-button" to="/find-your-moment">Find my fragrance <Arrow/></Link><span className="quiet-finder-note">A small pause. A personal discovery.</span></div></section>
+  <div className="quiet-chapters">{moments.map((m,i)=><section className={`quiet-chapter ${i%2?'reverse':''}`} key={m.slug} style={{'--moment-tone':m.tone}}><div className="quiet-chapter-image"><img src={photo(m.slug)} alt={m.alt} loading="lazy" style={{objectPosition:m.position}}/></div><div className="quiet-chapter-copy"><span className="quiet-eyebrow">0{i+1} / {m.word}</span><h2>{m.name}</h2><p className="quiet-chapter-intro">{m.copy}</p><p>{m.story}</p><span className="quiet-occasions">{m.occasion}</span><Link className="quiet-link" to={`/collection/${m.slug}`}>Explore {m.name}<Arrow/></Link></div></section>)}</div>
+  <section className="quiet-gifting quiet-section"><div className="quiet-gift-art"><img src={asset('connected-carton-full.webp')} alt="Full Zanshin Connected presentation carton" loading="lazy"/></div><div><span className="quiet-eyebrow">Something personal</span><h2>A little discovery.<br/><em>A thoughtful gesture.</em></h2><p>Meet the collection at your own pace, or find a fragrance for someone whose moments you know by heart.</p><Link className="quiet-link" to="/discovery-gifting">Discovery & gifting <Arrow/></Link></div></section>
+  <section className="quiet-community quiet-section"><div className="quiet-section-heading"><div><span className="quiet-eyebrow">The moments we share</span><h2>A world of <em>personal rituals.</em></h2></div><Link className="quiet-link" to="/community">Meet the community <Arrow/></Link></div><div className="quiet-community-grid"><Link to="/journal"><span>01 / The journal</span><h3>A moment to read.</h3><p>Explore fragrance, intention and the art of making a ritual your own.</p><Arrow/></Link><Link to="/how-to-buy"><span>02 / Your guide</span><h3>A little guidance.</h3><p>Get to know the collection and find your way to a fragrance that feels personal.</p><Arrow/></Link><Link to="/contact"><span>03 / A conversation</span><h3>We’re here for you.</h3><p>Questions about your fragrance or your order? Begin a conversation with us.</p><Arrow/></Link></div></section>
+  <section className="quiet-closing"><img src={asset('zanshin-logo-full.png')} alt="Zanshin — Begin with the moment" loading="lazy"/><p>Be here. Be yourself.</p><Link className="quiet-link" to="/collection">Explore Zanshin <Arrow/></Link></section>
+ </div>;
 }
