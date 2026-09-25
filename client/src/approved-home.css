@@ -19,3 +19,18 @@
 .editorial-home:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.12;mix-blend-mode:multiply;background-image:url('/assets/zanshin-logo-full.png'),url('/assets/zanshin-logo-full.png');background-repeat:no-repeat;background-size:clamp(240px,35vw,520px) auto,clamp(240px,32vw,460px) auto;background-position:right 2vw top calc(100svh + 20px),left 2vw bottom 10px}
 .editorial-home .ed-hero{margin-top:0;height:calc(100svh - var(--header,96px));min-height:530px}
 @media(max-width:720px){.editorial-home:after{opacity:.10;background-size:230px auto,210px auto;background-position:right 3vw top calc(100svh + 40px),right 3vw bottom 12px}.editorial-home .ed-hero{height:calc(100svh - var(--header,84px));min-height:560px}}
+/* Preserve the complete composition: these portraits have little headroom. */
+.editorial-home .ed-hero-images img{object-fit:contain;object-position:right top}
+.editorial-home .ed-hero-images{background:linear-gradient(120deg,#eee9e0,#f7f3ea)}
+.editorial-home .ed-story-photo{min-height:0;align-self:center;height:auto}
+.editorial-home .ed-story-photo img{height:auto;max-height:none;width:100%;object-fit:contain}
+.editorial-home .ed-philosophy-image img{height:auto;object-fit:contain}
+.editorial-home .ed-ritual>img{height:auto;align-self:center;object-fit:contain}
+.editorial-home .ed-journal-grid>a>img{height:auto;object-fit:contain}
+@media(max-width:720px){
+ .editorial-home .ed-hero-images img{object-position:center top}
+ .editorial-home .ed-hero-overlay{background:linear-gradient(0deg,#faf7f1 5%,#faf7f1f2 25%,#faf7f100 60%)}
+ .editorial-home .ed-hero-copy{padding-top:clamp(230px,67vw,470px);padding-bottom:32px}
+ .editorial-home .ed-hero{height:auto;min-height:calc(100svh - var(--header,84px))}
+ .editorial-home .ed-story-photo{height:auto}
+}
