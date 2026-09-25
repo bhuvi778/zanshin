@@ -1,0 +1,3 @@
+import {asset} from '../data';
+import './LabelPack.css';
+export default function LabelPack({product:p,bottleOnly=false,priority=false}){return <div className={`label-pack ${bottleOnly?'bottle-only':''}`} style={{'--pack-color':p.color}}>{!bottleOnly&&<div className="label-pack-carton"><img src={asset(p.label)} alt={`${p.name} presentation carton concept`} loading={priority?'eager':'lazy'}/></div>}<div className="label-pack-bottle"><img className="label-pack-glass" src={asset('concept-bottle.webp')} alt="" loading={priority?'eager':'lazy'}/><img className="label-pack-label" src={asset(p.label)} alt={`${p.name} — ${p.descriptor}`} loading={priority?'eager':'lazy'}/></div></div>}
