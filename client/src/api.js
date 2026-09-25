@@ -1,6 +1,7 @@
+import {readResponse} from './safeData';
 const API_BASE=(import.meta.env.VITE_API_URL||'').replace(/\/$/,'');
 const endpoint=path=>`${API_BASE}${path}`;
-const json=async(url,options)=>{const response=await fetch(endpoint(url),options);const data=await response.json().catch(()=>({}));if(!response.ok)throw new Error(data.message||'Request failed');return data};
+const json=async(url,options)=>readResponse(await fetch(endpoint(url),options));
 export const api={
  products:()=>json('/api/products'),
  categories:()=>json('/api/recommendations/categories'),

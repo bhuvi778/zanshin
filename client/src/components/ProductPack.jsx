@@ -1,0 +1,2 @@
+import {asset} from '../data';
+export default function ProductPack({product:p,index=0}){return <div className="signature-pack" style={{'--sku':p.color}}><div className="signature-carton"><span>ZANSHIN</span><strong>{p.name}</strong><small>BEGIN WITH<br/>THE MOMENT</small><i>EAU DE PARFUM / 50 ML</i></div><div className="signature-bottle"><img src={asset('concept-bottle.webp')} alt={`${p.name} bottle with its supplied label`}/><img className="signature-label" src={asset(p.label)} alt=""/></div><span className="signature-number">0{index+1}</span></div>}

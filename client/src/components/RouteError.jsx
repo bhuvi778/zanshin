@@ -1,0 +1,2 @@
+import {Link,useRouteError} from 'react-router-dom';
+export default function RouteError(){const error=useRouteError();console.error('Zanshin route error',error);return <section className="utility-page" role="alert"><span className="eyebrow">Zanshin / A moment to reset</span><h1>This page needs <em>a fresh start.</em></h1><p>We could not open this page. Your saved selection has not been cleared.</p><button className="quiet-button" onClick={()=>window.location.reload()}>Try again</button> <Link to="/" className="quiet-link">Return home</Link></section>}

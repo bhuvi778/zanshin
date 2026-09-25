@@ -1,3 +1,5 @@
+import ProductPack from '../components/ProductPack';
+import {fallbackProducts} from '../data';
 import {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {asset} from '../data';
@@ -17,7 +19,7 @@ export default function Home(){
  useEffect(()=>{const media=window.matchMedia('(prefers-reduced-motion: reduce)'); const update=()=>setPaused(media.matches);update();media.addEventListener('change',update);return()=>media.removeEventListener('change',update);},[]);
  useEffect(()=>{if(paused||hovered)return;const timer=setInterval(()=>{if(!document.hidden)setSlide(s=>(s+1)%moments.length);},7000);return()=>clearInterval(timer);},[paused,hovered,slide]);
  return <div className="quiet-home">
-  <section className="quiet-hero" aria-label="Zanshin moments" aria-roledescription="carousel" onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)} onFocusCapture={()=>setHovered(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setHovered(false);}} style={{'--moment-tone':active.tone}}>
+  <section className="quiet-hero" aria-label="Zanshin moments" aria-roledescription="carousel" onFocusCapture={()=>setHovered(true)} onBlurCapture={e=>{if(!e.currentTarget.contains(e.relatedTarget))setHovered(false);}} style={{'--moment-tone':active.tone}}>
    <div className="quiet-hero-images">{moments.map((m,i)=><img key={m.slug} src={photo(m.slug)} alt={i===slide?m.alt:''} aria-hidden={i!==slide} className={i===slide?'is-current':''} fetchPriority={i===0?'high':'auto'} loading={i===0?'eager':'lazy'} style={{objectPosition:m.position}}/>)}</div>
    <div className="quiet-hero-shade"/>
    <div className="quiet-hero-copy">
@@ -28,16 +30,17 @@ export default function Home(){
     <Link className="quiet-button" to={`/collection/${active.slug}`}>Discover {active.name}<Arrow/></Link>
    </div>
    <div className="quiet-hero-controls">
-    <div className="quiet-tabs" aria-label="Choose a fragrance moment">{moments.map((m,i)=><button key={m.slug} onClick={()=>setSlide(i)} aria-pressed={slide===i} className={slide===i?'selected':''}><small>0{i+1}</small>{m.name}</button>)}</div>
+    <div className="quiet-tabs" aria-label="Choose a fragrance moment">{moments.map((m,i)=><button key={m.slug} onClick={()=>setSlide(i)} aria-pressed={slide===i} aria-label={`Show ${m.name} slide`} className={slide===i?'selected':''}><span className="slider-dot"/></button>)}</div>
     <button className="quiet-pause" onClick={()=>setPaused(p=>!p)} aria-label={paused?'Resume slideshow':'Pause slideshow'}>{paused?'Play':'Pause'} <span aria-hidden="true">{paused?'▷':'Ⅱ'}</span></button>
    </div>
   </section>
   <section className="quiet-philosophy quiet-section">
    <span className="quiet-eyebrow">The Zanshin philosophy</span>
-   <h2>Not every moment asks for more.<br/><em>Some ask you to be here.</em></h2>
+   <h2>A scent for the way you feel.<br/><em>A presence that stays with you.</em></h2>
    <p>Fragrance is a personal ritual. A pause before the day. A way to arrive. Zanshin begins with how you want to feel, and the moments you want to make your own.</p>
    <Link className="quiet-link" to="/our-story">Our story <Arrow/></Link>
   </section>
+  <section className="signature-collection quiet-section"><div className="quiet-section-heading"><div><span className="quiet-eyebrow">The signature collection</span><h2>Four expressions.<br/><em>One unmistakable presence.</em></h2></div><Link className="quiet-link" to="/collection">Explore the collection <Arrow/></Link></div><div className="signature-grid">{fallbackProducts.map((p,i)=><Link className="signature-card" to={`/collection/${p.slug}`} key={p.slug} style={{'--sku':p.color}}><ProductPack product={p} index={i}/><div><h3>{p.name}</h3><p>{p.descriptor}</p><span>Discover the fragrance &rarr;</span></div></Link>)}</div><p className="pack-note">Bottle and carton presentation concepts using the supplied fragrance labels. Final packaging may vary.</p></section>
   <section className="quiet-discover quiet-section">
    <div className="quiet-section-heading"><div><span className="quiet-eyebrow">Begin with a feeling</span><h2>What feels like <em>you, today?</em></h2></div><Link className="quiet-link" to="/find-your-moment">Find your moment <Arrow/></Link></div>
    <div className="quiet-mood-grid">{moments.map((m,i)=><Link className="quiet-mood" to={`/collection/${m.slug}`} key={m.slug}><div className="quiet-mood-photo"><img src={photo(m.slug)} alt={m.alt} loading="lazy" style={{objectPosition:m.position}}/><span>0{i+1} / {m.word}</span></div><div className="quiet-mood-label"><h3>{m.name}</h3><Arrow/></div></Link>)}</div>

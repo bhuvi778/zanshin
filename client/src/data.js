@@ -4,5 +4,5 @@ export const fallbackProducts=[
  {slug:'connected',name:'Connected',descriptor:'Harmony. Relationships. Belonging.',mood:'For everything better together.',story:'Make room for the people who make the moment feel like yours—from an easy catch-up to a gathering worth remembering.',moments:['Family dinners','Friends','Sunday lunch'],color:'#58674c',scene:'scene-connected.webp',label:'connected-label.png',lifestyle:'moment-connected.webp',size:'50 ml / 1.7 fl oz',price:1999},
  {slug:'magnetized',name:'Magnetized',descriptor:'Confidence. Presence. Attraction.',mood:'For an entrance that feels entirely your own.',story:'A more expressive mood for the times you want to arrive with confidence and let your presence speak.',moments:['Evening parties','Dates','Celebrations'],color:'#8b3c4c',scene:'scene-magnetized.webp',label:'magnetized-label.png',lifestyle:'moment-magnetized.webp',size:'50 ml / 1.7 fl oz',price:1999}
 ];
-export const money=n=>'₹'+Number(n).toLocaleString('en-IN');
+export const money=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(Number(n)||0);
 export const asset=name=>`/assets/${name}`;
