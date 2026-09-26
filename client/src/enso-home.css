@@ -7,3 +7,65 @@
 @media(min-width:601px) and (max-width:950px){.zh-slide.ink h1{font-size:36px}.zh-slide.ink .zh-hero-copy{top:12%;width:44%;max-width:44%}.zh-slide.ink .zh-pill{white-space:normal;gap:12px;font-size:11px;padding-inline:14px}}
 @media(max-width:600px){.zh-slide.ink .zh-enso-art{height:100%;inset:0}.zh-slide.ink .zh-enso-art>img{object-position:72% center}.zh-slide.ink:after{background:linear-gradient(0deg,#f4f0e7fa 0%,#f4f0e7e6 30%,#f4f0e750 57%,transparent 78%)}.zh-slide.ink .zh-hero-copy{top:auto;bottom:58px;left:7%;width:86%;max-width:86%}.zh-slide.ink h1{font-size:38px;margin-bottom:14px}.zh-slide.ink .zh-kicker{margin-bottom:12px}.zh-slide.ink .zh-pill{margin-top:8px}.zh-stage{height:580px}.zh-water-ripple{display:none}}
 @media(prefers-reduced-motion:reduce){.zh-slide.active .zh-water-ripple{animation:none}}
+/* Homepage editorial chapters: spacious, intention-led and deliberately quiet. */
+.zh-editorial{max-width:1440px;margin:auto;padding:110px 3% 20px}
+.zh-editorial h2{font-size:clamp(38px,4.5vw,68px);line-height:1.08;letter-spacing:-.045em}
+.zh-editorial h2 em{font-weight:400;color:#68786a}
+.ze-eyebrow{display:block;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;margin-bottom:26px;color:#647066}
+.ze-story{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10%;margin-bottom:130px}
+.ze-story-image{position:relative;background:#e8e4d9;overflow:hidden;border-radius:2px 100px 2px 2px;aspect-ratio:4/5}
+.ze-story-image img{width:100%;height:100%;object-fit:cover}
+.ze-story-image:after{content:'';position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#18251bb3)}
+.ze-story-image>span{position:absolute;bottom:28px;left:28px;right:24px;color:white;font:italic 22px/1.4 Georgia,serif;z-index:1}
+.ze-story-copy .ze-lead{font:26px Georgia,serif;color:#3f4d40;margin:25px 0}
+.ze-story-copy>p{max-width:430px;font-size:14px;line-height:1.95}
+.ze-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;border-bottom:1px solid #8d998b;padding:12px 0!important;font-size:12px;font-weight:600;line-height:1.5}
+.ze-story-copy>.ze-text-link{margin-top:15px}
+.ze-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:38px}
+.ze-section-head h2{margin-bottom:0}.ze-section-head>p{max-width:280px;margin-bottom:4px}
+.ze-select{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #cdd2c9;margin-bottom:28px;gap:14px}
+.ze-select button{display:flex;align-items:center;gap:15px;justify-content:space-between;border:0;border-bottom:3px solid transparent;background:transparent;color:#687066;padding:18px 10px;font-size:16px;font-weight:500;min-height:56px}
+.ze-select button>span{font-size:10px}.ze-select button[aria-pressed=true]{color:var(--tone);border-bottom-color:var(--tone);background:color-mix(in srgb,var(--tone) 7%,transparent)}
+.ze-select button:hover{background:#eaece4}
+.ze-fragrance{display:grid;grid-template-columns:1.05fr 1fr .9fr;min-height:430px;background:color-mix(in srgb,var(--tone) 8%,#fafaf6);border-radius:4px;overflow:hidden}
+.ze-fragrance[hidden]{display:none}
+.ze-fragrance-life{position:relative;min-height:430px}
+.ze-fragrance-life img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center}
+.ze-fragrance-life:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#17241bcc)}
+.ze-fragrance-life>span{position:absolute;z-index:1;left:28px;right:28px;bottom:28px;color:white;font:italic 26px/1.2 Georgia,serif}
+.ze-fragrance-details{padding:50px 28px;align-self:center}
+.ze-fragrance-details h3{font-size:clamp(32px,3vw,46px);color:var(--tone)}
+.ze-fragrance-details .ze-eyebrow{font-size:9px;letter-spacing:.08em;line-height:1.8;margin-bottom:18px}
+.ze-fragrance-details>p{font-size:13px;line-height:1.9}
+.ze-moments{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
+.ze-moments span{font-size:9px;border:1px solid #89978955;border-radius:30px;padding:7px 10px}
+.ze-fragrance-pack{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px 20px;background:radial-gradient(ellipse,#ffffffb3,transparent 70%)}
+.ze-fragrance-pack .label-pack{margin:0;width:100%;max-width:360px}
+.ze-fragrance-pack>span{font-size:9px;line-height:1.8;letter-spacing:.08em;text-align:center;margin-top:24px;color:var(--tone)}
+.ze-collection-foot{display:flex;align-items:center;justify-content:space-between;padding-top:22px;gap:20px;font-size:11px;color:#677162}
+.ze-collection{margin-bottom:130px}
+.ze-ritual{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center;margin-bottom:130px}
+.ze-ritual-copy h2{margin-bottom:35px}
+.ze-ritual-step{display:flex;gap:24px;padding:22px 0;border-top:1px solid #d2d7cc}
+.ze-ritual-step>span{font-size:11px;color:#85917f;padding-top:5px}
+.ze-ritual-step h3{font-size:23px;letter-spacing:-.02em;margin:0 0 10px}
+.ze-ritual-step p{margin:0;max-width:350px;font-size:12px}
+.ze-ritual-image{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:100px 2px 2px 2px;background:#dfddd2}
+.ze-ritual-image img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.ze-ritual-image>span{position:absolute;bottom:25px;left:25px;background:#f7f7edeb;padding:13px 20px;font:italic 22px Georgia,serif;color:#354536}
+.zh-editorial .zh-circle{padding:0;margin-bottom:110px}
+.zh-editorial .zh-circle h2{font-size:clamp(35px,4vw,58px)}
+.zh-editorial .zh-rail{gap:22px;padding-top:28px}
+.zh-editorial .zh-rail article{flex-basis:clamp(230px,24vw,320px)}
+.zh-editorial .zh-media{border:0;border-radius:80px 80px 5px 5px;aspect-ratio:4/5}
+.zh-editorial .zh-media img{object-fit:cover;object-position:center}
+.zh-editorial .zh-caption{border:0;border-bottom:1px solid #c8d0c2;border-radius:0;text-align:left;padding:17px 0;font-size:13px}
+.zh-editorial .zh-play{width:42px;height:42px}
+.ze-finder{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:90px 25px;background:#e9eee6;border-radius:4px}
+.ze-finder>img{position:absolute;z-index:-1;right:-7%;top:10%;width:40%;height:80%;object-fit:contain;opacity:.07;mix-blend-mode:multiply;pointer-events:none}
+.ze-finder h2{font-size:clamp(44px,6vw,84px)}
+.ze-finder p{max-width:370px;margin:20px auto 28px}
+.ze-finder .zh-pill{background:#314938;border-color:#314938;padding:16px 28px}
+.ze-finder-note{display:block;font-size:10px;letter-spacing:.05em;margin-top:25px;color:#687366}
+@media(max-width:1100px){.zh-editorial{padding-inline:1%}.ze-story,.ze-ritual{gap:6%}.ze-fragrance{grid-template-columns:1fr 1fr}.ze-fragrance-life{grid-row:1/3}.ze-fragrance-details{padding:30px}.ze-fragrance-pack{padding:0 25px 25px}.ze-fragrance-pack .label-pack{max-width:200px}.ze-fragrance-pack>span{margin-top:10px}.ze-section-head{align-items:start}}
+@media(max-width:650px){.zh-editorial{padding:65px 1% 10px}.ze-story,.ze-ritual{grid-template-columns:1fr;gap:30px;margin-bottom:75px}.ze-story-image{aspect-ratio:5/4;border-radius:2px 65px 2px 2px}.ze-eyebrow{font-size:9px;margin-bottom:20px}.ze-story-copy>p{font-size:13px}.ze-section-head{display:block;margin-bottom:25px}.ze-section-head>p{margin-top:22px}.ze-select{grid-template-columns:repeat(2,1fr);gap:4px 12px}.ze-select button{font-size:14px;padding:14px 8px;gap:8px}.ze-fragrance{grid-template-columns:1fr}.ze-fragrance-life{grid-row:auto;min-height:260px}.ze-fragrance-life img{object-position:center 35%}.ze-fragrance-details{padding:28px 24px 10px}.ze-fragrance-pack .label-pack{max-width:240px}.ze-fragrance-pack{padding:10px 24px 30px}.ze-collection{margin-bottom:75px}.ze-collection-foot{align-items:start;font-size:10px}.ze-collection-foot .ze-text-link{font-size:10px;padding-top:0!important}.ze-ritual-image{aspect-ratio:5/4;border-radius:65px 2px 2px 2px}.ze-ritual-step{gap:18px}.zh-editorial .zh-circle{margin-bottom:70px}.zh-editorial .zh-circle>header{display:block}.zh-editorial .zh-arrows{margin-top:20px}.zh-editorial .zh-rail{gap:15px}.zh-editorial .zh-rail article{flex-basis:78%}.ze-finder{padding:65px 20px}.ze-finder>img{width:80%;right:-30%}}
