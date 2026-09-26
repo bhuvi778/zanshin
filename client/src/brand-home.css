@@ -33,7 +33,19 @@
 .site-header.glass-header.home-header+main{margin:0;padding-top:0}
 /* Centered brand header with balanced navigation and separate utility controls. */
 .nav-half{display:flex;align-items:center;gap:clamp(12px,1.3vw,24px)}
-@media(min-width:1401px){.site-header.glass-header .header-inner{position:relative;justify-content:center}.site-header.glass-header .brand-logo{position:absolute;left:50%;transform:translateX(-50%);z-index:2}.site-header.glass-header .site-nav{display:flex;width:100%;justify-content:space-between;gap:185px;margin:0}.site-header.glass-header .nav-left{width:calc(50% - 100px)}.site-header.glass-header .nav-right{justify-content:flex-end;padding-right:165px;flex:1}.site-header.glass-header .header-tools{position:absolute;right:0}.site-header.glass-header .site-nav a{font-size:12px}.site-header.glass-header .glass-menu{display:none}}
+/* Reserve independent columns for links, centered logo and utility controls. */
+@media(min-width:1401px){
+ .site-header.glass-header .header-inner{display:grid;grid-template-columns:minmax(0,1fr) 134px minmax(0,1fr);column-gap:24px;position:relative}
+ .site-header.glass-header .brand-logo{position:static;transform:none;grid-column:2;grid-row:1;z-index:2}
+ .site-header.glass-header .site-nav{display:contents}
+ .site-header.glass-header .nav-half{grid-row:1;min-width:0;width:auto;box-sizing:border-box;gap:clamp(12px,1.3vw,24px)}
+ .site-header.glass-header .nav-left{grid-column:1}
+ .site-header.glass-header .nav-right{grid-column:3;justify-content:flex-end;padding-right:208px}
+ .site-header.glass-header .header-tools{position:absolute;right:0;gap:9px;width:179px;margin:0}
+ .site-header.glass-header .header-tool{flex:0 0 38px}
+ .site-header.glass-header .site-nav a{font-size:12px}
+ .site-header.glass-header .glass-menu{display:none}
+}
 @media(max-width:1400px){.site-header.glass-header .header-inner{justify-content:flex-end}.site-header.glass-header .brand-logo{position:absolute;left:50%;transform:translateX(-50%)}.site-header.glass-header .glass-menu{display:block;position:absolute;left:0}.site-header.glass-header .site-nav{display:none;position:absolute;top:100%;left:-2.5vw;right:-2.5vw;background:#eff1e9;padding:24px 6vw;max-height:calc(100svh - var(--header));overflow:auto;margin:0}.site-header.glass-header .site-nav.open{display:flex;flex-direction:column;align-items:stretch}.site-header.glass-header .nav-half{display:flex;flex-direction:column;align-items:stretch;gap:0}.site-header.glass-header .site-nav a{padding:13px 0;font-size:14px}}
 @media(max-width:600px){.site-header.glass-header .header-tool{width:28px}.site-header.glass-header .header-tools{gap:0}.site-header.glass-header .header-tool[aria-label^="Favourites"]{display:none}.site-header.glass-header .brand-logo img{width:92px}.site-header.glass-header .brand-logo{flex-basis:92px}}
 .footer-brand-image{width:180px;height:auto;mix-blend-mode:multiply}
