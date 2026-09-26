@@ -7,65 +7,53 @@
 @media(min-width:601px) and (max-width:950px){.zh-slide.ink h1{font-size:36px}.zh-slide.ink .zh-hero-copy{top:12%;width:44%;max-width:44%}.zh-slide.ink .zh-pill{white-space:normal;gap:12px;font-size:11px;padding-inline:14px}}
 @media(max-width:600px){.zh-slide.ink .zh-enso-art{height:100%;inset:0}.zh-slide.ink .zh-enso-art>img{object-position:72% center}.zh-slide.ink:after{background:linear-gradient(0deg,#f4f0e7fa 0%,#f4f0e7e6 30%,#f4f0e750 57%,transparent 78%)}.zh-slide.ink .zh-hero-copy{top:auto;bottom:58px;left:7%;width:86%;max-width:86%}.zh-slide.ink h1{font-size:38px;margin-bottom:14px}.zh-slide.ink .zh-kicker{margin-bottom:12px}.zh-slide.ink .zh-pill{margin-top:8px}.zh-stage{height:580px}.zh-water-ripple{display:none}}
 @media(prefers-reduced-motion:reduce){.zh-slide.active .zh-water-ripple{animation:none}}
-/* Homepage editorial chapters: spacious, intention-led and deliberately quiet. */
-.zh-editorial{max-width:1440px;margin:auto;padding:110px 3% 20px}
-.zh-editorial h2{font-size:clamp(38px,4.5vw,68px);line-height:1.08;letter-spacing:-.045em}
-.zh-editorial h2 em{font-weight:400;color:#68786a}
-.ze-eyebrow{display:block;font-size:10px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;margin-bottom:26px;color:#647066}
-.ze-story{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10%;margin-bottom:130px}
-.ze-story-image{position:relative;background:#e8e4d9;overflow:hidden;border-radius:2px 100px 2px 2px;aspect-ratio:4/5}
-.ze-story-image img{width:100%;height:100%;object-fit:cover}
-.ze-story-image:after{content:'';position:absolute;inset:65% 0 0;background:linear-gradient(transparent,#18251bb3)}
-.ze-story-image>span{position:absolute;bottom:28px;left:28px;right:24px;color:white;font:italic 22px/1.4 Georgia,serif;z-index:1}
-.ze-story-copy .ze-lead{font:26px Georgia,serif;color:#3f4d40;margin:25px 0}
-.ze-story-copy>p{max-width:430px;font-size:14px;line-height:1.95}
-.ze-text-link{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;border-bottom:1px solid #8d998b;padding:12px 0!important;font-size:12px;font-weight:600;line-height:1.5}
-.ze-story-copy>.ze-text-link{margin-top:15px}
-.ze-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:38px}
-.ze-section-head h2{margin-bottom:0}.ze-section-head>p{max-width:280px;margin-bottom:4px}
-.ze-select{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #cdd2c9;margin-bottom:28px;gap:14px}
-.ze-select button{display:flex;align-items:center;gap:15px;justify-content:space-between;border:0;border-bottom:3px solid transparent;background:transparent;color:#687066;padding:18px 10px;font-size:16px;font-weight:500;min-height:56px}
-.ze-select button>span{font-size:10px}.ze-select button[aria-pressed=true]{color:var(--tone);border-bottom-color:var(--tone);background:color-mix(in srgb,var(--tone) 7%,transparent)}
-.ze-select button:hover{background:#eaece4}
-.ze-fragrance{display:grid;grid-template-columns:1.05fr 1fr .9fr;min-height:430px;background:color-mix(in srgb,var(--tone) 8%,#fafaf6);border-radius:4px;overflow:hidden}
-.ze-fragrance[hidden]{display:none}
-.ze-fragrance-life{position:relative;min-height:430px}
-.ze-fragrance-life img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center}
-.ze-fragrance-life:after{content:'';position:absolute;inset:45% 0 0;background:linear-gradient(transparent,#17241bcc)}
-.ze-fragrance-life>span{position:absolute;z-index:1;left:28px;right:28px;bottom:28px;color:white;font:italic 26px/1.2 Georgia,serif}
-.ze-fragrance-details{padding:50px 28px;align-self:center}
-.ze-fragrance-details h3{font-size:clamp(32px,3vw,46px);color:var(--tone)}
-.ze-fragrance-details .ze-eyebrow{font-size:9px;letter-spacing:.08em;line-height:1.8;margin-bottom:18px}
-.ze-fragrance-details>p{font-size:13px;line-height:1.9}
-.ze-moments{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
-.ze-moments span{font-size:9px;border:1px solid #89978955;border-radius:30px;padding:7px 10px}
-.ze-fragrance-pack{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:25px 20px;background:radial-gradient(ellipse,#ffffffb3,transparent 70%)}
-.ze-fragrance-pack .label-pack{margin:0;width:100%;max-width:360px}
-.ze-fragrance-pack>span{font-size:9px;line-height:1.8;letter-spacing:.08em;text-align:center;margin-top:24px;color:var(--tone)}
-.ze-collection-foot{display:flex;align-items:center;justify-content:space-between;padding-top:22px;gap:20px;font-size:11px;color:#677162}
-.ze-collection{margin-bottom:130px}
-.ze-ritual{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center;margin-bottom:130px}
-.ze-ritual-copy h2{margin-bottom:35px}
-.ze-ritual-step{display:flex;gap:24px;padding:22px 0;border-top:1px solid #d2d7cc}
-.ze-ritual-step>span{font-size:11px;color:#85917f;padding-top:5px}
-.ze-ritual-step h3{font-size:23px;letter-spacing:-.02em;margin:0 0 10px}
-.ze-ritual-step p{margin:0;max-width:350px;font-size:12px}
-.ze-ritual-image{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:100px 2px 2px 2px;background:#dfddd2}
-.ze-ritual-image img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
-.ze-ritual-image>span{position:absolute;bottom:25px;left:25px;background:#f7f7edeb;padding:13px 20px;font:italic 22px Georgia,serif;color:#354536}
-.zh-editorial .zh-circle{padding:0;margin-bottom:110px}
-.zh-editorial .zh-circle h2{font-size:clamp(35px,4vw,58px)}
-.zh-editorial .zh-rail{gap:22px;padding-top:28px}
-.zh-editorial .zh-rail article{flex-basis:clamp(230px,24vw,320px)}
-.zh-editorial .zh-media{border:0;border-radius:80px 80px 5px 5px;aspect-ratio:4/5}
-.zh-editorial .zh-media img{object-fit:cover;object-position:center}
-.zh-editorial .zh-caption{border:0;border-bottom:1px solid #c8d0c2;border-radius:0;text-align:left;padding:17px 0;font-size:13px}
-.zh-editorial .zh-play{width:42px;height:42px}
-.ze-finder{position:relative;isolation:isolate;overflow:hidden;text-align:center;padding:90px 25px;background:#e9eee6;border-radius:4px}
-.ze-finder>img{position:absolute;z-index:-1;right:-7%;top:10%;width:40%;height:80%;object-fit:contain;opacity:.07;mix-blend-mode:multiply;pointer-events:none}
-.ze-finder h2{font-size:clamp(44px,6vw,84px)}
-.ze-finder p{max-width:370px;margin:20px auto 28px}
-.ze-finder .zh-pill{background:#314938;border-color:#314938;padding:16px 28px}
-.ze-finder-note{display:block;font-size:10px;letter-spacing:.05em;margin-top:25px;color:#687366}
-@media(max-width:1100px){.zh-editorial{padding-inline:1%}.ze-story,.ze-ritual{gap:6%}.ze-fragrance{grid-template-columns:1fr 1fr}.ze-fragrance-life{grid-row:1/3}.ze-fragrance-details{padding:30px}.ze-fragrance-pack{padding:0 25px 25px}.ze-fragrance-pack .label-pack{max-width:200px}.ze-fragrance-pack>span{margin-top:10px}.ze-section-head{align-items:start}}
-@media(max-width:650px){.zh-editorial{padding:65px 1% 10px}.ze-story,.ze-ritual{grid-template-columns:1fr;gap:30px;margin-bottom:75px}.ze-story-image{aspect-ratio:5/4;border-radius:2px 65px 2px 2px}.ze-eyebrow{font-size:9px;margin-bottom:20px}.ze-story-copy>p{font-size:13px}.ze-section-head{display:block;margin-bottom:25px}.ze-section-head>p{margin-top:22px}.ze-select{grid-template-columns:repeat(2,1fr);gap:4px 12px}.ze-select button{font-size:14px;padding:14px 8px;gap:8px}.ze-fragrance{grid-template-columns:1fr}.ze-fragrance-life{grid-row:auto;min-height:260px}.ze-fragrance-life img{object-position:center 35%}.ze-fragrance-details{padding:28px 24px 10px}.ze-fragrance-pack .label-pack{max-width:240px}.ze-fragrance-pack{padding:10px 24px 30px}.ze-collection{margin-bottom:75px}.ze-collection-foot{align-items:start;font-size:10px}.ze-collection-foot .ze-text-link{font-size:10px;padding-top:0!important}.ze-ritual-image{aspect-ratio:5/4;border-radius:65px 2px 2px 2px}.ze-ritual-step{gap:18px}.zh-editorial .zh-circle{margin-bottom:70px}.zh-editorial .zh-circle>header{display:block}.zh-editorial .zh-arrows{margin-top:20px}.zh-editorial .zh-rail{gap:15px}.zh-editorial .zh-rail article{flex-basis:78%}.ze-finder{padding:65px 20px}.ze-finder>img{width:80%;right:-30%}}
+/* Approved below-hero concept: four intention panels and spacious campaign sections. */
+.za-home{max-width:1440px;margin:auto;padding:0 1% 25px}
+.za-home h2{font:400 clamp(34px,4.1vw,62px)/1.12 Georgia,serif;letter-spacing:-.04em;margin:0}
+.za-home h2 em{font-weight:400;color:#785b32}
+.za-eyebrow{display:block;font-size:9px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin-bottom:20px}
+.za-link{display:inline-flex;align-items:center;gap:12px;border-bottom:1px solid currentColor;padding:5px 0;font-size:12px;line-height:1.6;white-space:nowrap}
+.za-link:hover{color:#6d794f}
+.za-manifesto{text-align:center;padding:65px 20px 75px}
+.za-manifesto>img{display:block;width:130px;height:88px;object-fit:contain;margin:0 auto 20px;mix-blend-mode:multiply}
+.za-manifesto h2{font-size:clamp(38px,4.6vw,70px)}
+.za-manifesto p{font-size:15px;color:#333e35;margin:22px 0 12px}
+.za-heading{display:flex;justify-content:space-between;align-items:baseline;gap:25px;margin-bottom:25px}
+.za-heading p{margin:9px 0 0;letter-spacing:.035em;font-size:14px}
+.za-fragrances{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.za-fragrance{border-radius:5px;overflow:hidden;min-width:0;background:var(--band)}
+.za-fragrance>a{display:block;height:100%}
+.za-fragrance-image{position:relative;aspect-ratio:1.65;overflow:hidden;background:color-mix(in srgb,var(--identity) 15%,#f4f1e6)}
+.za-fragrance-image .za-lifestyle{width:100%;height:100%;display:block;object-fit:cover;object-position:center 30%;transition:transform .6s ease}
+.za-fragrance:hover .za-lifestyle{transform:scale(1.025)}
+.za-product{position:absolute;right:0;bottom:0;width:34%;pointer-events:none;background:radial-gradient(ellipse at 50% 85%,#e8e0c85c,transparent 70%)}
+.za-product .label-pack.bottle-only{width:100%;aspect-ratio:.7;margin:0}
+.za-product .bottle-only .label-pack-bottle{left:15%;width:70%;bottom:5%}
+.za-product .label-pack:after{bottom:1%;left:12%;width:78%;height:4%;filter:blur(7px)}
+.za-fragrance-caption{display:flex;align-items:center;justify-content:space-between;gap:20px;color:white;background:var(--band);padding:22px 28px;min-height:108px}
+.za-fragrance-caption h3{font:400 clamp(28px,3vw,43px)/1.1 Georgia,serif;letter-spacing:-.025em;margin:0 0 8px}
+.za-fragrance-caption p{color:#fff;margin:0;font-size:12px;line-height:1.5}
+.za-arrow{display:grid;place-items:center;flex:0 0 44px;height:44px;border:1px solid #ffffffa6;border-radius:50%;font:24px Georgia,serif;transition:background .2s}
+.za-fragrance:hover .za-arrow{background:#ffffff21}
+.za-discovery{margin-bottom:75px}
+.za-ritual{display:grid;grid-template-columns:.9fr 1.3fr;align-items:center;position:relative;isolation:isolate;overflow:hidden;background:#f1ece0;border-radius:10px;min-height:340px;margin-bottom:75px}
+.za-ritual-copy{padding:45px 12%;z-index:1}
+.za-ritual h2{font-size:clamp(33px,3.8vw,55px);margin-bottom:30px}
+.za-ritual>img{width:100%;height:100%;min-height:340px;object-fit:cover}
+.za-circle{margin-bottom:75px}
+.za-circle .za-heading{align-items:center}
+.za-people{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;padding:5px 2px 12px}
+.za-people>article{flex:0 0 calc((100% - 60px)/4);min-width:0;scroll-snap-align:start}
+.za-person{display:block;position:relative;width:100%;aspect-ratio:1/1.1;padding:0;border:0;border-radius:8px;overflow:hidden;background:#e5e6db}
+.za-person img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block}
+.za-people article>p{text-align:center;color:#344035;font-size:12px;margin:13px 0 0}
+.za-circle-footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:18px}
+.za-circle-footer>span{font-size:10px;color:#7c8175}
+.za-finder{position:relative;isolation:isolate;overflow:hidden;padding:55px 5%;display:flex;justify-content:space-between;align-items:center;gap:35px;border-radius:10px;background:linear-gradient(110deg,#eff0e5,#d8dfc9)}
+.za-finder:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#e9eddfed 15%,#e9eddfa6 50%,#e9eddf70),url('/assets/home-approved/connected.webp') right center/cover;opacity:.22;filter:grayscale(1)}
+.za-finder h2{font-size:clamp(38px,4.8vw,70px)}
+.za-finder h2 em{color:inherit}.za-finder p{margin:18px 0 0;font-size:12px}
+.za-finder .zh-pill{background:#34452b;border-color:#34452b;min-width:225px;padding:16px 25px;flex-shrink:0}
+@media(max-width:950px){.za-home{padding-inline:0}.za-fragrances{gap:16px}.za-fragrance-caption{padding:20px;min-height:105px}.za-fragrance-image{aspect-ratio:1.3}.za-ritual-copy{padding:35px 8%}.za-people{gap:15px}.za-people>article{flex-basis:calc((100% - 45px)/4)}.za-heading h2{font-size:38px}}
+@media(max-width:600px){.za-manifesto{padding:45px 8px 50px}.za-manifesto>img{width:115px;height:76px;margin-bottom:16px}.za-eyebrow{font-size:8px;letter-spacing:.19em}.za-manifesto h2{font-size:36px}.za-manifesto h2 br{display:none}.za-manifesto p{font-size:13px}.za-heading{display:block;margin-bottom:22px}.za-heading h2{font-size:35px}.za-heading>.za-link{margin-top:16px}.za-fragrances{grid-template-columns:1fr;gap:20px}.za-fragrance-image{aspect-ratio:1.5}.za-fragrance-caption{padding:20px 22px;min-height:99px}.za-fragrance-caption h3{font-size:32px}.za-fragrance-caption p{font-size:11px}.za-arrow{flex-basis:38px;height:38px}.za-discovery,.za-ritual,.za-circle{margin-bottom:50px}.za-ritual{grid-template-columns:1fr}.za-ritual-copy{padding:35px 25px}.za-ritual h2{font-size:35px;margin-bottom:20px}.za-ritual>img{height:auto;min-height:0;aspect-ratio:1.65;object-fit:cover}.za-circle .za-heading{display:flex;align-items:flex-start;gap:15px}.za-circle .za-heading h2{font-size:32px}.za-heading p{font-size:12px}.za-circle .zh-arrows{gap:5px}.za-circle .zh-arrows button{width:34px;height:34px}.za-people>article{flex-basis:72%}.za-person{aspect-ratio:1}.za-circle-footer{gap:10px}.za-circle-footer .za-link{font-size:11px}.za-finder{display:block;padding:38px 25px}.za-finder h2{font-size:42px}.za-finder .zh-pill{margin-top:25px;min-width:0}.za-link{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.za-fragrance-image .za-lifestyle,.za-arrow{transition:none}.za-fragrance:hover .za-lifestyle{transform:none}}
