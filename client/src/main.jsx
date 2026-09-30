@@ -6,3 +6,4 @@ import './legacy.css';
 import './react.css';
 import './brand-home.css';
 createRoot(document.getElementById('root')).render(<React.StrictMode><StoreProvider><App/></StoreProvider></React.StrictMode>);
+import './readability.css';

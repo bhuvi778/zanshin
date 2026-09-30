@@ -1,0 +1,45 @@
+/* Readability refinements for the approved homepage and shared navigation. */
+.site-header.glass-header .site-nav a{font-size:15px;font-weight:700;letter-spacing:.01em}
+.site-header.glass-header .brand-logo img{width:156px;height:92px;object-fit:contain}
+.site-header.glass-header .brand-logo{flex-basis:156px}
+@media(min-width:1401px){
+ .site-header.glass-header .header-inner{grid-template-columns:minmax(0,1fr) 156px minmax(0,1fr);column-gap:18px}
+ .site-header.glass-header .nav-half{gap:14px}
+ .site-header.glass-header .nav-right{padding-right:195px}
+ .site-header.glass-header .site-nav a{font-size:14px}
+}
+@media(min-width:1600px){.site-header.glass-header .site-nav a{font-size:15px}.site-header.glass-header .nav-half{gap:20px}}
+@media(max-width:1400px){.site-header.glass-header .site-nav a{font-size:17px;padding-block:15px}}
+@media(max-width:600px){.site-header.glass-header .brand-logo img{width:104px;height:78px}.site-header.glass-header .brand-logo{flex-basis:104px}}
+.za-home .za-eyebrow,.za-home .hc-about .za-manifesto>.za-eyebrow{font-size:12px;font-weight:650;letter-spacing:.15em;line-height:1.6}
+.za-home .za-link,.za-home .hc-about .za-manifesto>.za-link{font-size:16px;font-weight:600;line-height:1.6}
+.za-home .za-heading p,.za-home .za-finder p{font-size:15px;line-height:1.75}
+.za-home .hc-enso p,.za-home .hq-facts p,.za-home .hq-intro>p{font-size:14px;line-height:1.8}
+.za-home .hc-caption{font-size:13px!important;line-height:1.75}
+.za-home .hc-flip-front p,.za-home .hc-flip-back p{font-size:14px;line-height:1.7}
+.za-home .hc-explore,.za-home .hc-flip-cta{display:inline-block;font-size:13px;font-weight:600;line-height:1.65}
+.za-home .hc-flip-front>div{padding:22px 12px 15px}
+.za-home .hc-journey li{font-size:14px;line-height:1.6}.za-home .hc-journey span,.za-home .hq-facts article>span{font-size:12px}
+.za-home .za-fragrance-caption p{font-size:14px;line-height:1.7}
+.za-home .za-people article>p{font-size:14px;line-height:1.6}
+.za-home .za-circle-footer>span,.za-home .hv-creator-heading>span{font-size:12px;line-height:1.7}
+.za-home .hv-film-copy p,.za-home .hv-watch,.za-home .hv-customers>header p{font-size:13px;line-height:1.75}
+.za-home .hv-quotes blockquote{font-size:15px}.za-home .hv-quotes figcaption>span{font-size:13px}.za-home .hv-quotes small{font-size:11px}
+.za-home .gift-heading p,.za-home .gift-paper p{font-size:14px;line-height:1.8}
+.za-home .gift-reasons button{font-size:13px;padding:12px 18px;font-weight:600}.za-home .gift-reasons button>span{font-size:11px}
+.za-home .gift-small-label,.za-home .gift-note-caption{font-size:11px;line-height:1.7}
+.za-home .gift-match p,.za-home .gift-purchase>span{font-size:12px;line-height:1.7}
+.za-home .gift-purchase .zh-pill{font-size:14px}.za-home .gift-purchase>.za-link{font-size:14px}
+.footer-links a{font-size:12px;line-height:1.7}.footer-bottom{font-size:12px}
+@media(max-width:600px){
+ .za-home .za-eyebrow,.za-home .hc-about .za-manifesto>.za-eyebrow{font-size:11px;letter-spacing:.12em}
+ .za-home .za-link,.za-home .hc-about .za-manifesto>.za-link{font-size:15px}
+ .za-home .hc-flip-front>div{padding:17px 7px 12px}
+ .za-home .hc-flip-front p,.za-home .hc-flip-back p{font-size:13px}
+ .za-home .hc-explore,.za-home .hc-flip-cta{font-size:12px}
+ .za-home .hc-journey{gap:12px;flex-wrap:wrap;padding:18px 5px}
+ .za-home .hc-journey li{font-size:13px}
+ .za-home .gift-reasons button{font-size:12px;padding:11px 13px}
+ .za-home .gift-purchase{gap:14px}.za-home .gift-purchase .zh-pill{padding:13px 17px;gap:14px}
+ .za-home .hv-quotes figcaption{flex-wrap:wrap}
+}
