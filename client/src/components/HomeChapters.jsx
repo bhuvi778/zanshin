@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
 import {Link} from 'react-router-dom';
 import {asset,fallbackProducts} from '../data';
 import {useStore} from '../context/StoreContext';
@@ -18,18 +18,24 @@ const giftIntentions = [
 export function BuildYourBag(){
  const {add}=useStore();
  const [choice,setChoice]=useState(0),[added,setAdded]=useState(false);
+ const [timerKey,setTimerKey]=useState(0),[purchaseActive,setPurchaseActive]=useState(false);
+ useEffect(()=>{
+  if(purchaseActive)return;
+  const timer=window.setTimeout(()=>{setChoice(value=>(value+1)%giftIntentions.length);setAdded(false)},3000);
+  return ()=>window.clearTimeout(timer);
+ },[choice,timerKey,purchaseActive]);
  const intention=giftIntentions[choice];
  const product=fallbackProducts.find(p=>p.slug===intention.slug);
- function select(index){setChoice(index);setAdded(false)}
+ function select(index){setChoice(index);setAdded(false);setTimerKey(value=>value+1)}
  function submit(){if(added)return;add(product.slug);setAdded(true)}
  return <section className="gift-letter" aria-labelledby="hc-bag-title" style={{'--gift-ink':product.color}}>
   <header className="gift-heading"><span className="za-eyebrow">The art of giving · Zanshin</span><h2 id="hc-bag-title">Some feelings<br/>deserve <em>a fragrance.</em></h2><p>A thank you. A fresh start. A simple “I thought of you”.<br/>Begin with what you want to say.</p></header>
   <div className="gift-reasons" role="group" aria-label="What would you like your gift to say?">{giftIntentions.map((item,index)=><button key={item.slug} type="button" aria-pressed={choice===index} onClick={()=>select(index)}><span aria-hidden="true">0{index+1}</span>{item.label}</button>)}</div>
   <div className="gift-table" key={product.slug}>
    <div className="gift-correspondence"><span className="gift-small-label">A thought to give</span><article className="gift-paper"><span className="gift-to">To someone special,</span><h3>{intention.message}</h3><p>{intention.note}</p><span className="gift-sign">{intention.sign}</span><span className="gift-seal" aria-hidden="true">Z</span></article><span className="gift-note-caption">A little inspiration for your own message.</span></div>
-   <div className="gift-object"><span className="gift-halo" aria-hidden="true"/><span className="gift-ribbon" aria-hidden="true"/><div className="gift-object-pack"><LabelPack product={product}/></div><span className="gift-object-caption">An intention to unwrap.<br/>A feeling to carry.</span></div>
+   <div className="gift-object"><img className="gift-brand-backdrop" src={asset('zanshin-logo-full.png')} alt="" aria-hidden="true"/><span className="gift-ribbon" aria-hidden="true"/><div className="gift-object-pack"><LabelPack product={product}/></div><span className="gift-object-caption">An intention to unwrap.<br/>A feeling to carry.</span></div>
   </div>
-  <footer className="gift-footer"><div className="gift-match"><span className="za-eyebrow">Your gifting edit</span><h3>{product.name}</h3><p>50 ml Eau de parfum · Matching presentation carton</p></div><div className="gift-purchase"><Link className="za-link" to={`/collection/${product.slug}`}>Meet {product.name} &#8599;</Link><button type="button" className="zh-pill" onClick={submit} disabled={added}>{added?'Added to your bag':'Give this feeling'} <span aria-hidden="true">&#8599;</span></button><span role="status">{added?<Link to="/bag">Review your bag &#8594;</Link>:'Choose with intention. Give with love.'}</span></div></footer>
+  <footer className="gift-footer"><div className="gift-match"><span className="za-eyebrow">Your gifting edit</span><h3>{product.name}</h3><p>50 ml Eau de parfum · Matching presentation carton</p></div><div className="gift-purchase" onPointerEnter={()=>setPurchaseActive(true)} onPointerLeave={()=>setPurchaseActive(false)} onFocus={()=>setPurchaseActive(true)} onBlur={event=>{if(!event.currentTarget.contains(event.relatedTarget))setPurchaseActive(false)}}><Link className="za-link" to={`/collection/${product.slug}`}>Meet {product.name} &#8599;</Link><button type="button" className="zh-pill" onClick={submit} disabled={added}>{added?'Added to your bag':'Give this feeling'} <span aria-hidden="true">&#8599;</span></button><span role="status">{added?<Link to="/bag">Review your bag &#8594;</Link>:'Choose with intention. Give with love.'}</span></div></footer>
  </section>
 }
 // Replace demo entries with approved, permission-cleared creator and customer media.
