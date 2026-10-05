@@ -5,4 +5,4 @@ export const fallbackProducts=[
  {slug:'magnetized',name:'Magnetized',descriptor:'Confidence. Presence. Attraction.',mood:'For an entrance that feels entirely your own.',story:'A more expressive mood for the times you want to arrive with confidence and let your presence speak.',moments:['Evening parties','Dates','Celebrations'],color:'#8b3c4c',scene:'scene-magnetized.webp',label:'magnetized-label.png',lifestyle:'moment-magnetized.webp',size:'50 ml / 1.7 fl oz',price:1999}
 ];
 export const money=n=>new Intl.NumberFormat('en-IN',{style:'currency',currency:'INR',maximumFractionDigits:0}).format(Number(n)||0);
-export const asset=name=>`/assets/${name}`;
+export const asset=name=>name?.startsWith('/api/')?(import.meta.env.VITE_API_URL||'').replace(/\/$/,'')+name:name?.startsWith('/')||name?.startsWith('https://')?name:`/assets/${name}`;

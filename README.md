@@ -1,3 +1,7 @@
+# Current backend: Python + FastAPI
+
+The current application uses the new `backend/` service and `/admin` studio. Start with [backend/README.md](backend/README.md) for setup, credentials, testing and deployment. The Express `server/` below is retained as legacy source only.
+
 # Zanshin MERN website
 
 A new MongoDB, Express, React and Node project based on the approved Zanshin HTML sample. The original HTML deliverables remain unchanged.

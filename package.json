@@ -2,13 +2,17 @@
   "name": "zanshin-mern",
   "private": true,
   "version": "1.0.0",
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
-    "dev": "concurrently -n api,web -c green,blue \"npm run dev -w server\" \"npm run dev -w client\"",
+    "dev": "concurrently -n api,web -c green,blue \"node backend/run.mjs --reload\" \"npm run dev -w client\"",
     "build": "npm run build -w client",
-    "start": "npm run start -w server",
-    "seed": "npm run seed -w server",
-    "test": "npm run test -w server"
+    "start": "node backend/run.mjs",
+    "seed": "node -e \"console.log('FastAPI seeds published content on first startup.')\"",
+    "test": "npm run test -w server",
+    "test:backend": "backend/.venv/Scripts/python.exe -m unittest discover -s backend/tests -v"
   },
   "devDependencies": {
     "concurrently": "^9.2.1"

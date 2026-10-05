@@ -1,0 +1,422 @@
+[
+  {
+    "kind": "products",
+    "id": "focused",
+    "data": {
+      "slug": "focused",
+      "name": "Focused",
+      "descriptor": "Clarity. Discipline. Deep Work.",
+      "mood": "For the hours that ask for your full attention.",
+      "story": "A quiet sense of direction for the moments when you want to think clearly and stay with the work in front of you.",
+      "moments": [
+        "Deep work",
+        "Self-study",
+        "Important meetings"
+      ],
+      "color": "#4d7f9c",
+      "scene": "scene-focused.webp",
+      "label": "focused-label.png",
+      "lifestyle": "moment-focused.webp",
+      "size": "50 ml / 1.7 fl oz",
+      "price": 1999,
+      "stock": 100,
+      "image": ""
+    },
+    "position": 0
+  },
+  {
+    "kind": "products",
+    "id": "energised",
+    "data": {
+      "slug": "energised",
+      "name": "Energised",
+      "descriptor": "Energy. Momentum. Vitality.",
+      "mood": "For the moments that move you forward.",
+      "story": "Bring a lively, forward-looking presence to movement, new places and the days that refuse to stand still.",
+      "moments": [
+        "Workouts",
+        "Hiking",
+        "Travel"
+      ],
+      "color": "#344b89",
+      "scene": "scene-energised.webp",
+      "label": "energised-label.png",
+      "lifestyle": "moment-energised.webp",
+      "size": "50 ml / 1.7 fl oz",
+      "price": 1999,
+      "stock": 100,
+      "image": ""
+    },
+    "position": 1
+  },
+  {
+    "kind": "products",
+    "id": "connected",
+    "data": {
+      "slug": "connected",
+      "name": "Connected",
+      "descriptor": "Harmony. Relationships. Belonging.",
+      "mood": "For everything better together.",
+      "story": "Make room for the people who make the moment feel like yoursâ€”from an easy catch-up to a gathering worth remembering.",
+      "moments": [
+        "Family dinners",
+        "Friends",
+        "Sunday lunch"
+      ],
+      "color": "#58674c",
+      "scene": "scene-connected.webp",
+      "label": "connected-label.png",
+      "lifestyle": "moment-connected.webp",
+      "size": "50 ml / 1.7 fl oz",
+      "price": 1999,
+      "stock": 100,
+      "image": ""
+    },
+    "position": 2
+  },
+  {
+    "kind": "products",
+    "id": "magnetized",
+    "data": {
+      "slug": "magnetized",
+      "name": "Magnetized",
+      "descriptor": "Confidence. Presence. Attraction.",
+      "mood": "For an entrance that feels entirely your own.",
+      "story": "A more expressive mood for the times you want to arrive with confidence and let your presence speak.",
+      "moments": [
+        "Evening parties",
+        "Dates",
+        "Celebrations"
+      ],
+      "color": "#8b3c4c",
+      "scene": "scene-magnetized.webp",
+      "label": "magnetized-label.png",
+      "lifestyle": "moment-magnetized.webp",
+      "size": "50 ml / 1.7 fl oz",
+      "price": 1999,
+      "stock": 100,
+      "image": ""
+    },
+    "position": 3
+  },
+  {
+    "kind": "hero",
+    "id": "focused",
+    "data": {
+      "title": "Every moment begins with you.",
+      "label": "Focused / A little clarity",
+      "body": "",
+      "image": "/assets/enso-home/enso-focused.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#4d7f9c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "hero",
+    "id": "energised",
+    "data": {
+      "title": "Step into possibility.",
+      "label": "Energised / Momentum",
+      "body": "",
+      "image": "/assets/enso-home/enso-energised.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "energised",
+      "duration": 5000,
+      "color": "#344b89"
+    },
+    "position": 1
+  },
+  {
+    "kind": "hero",
+    "id": "connected",
+    "data": {
+      "title": "Closer to your people.",
+      "label": "Connected / Belonging",
+      "body": "",
+      "image": "/assets/enso-home/enso-connected.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "connected",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 2
+  },
+  {
+    "kind": "hero",
+    "id": "magnetized",
+    "data": {
+      "title": "Presence, on your terms.",
+      "label": "Magnetized / Confidence",
+      "body": "",
+      "image": "/assets/enso-home/enso-magnetized.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "magnetized",
+      "duration": 5000,
+      "color": "#8b3c4c"
+    },
+    "position": 3
+  },
+  {
+    "kind": "moments",
+    "id": "focused",
+    "data": {
+      "title": "Keep your head in the game.",
+      "label": "",
+      "body": "Clarity for the task in front of you.",
+      "image": "/assets/enso-home/focused-man.png",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "moments",
+    "id": "connected",
+    "data": {
+      "title": "The vibe is better together.",
+      "label": "",
+      "body": "Make time for your people.",
+      "image": "/assets/home-approved/connected.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "connected",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 1
+  },
+  {
+    "kind": "moments",
+    "id": "magnetized",
+    "data": {
+      "title": "Certified rizz.",
+      "label": "",
+      "body": "Show up as your most confident self.",
+      "image": "/assets/enso-home/shared-presence.png",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "magnetized",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 2
+  },
+  {
+    "kind": "moments",
+    "id": "energised",
+    "data": {
+      "title": "Sweat is the new flex.",
+      "label": "",
+      "body": "A little momentum for your next move.",
+      "image": "/assets/home-approved/energised.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "energised",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 3
+  },
+  {
+    "kind": "circle",
+    "id": "focused",
+    "data": {
+      "title": "A clearer morning",
+      "label": "",
+      "body": "",
+      "image": "/films/focused-original-poster.png",
+      "video": "/films/focused-original-motion.mp4",
+      "mediaType": "video",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "creators",
+    "id": "focused",
+    "data": {
+      "title": "A quieter kind of morning.",
+      "label": "Sample campaign film",
+      "body": "A little presence for your everyday ritual.",
+      "image": "/films/focused-original-poster.png",
+      "video": "/films/focused-original-motion.mp4",
+      "mediaType": "video",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "circle",
+    "id": "energised",
+    "data": {
+      "title": "New energy",
+      "label": "",
+      "body": "",
+      "image": "/films/energised-original-poster.png",
+      "video": "/films/energised-original-motion.mp4",
+      "mediaType": "video",
+      "productSlug": "energised",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 1
+  },
+  {
+    "kind": "creators",
+    "id": "energised",
+    "data": {
+      "title": "A fresh start, on your terms.",
+      "label": "Sample campaign film",
+      "body": "A little presence for your everyday ritual.",
+      "image": "/films/energised-original-poster.png",
+      "video": "/films/energised-original-motion.mp4",
+      "mediaType": "video",
+      "productSlug": "energised",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 1
+  },
+  {
+    "kind": "circle",
+    "id": "connected",
+    "data": {
+      "title": "Time together",
+      "label": "",
+      "body": "",
+      "image": "/assets/home-approved/connected.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "connected",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 2
+  },
+  {
+    "kind": "circle",
+    "id": "magnetized",
+    "data": {
+      "title": "Own your evening",
+      "label": "",
+      "body": "",
+      "image": "/assets/home-approved/magnetized.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "magnetized",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 3
+  },
+  {
+    "kind": "community",
+    "id": "create",
+    "data": {
+      "title": "Create with Zanshin",
+      "label": "",
+      "body": "Share your moments, rituals and perspective. Introduce your ideas through Contact Us.",
+      "image": "/assets/home-approved/ritual.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "community",
+    "id": "together",
+    "data": {
+      "title": "A shared intention",
+      "label": "",
+      "body": "A place for people who want to live with intention. Share your story from your account.",
+      "image": "/assets/home-approved/connected.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 1
+  },
+  {
+    "kind": "community",
+    "id": "inspiration",
+    "data": {
+      "title": "Find inspiration",
+      "label": "",
+      "body": "Explore everyday fragrance rituals and personal stories in our journal.",
+      "image": "/assets/home-approved/magnetized.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 2
+  },
+  {
+    "kind": "journal",
+    "id": "intention",
+    "data": {
+      "title": "Start with intention",
+      "label": "Rituals & perspectives",
+      "body": "Before choosing a fragrance, consider the moment ahead. A quiet morning at your desk may invite a different intention from an evening with friends.\n\nExplore Focused for clarity, Energised for momentum, Connected for togetherness and Magnetized for presence.",
+      "image": "/assets/home-approved/hero.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 0
+  },
+  {
+    "kind": "journal",
+    "id": "ritual",
+    "data": {
+      "title": "A small pause, made personal",
+      "label": "Rituals & perspectives",
+      "body": "Leave a little room in your routine to pause. Choose your fragrance, apply it as directed, and take a moment before stepping into your day.",
+      "image": "/assets/home-approved/ritual.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 1
+  },
+  {
+    "kind": "journal",
+    "id": "connection",
+    "data": {
+      "title": "Be present with your people",
+      "label": "Rituals & perspectives",
+      "body": "A familiar voice, an unhurried conversation, a shared laugh: the best part of an evening can be the simplest.",
+      "image": "/assets/home-approved/connected.webp",
+      "video": "",
+      "mediaType": "image",
+      "productSlug": "focused",
+      "duration": 5000,
+      "color": "#58674c"
+    },
+    "position": 2
+  }
+]

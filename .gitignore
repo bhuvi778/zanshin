@@ -7,3 +7,9 @@ coverage/
 brand-films/temp-*.png
 mobile-home*.png
 brand-films/source-footage/
+backend/.venv/
+backend/data/
+backend/.env
+backend/.local-admin.txt
+__pycache__/
+*.pyc
