@@ -17,7 +17,7 @@
       "scene": "scene-focused.webp",
       "label": "focused-label.png",
       "lifestyle": "moment-focused.webp",
-      "size": "50 ml / 1.7 fl oz",
+      "size": "51 ml",
       "price": 1999,
       "stock": 100,
       "image": ""
@@ -42,7 +42,7 @@
       "scene": "scene-energised.webp",
       "label": "energised-label.png",
       "lifestyle": "moment-energised.webp",
-      "size": "50 ml / 1.7 fl oz",
+      "size": "51 ml",
       "price": 1999,
       "stock": 100,
       "image": ""
@@ -67,7 +67,7 @@
       "scene": "scene-connected.webp",
       "label": "connected-label.png",
       "lifestyle": "moment-connected.webp",
-      "size": "50 ml / 1.7 fl oz",
+      "size": "51 ml",
       "price": 1999,
       "stock": 100,
       "image": ""
@@ -92,7 +92,7 @@
       "scene": "scene-magnetized.webp",
       "label": "magnetized-label.png",
       "lifestyle": "moment-magnetized.webp",
-      "size": "50 ml / 1.7 fl oz",
+      "size": "51 ml",
       "price": 1999,
       "stock": 100,
       "image": ""

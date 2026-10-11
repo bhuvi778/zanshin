@@ -27,6 +27,21 @@ class CommerceTests(unittest.TestCase):
             seed=json.loads((Path(__file__).resolve().parents[1]/'seed/content.json').read_text(encoding='utf-8'))
             for r in seed:c.execute('INSERT INTO records VALUES(?,?,?,?,?,?)',(r['kind'],r['id'],json.dumps(r['data']),1,r['position'],now()))
             c.execute('INSERT INTO users(id,email,name,password,role,created_at) VALUES(?,?,?,?,?,?)',('admin','admin@example.com','Test Admin',hash_password(PASSWORD),'admin',now()))
+    def test_catalogue_size_migration_preserves_custom_data(self):
+        from app.db import init
+        with db() as c:
+            c.execute('DELETE FROM schema_meta WHERE version=2')
+            for slug,size in [('focused','50 ml / 1.7 fl oz'),('connected','100 ml')]:
+                row=c.execute("SELECT data FROM records WHERE kind='products' AND id=?",(slug,)).fetchone()
+                data=json.loads(row['data']);data['size']=size
+                c.execute("UPDATE records SET data=? WHERE kind='products' AND id=?",(json.dumps(data),slug))
+        init()
+        with db() as c:
+            sizes={r['id']:json.loads(r['data'])['size'] for r in c.execute("SELECT id,data FROM records WHERE kind='products'")}
+        self.assertEqual(sizes['focused'],'51 ml')
+        self.assertEqual(sizes['connected'],'100 ml')
+        self.assertIn('story',self.client.get('/api/content').json())
+
     def tearDown(self):self.client.__exit__(None,None,None)
     def login_admin(self):self.assertEqual(self.client.post('/api/auth/login',json={'email':'admin@example.com','password':PASSWORD}).status_code,200)
     def register(self,email='customer@example.com'):

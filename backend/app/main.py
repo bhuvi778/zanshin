@@ -141,7 +141,7 @@ class ProductInput(Form):
             return v
         return media_url(v)
 
-KINDS={'hero':'content','moments':'content','circle':'content','creators':'content','products':'products','community':'community','journal':'journal'}
+KINDS={'story':'content','hero':'content','moments':'content','circle':'content','creators':'content','products':'products','community':'community','journal':'journal'}
 def kind_permission(kind):
     if kind not in KINDS: raise HTTPException(404,'Unknown content area')
     return KINDS[kind]
@@ -301,7 +301,7 @@ def save_content(kind:str,id:str,payload:dict,request:Request):
         raise
     data=parsed.model_dump(); published=data.pop('published'); position=data.pop('position')
     if kind=='products' and data['slug']!=id: raise HTTPException(400,'Product identifier cannot change.')
-    if kind in ['hero','moments','circle','creators'] and not data.get('image'): raise HTTPException(422,'An image or video poster is required.')
+    if kind in ['story','hero','moments','circle','creators'] and not data.get('image'): raise HTTPException(422,'An image or video poster is required.')
     if kind=='hero' and data['mediaType']=='video' and not data['video']: raise HTTPException(422,'Choose a video for this slide.')
     with db() as c:
         c.execute('INSERT INTO records VALUES(?,?,?,?,?,?) ON CONFLICT(kind,id) DO UPDATE SET data=excluded.data,published=excluded.published,position=excluded.position,updated_at=excluded.updated_at',(kind,id,json.dumps(data),published,position,now()))
