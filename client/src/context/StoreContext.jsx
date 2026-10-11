@@ -1,3 +1,4 @@
+import {addPairToCart} from '../bundles';
 import {createContext,useContext,useEffect,useMemo,useState} from 'react';
 import {api} from '../api';
 import {fallbackProducts} from '../data';
@@ -10,9 +11,10 @@ export function StoreProvider({children}){
  useEffect(()=>{let active=true;api.products().then(rows=>{const safe=cleanProducts(rows);if(active){setProducts(safe);setApiOnline(true)}}).catch(()=>{if(active)setApiOnline(false)});return()=>{active=false}},[]);
  useEffect(()=>write('zanshin-cart',cart),[cart]);useEffect(()=>write('zanshin-favourites',favourites),[favourites]);
  const add=(slug,quantity=1)=>setCart(c=>cleanCart({...c,[slug]:(c[slug]||0)+Number(quantity)}));
+ const addPair=slugs=>setCart(c=>{try{return addPairToCart(c,slugs,products)}catch{return c}});
  const setQuantity=(slug,q)=>setCart(c=>cleanCart({...c,[slug]:q})),clear=()=>setCart({});
  const toggleFavourite=slug=>{if(!fallbackProducts.some(p=>p.slug===slug))return;setFavourites(s=>s.includes(slug)?s.filter(x=>x!==slug):[...s,slug])};
  const count=Object.values(cart).reduce((a,b)=>a+b,0),items=products.filter(p=>cart[p.slug]).map(p=>({...p,quantity:cart[p.slug]})),subtotal=items.reduce((s,p)=>s+p.price*p.quantity,0);
- const value=useMemo(()=>({products,apiOnline,cart,items,count,subtotal,add,setQuantity,clear,favourites,toggleFavourite}),[products,apiOnline,cart,favourites]);return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
+ const value=useMemo(()=>({products,apiOnline,cart,items,count,subtotal,add,addPair,setQuantity,clear,favourites,toggleFavourite}),[products,apiOnline,cart,favourites]);return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>
 }
 export const useStore=()=>useContext(StoreContext);
