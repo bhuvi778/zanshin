@@ -1,2 +1,0 @@
-import {asset} from '../data';
-export default function LandscapeBottle({product,priority=false}){if(!product)return null;return <div className="ls-bottle">{product.image?<img className="ls-glass" src={asset(product.image)} alt={`${product.name} fragrance`} loading={priority?'eager':'lazy'}/>:<><img className="ls-glass" src={asset('concept-bottle.webp')} alt={`${product.name} fragrance`} loading={priority?'eager':'lazy'}/><img className="ls-label" src={asset(product.label)} alt="" loading={priority?'eager':'lazy'}/></>}</div>}

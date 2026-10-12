@@ -9,9 +9,3 @@ import './react.css';
 import './brand-home.css';
 createRoot(document.getElementById('root')).render(<React.StrictMode><AuthProvider><ContentProvider><StoreProvider><App/></StoreProvider></ContentProvider></AuthProvider></React.StrictMode>);
 import './readability.css';
-
-import './landscape-home.css';
-
-import './home-refinement.css';
-
-import './storefront-system.css';

@@ -44,14 +44,5 @@ def init():
             for r in json.loads((BASE / 'seed/content.json').read_text(encoding='utf-8')):
                 c.execute('INSERT INTO records VALUES(?,?,?,?,?,?)', (r['kind'],r['id'],json.dumps(r['data']),r.get('published',True),r.get('position',0),'2026-10-05T00:00:00+00:00'))
 
-
-        if not c.execute('SELECT 1 FROM schema_meta WHERE version=2').fetchone():
-            for row in c.execute("SELECT id,data FROM records WHERE kind='products'").fetchall():
-                data = json.loads(row['data'])
-                if data.get('size') in ('50 ml / 1.7 fl oz', '50 ml'):
-                    data['size'] = '51 ml'
-                    c.execute("UPDATE records SET data=? WHERE kind='products' AND id=?", (json.dumps(data), row['id']))
-            c.execute('INSERT INTO schema_meta VALUES(2)')
-
 def record(row):
     return {**json.loads(row['data']),'id':row['id'],'published':bool(row['published']),'position':row['position'],'updatedAt':row['updated_at']}
