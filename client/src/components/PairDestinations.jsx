@@ -1,0 +1,6 @@
+import {Link} from 'react-router-dom';
+import {asset} from '../data';
+import GiftPairBuilder from './GiftPairBuilder';
+export function PairDestinations(){return <section className="pair-destinations" aria-label="More ways to choose"><Link to="/create-your-own"><img src={asset('enso-home/landscape-focused.webp')} alt="Japanese mountain lake" loading="lazy"/><div><span>YOUR RITUAL, YOUR WAY</span><h2>Create your own.</h2><p>Choose two intentions. Make a combination that feels like you.</p><strong>Build your pairing ↗</strong></div></Link><Link to="/gift-your-moment"><img src={asset('enso-home/landscape-magnetized.webp')} alt="A warm Japanese sunset" loading="lazy"/><div><span>A THOUGHT TO GIVE</span><h2>For someone special.</h2><p>Two fragrances, chosen with someone in mind.</p><strong>Find their pairing ↗</strong></div></Link></section>}
+export function CustomPairPage(){return <div className="zanshin-home pair-route"><Link className="za-link" to="/">← Back to Zanshin</Link><GiftPairBuilder initialMode="custom"/></div>}
+export function GiftPairPage(){return <div className="zanshin-home pair-route"><Link className="za-link" to="/">← Back to Zanshin</Link><GiftPairBuilder initialMode="gift"/></div>}
