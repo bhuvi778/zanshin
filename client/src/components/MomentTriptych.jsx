@@ -19,7 +19,7 @@ function MomentCard({p}) {
   };
   const play=()=>{
     stop();
-    [1,2,0].forEach((next,i)=>later(()=>turn(next),(i+1)*1500));
+    [1,2,0].forEach((next,i)=>later(()=>turn(next),(i+1)*800));
   };
   const choose=(next)=>{stop();turn(next)};
   return <article className="moment-triptych" style={{'--moment-tone':p.color}}
