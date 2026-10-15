@@ -136,3 +136,35 @@
 @media(prefers-reduced-motion:reduce){.brand-promise-collection>a{transition:none}}
 
 .japanese-interior .zanshin-home{background:transparent}
+
+/* Each pairing gets a complete landscape and its own Japanese colour story. */
+.pair-themed{--pair-paper:#edf3f4;--pair-ink:#294a58;--pair-accent:#476c83;--pair-wash:#edf3f4d9;position:relative;isolation:isolate;overflow:hidden;background:var(--pair-paper);border-color:color-mix(in srgb,var(--pair-accent) 35%,transparent);transition:background-color .7s,color .7s;color:var(--pair-ink)}
+.pair-themed[data-pair-theme=network]{--pair-paper:#eef1e5;--pair-ink:#314e3d;--pair-accent:#5a714d;--pair-wash:#eef1e5d9}
+.pair-themed[data-pair-theme=charming]{--pair-paper:#faede6;--pair-ink:#633c43;--pair-accent:#a15b60;--pair-wash:#faede6d9}
+.pair-themed[data-pair-theme=stud]{--pair-paper:#e9eff6;--pair-ink:#213f60;--pair-accent:#3a5e88;--pair-wash:#e9eff6d9}
+.pair-scene-backdrops{position:absolute;inset:0;z-index:-2;pointer-events:none;background:var(--pair-paper)}
+.pair-scene-backdrops>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);transition:opacity .8s ease,transform 1.3s ease}
+.pair-scene-backdrops>img.is-active{opacity:1;transform:scale(1)}
+.pair-themed:before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--pair-paper) 0%,var(--pair-wash) 25%,transparent 50%,var(--pair-wash) 100%);pointer-events:none;transition:background .7s}
+.zanshin-home .pair-themed .pair-heading h2,.zanshin-home .pair-themed .pair-selection>h3{color:var(--pair-ink)}
+.zanshin-home .pair-themed .pair-heading h2 em,.pair-themed .pair-section-label,.pair-themed .za-eyebrow{color:var(--pair-accent)}
+.pair-themed .pair-heading>p{color:var(--pair-ink)}
+.pair-themed .pair-section-label{font-weight:600;letter-spacing:.2em}
+.pair-themed .pair-atelier{background:var(--pair-paper);border:1px solid color-mix(in srgb,var(--pair-accent) 30%,transparent);box-shadow:0 20px 50px #283b3b18}
+.pair-themed .pair-landscape{opacity:1;animation:pair-landscape-arrive .8s ease;object-position:center}
+.pair-themed .pair-atelier:after{background:linear-gradient(180deg,var(--pair-wash),transparent 50%,var(--pair-paper) 100%)}
+.pair-themed .pair-brand-logo{width:180px;height:110px}
+.zanshin-home .pair-themed .pair-art-label>p{color:var(--pair-ink);text-shadow:0 1px 12px var(--pair-paper)}
+.pair-themed .pair-bottles{background:linear-gradient(transparent 65%,var(--pair-wash));border-color:var(--pair-accent)}
+.pair-themed .pair-art-footer{color:var(--pair-ink)}
+.pair-themed .pair-selection{padding:32px 6%;background:color-mix(in srgb,var(--pair-paper) 93%,transparent);border:1px solid color-mix(in srgb,var(--pair-accent) 30%,transparent);backdrop-filter:blur(10px);box-shadow:0 12px 35px #283b3b0d}
+.pair-themed .pair-options button{background:#fffdf7a8;border-color:color-mix(in srgb,var(--pair-accent) 40%,transparent);transition:background .2s,border-color .2s}
+.pair-themed .pair-options button>span{color:var(--pair-ink)}
+.pair-themed .pair-options button[aria-pressed=true]{background:var(--pair-paper);border-color:var(--pair-accent);box-shadow:inset 0 0 0 1px var(--pair-accent)}
+.pair-themed .pair-options button:hover:not(:disabled){border-color:var(--pair-accent);background:var(--pair-paper)}
+.pair-themed .pair-confirm>.zh-pill{background:var(--pair-ink);border-color:var(--pair-ink);color:#fffdf4}
+.pair-themed .pair-confirm,.pair-themed .pair-product-links{border-color:color-mix(in srgb,var(--pair-accent) 40%,transparent)}
+@keyframes pair-landscape-arrive{from{opacity:.3;transform:scale(1.02)}to{opacity:1;transform:scale(1)}}
+@media(max-width:900px){.pair-themed .pair-selection{margin-top:25px;padding:28px 6%}.pair-themed .pair-layout{gap:0}.pair-themed:before{background:linear-gradient(var(--pair-wash),transparent 35%,var(--pair-wash) 75%,var(--pair-paper))}}
+@media(max-width:600px){.pair-themed .pair-selection{padding:25px 6%}.pair-themed .pair-brand-logo{width:160px;height:100px}.pair-themed .pair-options{gap:8px}.pair-themed .pair-options small{font-size:11px}.pair-themed .pair-options button>span{font-size:20px}}
+@media(prefers-reduced-motion:reduce){.pair-themed,.pair-themed:before,.pair-scene-backdrops>img,.pair-themed .pair-options button{transition:none}.pair-themed .pair-landscape{animation:none}}
