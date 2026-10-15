@@ -1,0 +1,138 @@
+/* Shared interior art direction: washi, ink, cedar and muted sunrise. */
+.japanese-interior{--jp-paper:#f6f2e9;--jp-ink:#263b3e;--jp-gold:#8a6941;--jp-line:#b7ad9766;color:var(--jp-ink);background:radial-gradient(ellipse at 5% 18%,#b5c8c226,transparent 38%),radial-gradient(ellipse at 95% 65%,#d2a7841c,transparent 40%),repeating-linear-gradient(100deg,transparent 0 3px,#8b765204 3px 4px),var(--jp-paper);isolation:isolate}
+.japanese-interior *{box-sizing:border-box}
+.japanese-interior :is(h1,h2,h3){font-family:Georgia,'Times New Roman',serif;font-weight:400;line-height:1.12}
+.japanese-interior h1{font-size:clamp(40px,5.2vw,76px)}
+.japanese-interior :is(p,li){line-height:1.8}
+.japanese-interior :is(button,input,select,textarea){font:inherit}
+.japanese-interior :is(button,a,input,textarea,select,summary):focus-visible{outline:2px solid #88653a;outline-offset:5px}
+.japanese-interior :is(input,textarea,select){max-width:100%;background:#fffdf6;border-color:#beb6a4;border-radius:2px;color:#283c3c}
+.japanese-interior :is(.eyebrow,.ep-kicker,.fd-kicker,.ag-kicker,.admin-kicker,.za-eyebrow){font-size:11px;letter-spacing:.17em;color:#6a654f;line-height:1.8}
+.japanese-interior :is(.editorial-page,.approved-brand-page,.fragrance-detail,.moment-journey){background:transparent}
+.japanese-interior .interior-hero{background:linear-gradient(90deg,#f6f2e9 30%,#f6f2e95c),url('/assets/enso-home/landscape-connected.webp') right 40%/cover;min-height:380px;border-bottom:1px solid var(--jp-line)}
+.japanese-interior .interior-hero-inner{gap:7%;padding-block:56px}
+.japanese-interior .interior-hero-mark{background:#f7f3e6c4;max-width:260px;padding:24px;border:1px solid var(--jp-line)}
+.japanese-interior .interior-hero p{max-width:570px;font-size:16px;color:#4d5d56}
+.japanese-interior .client-section{padding-block:55px}
+.japanese-interior :is(.feature-grid>article,.step-grid>article,.review-card,.utility-empty,.account-form,.account-order){background:#fffdf4bd;border:1px solid var(--jp-line);border-radius:2px;box-shadow:0 12px 35px #39463f06}
+.japanese-interior :is(.feature-grid,.step-grid){gap:24px}
+.japanese-interior .step-grid>article{padding:30px}
+.japanese-interior :is(.feature-grid a,.outline-link,.za-link){text-underline-offset:7px}
+.japanese-interior .ep-intro{min-height:440px;margin-top:32px;position:relative;padding:60px 5%;border:1px solid var(--jp-line);overflow:hidden;isolation:isolate;width:92%}
+.japanese-interior .ep-intro>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;z-index:-2}
+.japanese-interior .ep-intro:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f8f3e9f5 10%,#f8f3e9e8 40%,#f8f3e915 85%)}
+.japanese-interior .ep-intro>div{max-width:590px;position:relative;z-index:1}
+.japanese-interior .ep-intro h1{font-size:clamp(44px,5.6vw,80px)}
+.japanese-interior .ep-intro p{font-size:16px;max-width:460px}
+.japanese-interior .ep-collection>article{gap:7%;padding-block:45px;border-bottom:1px solid var(--jp-line)}
+.japanese-interior .ep-pack{background:linear-gradient(#f5f0e780,#f5f0e7cc),url('/assets/enso-home/landscape-connected.webp') center/cover;border:1px solid var(--jp-line)}
+.japanese-interior :is(.ep-button,.fd-button,.ag-button,.platform-primary,.mj-primary){background:#344c4b;color:#fffdf2;border:1px solid #344c4b;border-radius:2px}
+.japanese-interior .ep-invitation{background:linear-gradient(110deg,#e8e4d6f2,#e8e4d6b3),url('/assets/enso-home/landscape-focused.webp') center/cover;border:1px solid var(--jp-line);margin-block:45px}
+.japanese-interior .fd-gallery{background:linear-gradient(0deg,#f5f0e8eb,#f5f0e87a),url('/assets/enso-home/landscape-connected.webp') center/cover;border:1px solid var(--jp-line)}
+.japanese-interior .fd-copy{background:#f8f4e9b3}
+.japanese-interior .fd-section-nav{background:#efeadd;border-color:var(--jp-line);flex-wrap:wrap}
+.japanese-interior .fd-feeling{background:#e9e9dd}
+.japanese-interior .fd-feeling>img{object-fit:cover;object-position:center 25%}
+.japanese-interior .fd-related-art{background:linear-gradient(#f7f3e999,#e5e7dacc),url('/assets/enso-home/landscape-connected.webp') center/cover}
+.japanese-interior :is(.utility-page,.account-page){position:relative;isolation:isolate;min-height:60vh}
+.japanese-interior :is(.utility-page,.account-page):before{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(#f6f2e9c9,#f6f2e9f5 370px),url('/assets/enso-home/landscape-focused.webp') center top/100% auto no-repeat;pointer-events:none}
+.japanese-interior .search-results>article{border:1px solid var(--jp-line);background:#fffdf4bd;padding:22px}
+.japanese-interior .site-search button{background:#344c4b;color:#fffdf2}
+.japanese-interior .saved-grid>article{background:#fffdf4;border:1px solid var(--jp-line);padding:15px}
+.japanese-interior .auth-page{background:transparent}
+.japanese-interior .auth-form-panel{background:#fbf7edcf}
+.japanese-interior .account-tabs button[aria-pressed=true]{background:#344c4b;color:#fff}
+.japanese-interior .mj-summary{background:linear-gradient(#f9f4e8ed,#f9f4e8db),url('/assets/enso-home/enso-focused.webp') center/cover;border:1px solid var(--jp-line)}
+.japanese-interior .mj-art{border-radius:160px 160px 2px 2px;overflow:hidden}
+.japanese-interior :is(.package-image-shell,.engage-panel){background:#ece8db;border:1px solid var(--jp-line)}
+.japanese-interior .package-tabs button.active{background:#344c4b;color:#fff}
+.japanese-interior .ag-contact-art>.ag-kicker{background:#f8f3e9cc;margin:25px;width:80%;padding:20px;max-width:310px;color:#374c43}
+.japanese-interior .ag-contact-copy{background:#faf6edc2}
+.japanese-interior .ag-contact-close>img{height:420px;object-fit:cover;object-position:center 30%}
+.japanese-interior .ag-contact-close{background:#e5e7db}
+
+/* A single narrative, from the everyday question to the brand promise. */
+.brand-story-page{padding-top:28px;padding-bottom:45px}
+.brand-story-page>section{scroll-margin-top:135px}
+.brand-story-page .brand-story-intro{min-height:710px;border:1px solid var(--jp-line)}
+.brand-story-page .brand-story-intro>div{max-width:550px}
+.brand-story-intro .za-link{display:inline-block;margin-top:12px}
+.brand-story-page :is(.story-enlightenment,.story-japan,.story-foundation,.story-practice,.brand-promise){margin-top:55px}
+.brand-story-page .story-enlightenment{padding:65px 8%;text-align:center;background:#243b3f;position:relative;overflow:hidden;color:#faf5e9}
+.story-enlightenment:before{content:'';position:absolute;inset:0;background:url('/assets/enso-home/enso-story-original.png') center/cover;opacity:.065;pointer-events:none}
+.story-enlightenment>*{position:relative}
+.brand-story-page .story-enlightenment .za-eyebrow{color:#c9b487}
+.brand-story-page .story-enlightenment h2{font-size:clamp(35px,4.5vw,63px);margin:20px 0 30px;color:#f8f1e5}
+.story-enlightenment h2 em{color:#dbb37b}
+.brand-story-page .story-enlightenment>p{max-width:700px;margin:28px auto;font-size:17px;color:#e0e2d7}
+.story-question p{margin:0;font-size:18px!important;color:#d0d8d2}
+.story-question strong{display:block;font:italic clamp(25px,3vw,40px)/1.4 Georgia,serif;margin-top:8px;color:#ecd0a2}
+.story-enlightenment aside{max-width:720px;margin:28px auto;padding:20px 28px;border-left:1px solid #b89a65;background:#e5dcbd09;font-size:15px;line-height:1.9;color:#d6dfd6;text-align:left}
+.story-enlightenment ul{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;list-style:none;padding:0;margin:35px 0}
+.story-enlightenment li{padding:10px 18px;border:1px solid #c4a77766;font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.story-ending-line{font:20px Georgia,serif}
+.story-japan{display:grid;grid-template-columns:1fr 1fr;background:#e7e8db;border:1px solid var(--jp-line)}
+.story-japan>img{width:100%;height:100%;min-height:560px;object-fit:cover}
+.story-japan>div{padding:55px 10%;align-self:center}
+.brand-story-page .story-japan h2{font-size:clamp(32px,3.5vw,51px);margin:20px 0}
+.story-japan h2 em{color:#8a6941}
+.brand-story-page .story-japan p{font-size:16px;line-height:1.9;color:#4c5a51}
+.story-japan strong{display:block;border-top:1px solid #a4aa9777;margin-top:25px;padding-top:20px;font:italic 22px/1.5 Georgia,serif;color:#646e4f}
+.story-foundation{position:relative;isolation:isolate;overflow:hidden;min-height:620px;background:#eee6d6}
+.story-foundation>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2}
+.story-foundation:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#faf5e9fa 5%,#faf5e9ed 32%,#faf5e936 65%,transparent)}
+.story-foundation>div{padding:65px 6%;width:48%;max-width:650px}
+.brand-story-page .story-foundation h2{font:clamp(48px,6vw,84px)/1 Georgia,serif;letter-spacing:.1em;margin:22px 0 12px}
+.story-foundation h3{text-transform:uppercase;letter-spacing:.19em;font-size:15px;margin-bottom:25px}
+.brand-story-page .story-foundation p{font-size:16px;line-height:1.9}
+.story-foundation-values{display:flex;gap:22px;flex-wrap:wrap;margin:28px 0}
+.story-foundation-values span{border-top:1px solid #a99068;padding-top:10px;font:18px Georgia,serif}
+.story-foundation em{font:italic 22px Georgia,serif;color:#80633b}
+.brand-story-page .enso-lesson-panel{border:1px solid var(--jp-line)}
+.story-practice{text-align:center;padding:40px 4%}
+.story-practice h2{margin:20px 0 35px}
+.story-practice>div{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;text-align:left;margin-bottom:30px}
+.story-practice article{padding:25px 5%;border-top:1px solid var(--jp-line)}
+.story-practice article>span{font-size:12px;color:#9c8158}
+.story-practice h3{font-size:32px;margin:16px 0 10px}
+.brand-story-page .story-practice p{font-size:16px}
+.brand-promise{margin-top:45px;position:relative;isolation:isolate;min-height:590px;overflow:hidden;background:#efe7da;display:flex;align-items:center;border:1px solid var(--jp-line)}
+.brand-promise-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.brand-promise-copy{width:46%;padding:55px 5%;position:relative;z-index:2}
+.zanshin-home .brand-promise h2{font:clamp(36px,4.1vw,62px)/1.08 Georgia,serif;margin:22px 0}
+.brand-promise h2 em{color:#896738}
+.zanshin-home .brand-promise p{max-width:340px;font-size:15px;color:#4f5c53}
+.brand-promise .zh-pill{margin-top:20px;background:#8a6941;color:#fffdf4;border-color:#8a6941;gap:40px}
+.brand-promise-collection{position:absolute;right:3%;bottom:10%;width:53%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));align-items:end;gap:0}
+.brand-promise-collection>a{display:block;min-width:0;text-align:center;filter:drop-shadow(3px 10px 5px #2c30234f);transition:transform .4s}
+.brand-promise-collection>a:hover{transform:translateY(-8px)}
+.brand-promise-collection .label-pack{width:100%;aspect-ratio:.6}
+.brand-promise-collection .label-pack-bottle{width:94%;left:3%;bottom:0}
+.brand-promise-collection>a>span{display:block;font:13px Georgia,serif;color:#fffaf0;background:#283b35d9;padding:9px 3px;margin-top:12px;filter:none}
+
+.japanese-journal{max-width:1480px}
+.jp-editorial-hero{position:relative;isolation:isolate;min-height:460px;max-width:none!important;padding:65px 5%;border:1px solid var(--jp-line);overflow:hidden}
+.jp-editorial-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;z-index:-2}
+.jp-editorial-hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#f9f4e9fa 5%,#f9f4e9ed 35%,#f9f4e92b 90%)}
+.jp-editorial-hero>div{max-width:650px}
+.jp-editorial-hero h1{margin:22px 0}
+.jp-editorial-hero h1 em{color:#80633d}
+.jp-editorial-hero p{max-width:460px;font-size:16px}
+.jp-editorial-hero .za-link{display:inline-block;margin-top:20px}
+.jp-section-heading{padding:20px 0 30px}
+.jp-section-heading h2{font-size:clamp(29px,3.4vw,46px);margin:15px 0 0}
+.japanese-interior .managed-grid article{border-radius:2px;background:#fffdf5;border:1px solid var(--jp-line)}
+.japanese-interior .managed-grid article>img{aspect-ratio:1.1;object-position:center 30%}
+.japanese-interior .managed-grid article>div{padding:28px}
+.japanese-interior .managed-grid h2{font-size:30px;line-height:1.2}
+.japanese-interior .managed-grid p{font-size:15px}
+.managed-grid summary{padding-bottom:8px;border-bottom:1px solid var(--jp-line);width:fit-content}
+.managed-grid details[open]{border-top:1px solid var(--jp-line);margin-top:20px;padding-top:20px}
+.jp-journal-close{text-align:center;margin-top:50px;padding:50px 20px;background:linear-gradient(#f0ecdfdd,#f0ecdfdd),url('/assets/enso-home/landscape-magnetized.webp') center/cover}
+.jp-journal-close h2{font-size:clamp(32px,4vw,52px);margin:20px 0 30px}
+.jp-journal-close .zh-pill{display:inline-flex;background:#344c4b;color:white;padding:15px 25px}
+@media(max-width:900px){.story-japan{grid-template-columns:1fr}.story-japan>img{height:360px;min-height:0}.story-japan>div{padding:38px 7%}.story-foundation>div{width:60%}.brand-promise{min-height:530px}.brand-promise-copy{width:49%;padding:35px 5%}.brand-promise-collection{width:49%;right:1%}.japanese-interior .interior-hero-mark{max-width:190px}.japanese-interior .ag-contact-close>img{height:360px}}
+@media(max-width:650px){.japanese-interior h1{font-size:42px}.japanese-interior .interior-hero-inner{display:block;padding-block:36px}.japanese-interior .interior-hero-mark{display:none}.japanese-interior .ep-intro{padding:40px 7%;min-height:420px}.japanese-interior .ep-intro:after{background:linear-gradient(90deg,#f8f3e9f5,#f8f3e9bc)}.japanese-interior .ep-intro h1{font-size:46px}.brand-story-page{padding-top:18px}.brand-story-page .brand-story-intro{min-height:0;padding:35px 7%}.brand-story-page :is(.story-enlightenment,.story-japan,.story-foundation,.story-practice,.brand-promise){margin-top:30px}.brand-story-page .story-enlightenment{padding:40px 7%}.story-enlightenment ul{gap:8px}.story-enlightenment li{font-size:10px;padding:8px 10px}.story-enlightenment aside{padding:18px;font-size:14px}.story-foundation{padding-top:260px}.story-foundation>img{height:380px;object-position:75% top}.story-foundation:after{background:linear-gradient(0deg,#faf5e9 0%,#faf5e9 52%,transparent 95%)}.story-foundation>div{width:100%;padding:15px 7% 38px}.story-practice>div{grid-template-columns:1fr;gap:8px}.story-practice article{padding:22px 3%}.brand-promise{display:block;padding-bottom:340px}.brand-promise-copy{width:100%;padding:38px 7% 20px;background:linear-gradient(#f8f2e6f5,#f8f2e6e6)}.zanshin-home .brand-promise h2{font-size:42px}.brand-promise-art{object-position:65% center}.brand-promise-collection{width:94%;right:3%;bottom:35px}.brand-promise-collection .label-pack{aspect-ratio:.57}.brand-promise-collection>a>span{font-size:12px}.jp-editorial-hero{padding:40px 7%;min-height:420px}.jp-editorial-hero:after{background:#f9f4e9b8}.japanese-interior .ag-contact-close>img{height:330px}.japanese-interior .fd-section-nav a{padding:12px 9px;font-size:12px}.japanese-interior .client-section{padding-block:35px}}
+@media(prefers-reduced-motion:reduce){.brand-promise-collection>a{transition:none}}
+
+.japanese-interior .zanshin-home{background:transparent}

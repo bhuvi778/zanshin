@@ -1,3 +1,4 @@
+import BrandPromise from '../components/BrandPromise';
 import {useContent} from '../context/PlatformContext';
 import {useStore} from '../context/StoreContext';
 import {mediaURL} from '../platform';
@@ -35,5 +36,5 @@ return <div className="zanshin-home"><div className="zh-opening"><section classN
 </section>
 <QualityPromise/><BuildYourBag/><PairDestinations/>
 <section className="za-circle" aria-labelledby="za-circle-title"><header className="za-heading"><div><h2 id="za-circle-title">The Zanshin Circle.</h2><p>Different lives. Shared moments.</p></div><div className="zh-arrows"><button onClick={()=>scroll(-1)} aria-label="Previous moments">&larr;</button><button onClick={()=>scroll(1)} aria-label="Next moments">&rarr;</button></div></header><div className="za-people" ref={rail} tabIndex={0} aria-label="Zanshin campaign moments">{(content?content.circle.map(c=>({...c,photo:mediaURL(c.image),film:mediaURL(c.video),to:c.productSlug})):[circle[0],circle[1],{title:'Time together',photo:homeImage('energised'),to:'connected'},{title:'Own your evening',photo:homeImage('magnetized'),to:'magnetized'}]).map(c=><article key={c.title}>{c.film?<button className="za-person" aria-label={`Watch ${c.title}`} onClick={()=>setFilm(c)}><img src={c.photo} alt={c.title} loading="lazy"/><span className="zh-play" aria-hidden="true">&#9654;</span></button>:<Link className="za-person" to={`/collection/${c.to}`}><img src={c.photo} alt={c.title} loading="lazy"/></Link>}<p>{c.title}</p></article>)}</div><div className="za-circle-footer"><span>Campaign moments</span><Link className="za-link" to="/community">Discover our community <span aria-hidden="true">&#8599;</span></Link></div></section>
-<Testimonials onFilm={setFilm}/><section className="za-finder"><div><h2>Your moment.<br/><em>Your fragrance.</em></h2><p>A little discovery. A more personal connection.</p></div><Link className="zh-pill" to="/find-your-moment">Find your moment <span aria-hidden="true">&#8599;</span></Link></section>
+<Testimonials onFilm={setFilm}/><BrandPromise/>
 </div>{film&&<FilmDialog film={film} onClose={()=>setFilm(null)}/>}</div>}

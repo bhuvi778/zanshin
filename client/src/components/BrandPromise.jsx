@@ -1,0 +1,5 @@
+import {Link} from 'react-router-dom';
+import {asset} from '../data';
+import {useStore} from '../context/StoreContext';
+import LabelPack from './LabelPack';
+export default function BrandPromise(){const {products}=useStore();return <section className="brand-promise" aria-labelledby="brand-promise-title"><img className="brand-promise-art" src={asset('enso-home/story-promise-sunrise.webp')} alt="Mount Fuji at sunrise, seen through a Japanese shoji doorway with cherry blossoms" loading="lazy"/><div className="brand-promise-copy"><span className="za-eyebrow">Your moment is waiting</span><h2 id="brand-promise-title">Don’t start with<br/>the fragrance.<br/><em>Begin with<br/>the moment.</em></h2><p>Our promise is a more personal way to choose. Four expressions. Space to be yourself.</p><Link className="zh-pill" to="/collection">Explore Zanshin <span aria-hidden="true">→</span></Link></div><div className="brand-promise-collection" aria-label="Four Zanshin expressions">{products.map(p=><Link key={p.slug} to={`/collection/${p.slug}`} aria-label={`Explore ${p.name}`}><LabelPack product={p} bottleOnly/><span>{p.name}</span></Link>)}</div></section>}
