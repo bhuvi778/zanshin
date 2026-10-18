@@ -53,7 +53,7 @@
 .moment-bookmark-art{display:block;flex:1;width:100%;height:100%;min-height:0;overflow:hidden;background:#e9e0d0}
 .moment-enso-shift>span{flex:0 0 36px;display:grid;place-items:center;padding:8px 5px;background:#f6efdf;font-size:10px}
 .moment-triptych .moment-view-controls button{font-family:Arial,sans-serif;white-space:nowrap;font-size:11px;padding-inline:1px;min-height:40px}
-.moment-face:has(.moment-enso-shift) .moment-flip-hint{display:none}
+.moment-stage-2 .moment-flip-hint{display:none}
 
 /* One continuous photograph covers the entire panel, with no nested display window. */
 .zanshin-home .zh-sculpture.zh-composed{padding:32px 24px 24px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;background:#e9ddc8;isolation:isolate}
@@ -66,3 +66,10 @@
 .zh-composed .sculpture-invitation .zh-pill{width:100%;background:#283c35e8;color:#fffdf0;border-color:transparent}
 @media(min-width:601px) and (max-width:1000px){.zh-composed .sculpture-composed-art{object-position:25% center}}
 @media(max-width:600px){.zanshin-home .zh-sculpture.zh-composed{min-height:580px;padding:30px 24px 24px}.zanshin-home .zh-composed .sculpture-heading h2{font-size:34px}.sculpture-composed-art{object-position:50% center}}
+
+/* All faces stay mounted so the final image is loaded before the 800ms hover turn. */
+.moment-face-inner>[hidden]{display:none!important}
+.moment-your-moment{position:absolute;inset:0;width:100%;height:100%}
+.moment-your-moment>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
+.moment-enso-art-frame{position:relative;flex:1 1 0;min-height:0;width:100%;overflow:hidden}
+.moment-enso-art-frame .moment-bookmark-art{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;background:#e5ece4}

@@ -28,8 +28,12 @@ function MomentCard({p}) {
   return <article className="moment-triptych" style={{'--moment-tone':p.color}}
     onPointerEnter={e=>{if(e.pointerType==='mouse')play()}} onPointerLeave={stop}>
     <div className={`moment-card-sheet${turning?' is-turning':''}`}>
-      <button className="moment-face" onClick={()=>choose((stage+1)%3)} aria-label={`${p.name}: ${names[stage]}. Show next view`}>
-        <div className="moment-face-inner">{stage===1?<div className="moment-bottle-face"><span>BEGIN WITH THE MOMENT</span><LabelPack product={p} bottleOnly/><h3>{p.name}</h3><p>{p.descriptor}</p></div>:stage===2?<div className="moment-enso-shift"><BookmarkArtwork product={p} direction={direction}/><span>{direction.place}</span></div>:<><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/><span className="moment-image-caption">YOUR MOMENT</span></>}</div>
+      <button className={`moment-face moment-stage-${stage}`} onClick={()=>choose((stage+1)%3)} aria-label={`${p.name}: ${names[stage]}. Show next view`}>
+        <div className="moment-face-inner">
+          <div className="moment-your-moment" hidden={stage!==0}><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/><span className="moment-image-caption">YOUR MOMENT</span></div>
+          <div className="moment-bottle-face" hidden={stage!==1}><span>BEGIN WITH THE MOMENT</span><LabelPack product={p} bottleOnly/><h3>{p.name}</h3><p>{p.descriptor}</p></div>
+          <div className="moment-enso-shift" hidden={stage!==2}><BookmarkArtwork product={p} direction={direction}/><span>{direction.place}</span></div>
+        </div>
         <span className="moment-flip-hint">Explore the moment ↻</span>
       </button>
       <div className="moment-view-controls" role="group" aria-label={`${p.name} views`}>{names.map((n,i)=><button key={n} aria-pressed={stage===i} onClick={()=>choose(i)}>{n}</button>)}</div>
