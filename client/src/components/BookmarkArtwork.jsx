@@ -1,0 +1,3 @@
+import {asset} from '../data';
+const windows={"focused": {"viewBox": "52 133 108 192", "width": 400, "height": 408}, "energised": {"viewBox": "99 140 109 192", "width": 487, "height": 432}, "connected": {"viewBox": "103 136 110 194", "width": 511, "height": 433}, "magnetized": {"viewBox": "65 139 108 190", "width": 430, "height": 395}};
+export default function BookmarkArtwork({product,direction}){const w=windows[product.slug];return <svg className="moment-bookmark-art" viewBox={w.viewBox} preserveAspectRatio="xMidYMid slice" role="img" aria-label={`${product.name} original bookmark illustration: ${direction.place}`}><image href={asset(`enso-home/${direction.bookmark}`)} width={w.width} height={w.height} preserveAspectRatio="none"/></svg>}

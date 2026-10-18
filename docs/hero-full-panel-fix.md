@@ -1,0 +1,13 @@
+# Full-panel cedar composition and bookmark visibility
+
+Built-in imagegen produced `client/public/assets/enso-home/hero-focused-cedar-composed-v3.webp` as one complete bottle-and-frame photograph. It replaces the nested background/independent floating bottle. The image fills the whole right hero panel with accessible HTML heading and collection link over it.
+
+The bookmark view now uses fixed source-image coordinates in BookmarkArtwork.jsx instead of percentage enlargement and offsets. Original supplied bookmark files are unchanged. The image viewport has explicit absolute bounds so artwork cannot collapse or drift into the beige photo background.
+
+## Final generation prompt
+
+Use case: product-mockup. Create ONE finished photorealistic vertical luxury ZANSHIN FOCUSED perfume advertising photograph, full-bleed 2:3 portrait image, NOT a webpage or screenshot. Reference image 1 is the current UI showing a too-small inset: fix that concept by producing a single continuous full-frame scene. Reference image 2 is the actual approved bottle shape, reference image 3 is its label: preserve the thick clear rectangular amber-glass bottle, dark cylindrical polished reddish wood cap, gold neck, ivory label with teal Enso crescent, ZANSHIN lettering and FOCUSED. Place this bottle PHYSICALLY resting on the lower inner ledge of a beautifully crafted upright cedar C-circle sculpture, so it looks photographed inside its wooden frame, not floating or pasted on top. Real contact shadow, refraction and warm daylight. The cedar frame, stone plinth, small zen stones, softly textured ivory wall all belong to ONE seamless studio set spanning EVERY edge. Bottle large and clear in middle-lower image, from roughly 43% to 79% image height, centered within circle. Sculptural C frame entirely contained in the central 60% of image width to allow responsive cropping, no pieces cut off. Leave upper 24% as quiet lit ivory wall for HTML heading; bottom 12% as continuous warm stone for an HTML button. Do not draw headings, navigation, buttons, inset panels, borders, extra bottles or watermark. Only readable text is existing approved bottle label. Refined Japanese craftsmanship, generous scale, editorial product photography, soft dimensional shadows, warm neutral palette, NO black background.
+
+## Verification
+
+Checked all four Ensō Shift messages and illustrated source windows in the browser. At 1440px, 900px and 390px, each image viewport retains nonzero width/height, the hero image matches the full panel bounds within its border, and the page has no horizontal overflow. The existing 800ms three-view hover flow is retained. Production build, route regressions and diff checks were run before push.

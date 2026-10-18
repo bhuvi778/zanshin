@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {asset} from '../data';
 import {useStore} from '../context/StoreContext';
 import LabelPack from './LabelPack';
+import BookmarkArtwork from './BookmarkArtwork';
 import {fragranceDirection} from '../brandDirection';
 const names=['Your Moment','Fragrance','Ensō Shift'];
 function MomentCard({p}) {
@@ -28,7 +29,7 @@ function MomentCard({p}) {
     onPointerEnter={e=>{if(e.pointerType==='mouse')play()}} onPointerLeave={stop}>
     <div className={`moment-card-sheet${turning?' is-turning':''}`}>
       <button className="moment-face" onClick={()=>choose((stage+1)%3)} aria-label={`${p.name}: ${names[stage]}. Show next view`}>
-        <div className="moment-face-inner">{stage===1?<div className="moment-bottle-face"><span>BEGIN WITH THE MOMENT</span><LabelPack product={p} bottleOnly/><h3>{p.name}</h3><p>{p.descriptor}</p></div>:stage===2?<div className="moment-enso-shift"><div className={`moment-bookmark-art bookmark-${p.slug}`}><img className="moment-bookmark-image" src={asset(`enso-home/${direction.bookmark}`)} alt={`${p.name} original bookmark artwork: ${direction.place}`}/></div><span>{direction.place}</span></div>:<><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/><span className="moment-image-caption">YOUR MOMENT</span></>}</div>
+        <div className="moment-face-inner">{stage===1?<div className="moment-bottle-face"><span>BEGIN WITH THE MOMENT</span><LabelPack product={p} bottleOnly/><h3>{p.name}</h3><p>{p.descriptor}</p></div>:stage===2?<div className="moment-enso-shift"><BookmarkArtwork product={p} direction={direction}/><span>{direction.place}</span></div>:<><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/><span className="moment-image-caption">YOUR MOMENT</span></>}</div>
         <span className="moment-flip-hint">Explore the moment ↻</span>
       </button>
       <div className="moment-view-controls" role="group" aria-label={`${p.name} views`}>{names.map((n,i)=><button key={n} aria-pressed={stage===i} onClick={()=>choose(i)}>{n}</button>)}</div>
