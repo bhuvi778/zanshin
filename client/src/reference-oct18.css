@@ -1,0 +1,67 @@
+/* Client reference update: human moment, fragrance, then the bookmark-led Ensō shift. */
+.moment-card-sheet{height:100%;display:flex;flex-direction:column}
+.moment-card-footer{flex:1;display:flex;flex-direction:column;align-items:flex-start;min-height:175px}
+.moment-card-footer>a{margin-top:auto}
+.moment-view-eyebrow{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--moment-tone);margin-bottom:15px;line-height:1.7}
+.zanshin-home .moment-card-footer h3{font:clamp(25px,2.4vw,36px)/1.14 Georgia,serif;margin-bottom:18px;color:#2c3934}
+.moment-enso-shift{height:100%;display:flex;flex-direction:column;padding:12px;background:#eee8dc;gap:10px}
+.moment-enso-shift .moment-bookmark-image{width:100%;height:calc(100% - 36px);object-fit:contain;min-height:0}
+.moment-enso-shift>span{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--moment-tone);padding-bottom:15px}
+.zanshin-home .moment-shift-note{font-size:13px;line-height:1.6;margin:0 0 15px;color:#677062}
+.moment-triptych .moment-image-caption{font:10px/1.5 Arial,sans-serif;letter-spacing:.25em;text-align:left;padding-bottom:55px}
+.moment-triptych .moment-view-controls button{font-size:11px;padding:10px 3px}
+.moment-triptych .moment-face-inner>img{object-position:center top}
+/* The stage contains the real approved bottle, positioned within the cedar sculpture. */
+.zh-sculpture .sculpture-stage{isolation:isolate;overflow:hidden;border-radius:100px 100px 5px 5px}
+.sculpture-cedar-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;z-index:0}
+.zh-sculpture .sculpture-bottle{position:relative;z-index:1;animation:cedar-bottle-float 6s ease-in-out infinite!important;filter:drop-shadow(8px 20px 10px #483b2440)}
+.zh-sculpture .sculpture-bottle .label-pack{aspect-ratio:.9}
+.zh-sculpture .bottle-only .label-pack-bottle{width:48%;left:32%;bottom:13%}
+@keyframes cedar-bottle-float{0%,100%{transform:translateY(5px) rotateY(-3deg)}50%{transform:translateY(-7px) rotateY(3deg)}}
+/* Consistent crafted line icons in place of numeric promise markers. */
+.hq-promise .hq-icon-medallion{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border:1px solid #ac986c77;border-radius:50%;background:#f8f3e9;color:#6c7657;padding:0}
+.hq-promise-icon{width:28px;height:28px;display:block}
+.hq-promise summary{align-items:center}
+.hq-promise summary>div{flex:1;min-width:0}
+.hq-promise[open] .hq-icon-medallion{background:#e0e6d5;border-color:#899474}
+.hq-promise>p{padding-left:66px}
+/* Paired personalities share one scene. Real bottle assets sit on the empty stone foreground. */
+.pair-themed .pair-campaign{display:block;position:relative;aspect-ratio:2/3;min-height:630px;border-radius:6px}
+.pair-themed .pair-campaign .pair-landscape{object-fit:cover;object-position:center;opacity:1}
+.pair-themed .pair-campaign:after{background:linear-gradient(var(--pair-wash),transparent 16%,transparent 65%,#1d2a2138);pointer-events:none}
+.pair-campaign .pair-art-label{position:absolute;z-index:3;left:18px;right:18px;top:14px;padding:0;display:flex;align-items:center;gap:15px;text-align:left;flex-wrap:wrap}
+.pair-campaign .pair-brand-logo{width:100px;height:65px;margin:0;object-fit:contain}
+.pair-campaign .pair-art-label>span{display:none}
+.zanshin-home .pair-campaign .pair-art-label>p{font:italic 29px/1.2 Georgia,serif;margin:0;color:var(--pair-ink);background:var(--pair-wash);padding:9px 13px;text-shadow:none}
+.pair-campaign .pair-bottles{position:absolute;left:3%;right:3%;bottom:65px;margin:0;min-height:0;border:0;background:none;padding:0;align-items:end}
+.pair-campaign .pair-bottle .label-pack{aspect-ratio:.95;max-width:260px}
+.pair-campaign .pair-bottle .label-pack-bottle{width:70%;left:15%;bottom:0}
+.pair-campaign .pair-bottle>span{display:block;font:18px Georgia,serif;background:#fff9e9e8;border-bottom:2px solid currentColor;padding:8px 5px;margin:5px 5px 0}
+.pair-campaign .pair-art-footer{position:absolute;bottom:14px;left:0;right:0;margin:0;padding:0;text-shadow:0 1px 8px #17281b;color:#fff9e9;font-size:10px}
+.pair-campaign .pair-art-footer em{font-size:17px}
+.single-gift-page{padding:55px 5%;max-width:1500px;margin:auto}
+.single-gift-page>header{max-width:650px;margin-bottom:40px}
+.single-gift-page h1{font:clamp(40px,5vw,70px)/1.1 Georgia,serif;margin:20px 0}
+.single-gift-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.single-gift-grid>a{padding:20px;background:#f7f1e6;border:1px solid #c0b49c66}
+.single-gift-grid h2{font:30px Georgia,serif;margin:18px 0 10px}
+.single-gift-grid p{font-size:13px;line-height:1.7}
+.single-gift-grid>a>span{display:inline-block;border-bottom:1px solid #9e906d;font-size:13px;padding:10px 0}
+@media(max-width:1000px){.single-gift-grid{grid-template-columns:1fr 1fr}.moment-card-footer{min-height:180px}.pair-themed .pair-campaign{max-width:580px}}
+@media(max-width:600px){.moment-card-footer{min-height:165px}.moment-triptych .moment-view-controls button{font-size:12px}.zanshin-home .moment-card-footer h3{font-size:32px}.moment-enso-shift{padding:18px}.pair-themed .pair-campaign{min-height:520px}.pair-campaign .pair-brand-logo{width:80px;height:50px}.zanshin-home .pair-campaign .pair-art-label>p{font-size:24px}.pair-campaign .pair-bottles{bottom:58px}.pair-campaign .pair-bottle>span{font-size:16px}.single-gift-grid{grid-template-columns:1fr}.hq-promise .hq-icon-medallion{width:40px;height:40px;flex-basis:40px}.hq-promise-icon{width:24px;height:24px}.hq-promise>p{padding-left:0}.zh-sculpture .sculpture-stage{min-height:340px}}
+@media(prefers-reduced-motion:reduce){.zh-sculpture .sculpture-bottle{animation:none!important}}
+
+/* Portrait proportions keep faces, workout equipment and the full bookmark artwork visible. */
+.moment-triptych .moment-face{height:auto;aspect-ratio:2/3}
+
+
+/* A non-destructive window into the illustrated front of each original client bookmark. */
+.moment-enso-shift{padding:0;gap:0}
+.moment-bookmark-art{position:relative;flex:1;min-height:0;width:100%;overflow:hidden;background:#e9e0d0}
+.moment-enso-shift .moment-bookmark-image{position:absolute;width:300%;max-width:none;height:auto;min-height:100%;object-fit:initial;left:-39%;top:50%;transform:translateY(-50%)}
+.bookmark-connected .moment-bookmark-image,.bookmark-energised .moment-bookmark-image{left:-60%}
+.bookmark-magnetized .moment-bookmark-image{left:-44%}
+.moment-enso-shift>span{padding:12px 5px;background:#f6efdf;font-size:10px}
+
+.moment-triptych .moment-view-controls button{font-family:Arial,sans-serif;white-space:nowrap;font-size:11px;padding-inline:1px;min-height:40px}
+.moment-face:has(.moment-enso-shift) .moment-flip-hint{display:none}

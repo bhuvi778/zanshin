@@ -141,7 +141,7 @@
 .pair-themed{--pair-paper:#edf3f4;--pair-ink:#294a58;--pair-accent:#476c83;--pair-wash:#edf3f4d9;position:relative;isolation:isolate;overflow:hidden;background:var(--pair-paper);border-color:color-mix(in srgb,var(--pair-accent) 35%,transparent);transition:background-color .7s,color .7s;color:var(--pair-ink)}
 .pair-themed[data-pair-theme=network]{--pair-paper:#eef1e5;--pair-ink:#314e3d;--pair-accent:#5a714d;--pair-wash:#eef1e5d9}
 .pair-themed[data-pair-theme=charming]{--pair-paper:#faede6;--pair-ink:#633c43;--pair-accent:#a15b60;--pair-wash:#faede6d9}
-.pair-themed[data-pair-theme=stud]{--pair-paper:#e9eff6;--pair-ink:#213f60;--pair-accent:#3a5e88;--pair-wash:#e9eff6d9}
+.pair-themed[data-pair-theme=euphoria]{--pair-paper:#e9eff6;--pair-ink:#213f60;--pair-accent:#3a5e88;--pair-wash:#e9eff6d9}
 .pair-scene-backdrops{position:absolute;inset:0;z-index:-2;pointer-events:none;background:var(--pair-paper)}
 .pair-scene-backdrops>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transform:scale(1.025);transition:opacity .8s ease,transform 1.3s ease}
 .pair-scene-backdrops>img.is-active{opacity:1;transform:scale(1)}
