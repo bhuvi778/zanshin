@@ -30,3 +30,12 @@
 @media(prefers-reduced-motion:reduce){.brand-story-page .enso-lesson-panel>img,.brand-story-page .enso-lesson-copy{animation:none}}
 
 .zh-stage:has(.brand-film-slide.active) .zh-dots{bottom:50px}
+
+/* Individual fragrance motion belongs in the left hero carousel. */
+.zh-stage .campaign-media{pointer-events:auto}
+.zh-stage .campaign-media video{position:absolute;inset:0;object-position:75% center}
+.zh-stage .campaign-video-backdrop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:blur(22px);transform:scale(1.1);opacity:.55}
+.zh-stage .portrait-film-slide video{left:auto;width:66%;object-fit:contain;object-position:right center}
+.zh-stage:has(.character-film-slide.active) .zh-dots{bottom:52px}
+.character-film-slide .film-hint{top:auto;bottom:56px;left:18px;font-size:12px;z-index:3}
+@media(max-width:600px){.zh-stage .character-film-slide video{object-fit:contain;object-position:center 12%;height:65%}.zh-stage .portrait-film-slide video{width:100%;height:100%;object-position:center top}.zh-slide.character-film-slide:after{background:linear-gradient(0deg,#f4f0e7 0%,#f4f0e7f0 28%,#f4f0e74d 53%,transparent 68%)}.character-film-slide .film-hint{top:12px;bottom:auto;left:12px}}

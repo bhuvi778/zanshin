@@ -15,7 +15,9 @@ Review URL: `/film-review/index.html`. Native players and individual downloads a
 
 ## Limits and remaining work
 
-These are genuine generated character-motion tests, not completed 15-second multi-shot campaigns. Product lettering softens in generated motion. Energised does not include a fragrance bottle in the generated take; its product reference is displayed separately on the review page. Energised is low-resolution. The final edit, sound design, separately framed mobile masters and the fourth clip remain outstanding. Storefront hero and Philosophy films have not been replaced with an incomplete set.
+These are genuine generated character-motion tests, not completed 15-second multi-shot campaigns. Product lettering softens in generated motion. Energised does not include a fragrance bottle in the generated take; its product reference is displayed separately on the review page. Energised is low-resolution. The final edit, sound design, separately framed mobile masters and the fourth clip remain outstanding.
+
+Following the requested placement correction, the three available clips now play in the homepage left hero carousel on their matching fragrance slides. Each video advances only after playback ends; inactive videos pause. Magnetized retains its existing image slide until its new clip is available. The right bottle panel and Our Story Ensō film are unchanged. Explicit videos uploaded through the hero CMS take precedence over these default clips.
 
 The services gave unspecified errors; the response does not establish whether quota, transient capacity or generation failure caused them. No quota bypass was attempted. The laptop has Intel Arc integrated graphics and 15.4 GiB system memory; a CUDA-only 13B generation setup was not installed locally.
 
