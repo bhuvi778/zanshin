@@ -19,12 +19,13 @@ const campaigns=[
  {title:<>Presence,<br/><em>on your terms.</em></>,label:'Magnetized / Confidence',tone:'#8b3c4c',id:'magnetized',image:asset('enso-home/enso-magnetized.webp'),art:'enso-magnetized.webp',duration:5000}
 ];
 const characterFilms={
- focused:{video:'/films/focused-character-free-v1.mp4',poster:'/films/focused-character-free-v1-poster.jpg'},
+ focused:{video:'/films/focused-character-free-v2.mp4',poster:'/films/focused-character-free-v2-poster.jpg'},
  energised:{video:'/films/energised-character-free-v1.mp4',poster:'/films/energised-character-free-v1-poster.jpg',portrait:true},
- connected:{video:'/films/connected-character-free-v1.mp4',poster:'/films/connected-character-free-v1-poster.jpg'}
+ connected:{video:'/films/connected-character-free-v1.mp4',poster:'/films/connected-character-free-v1-poster.jpg'},
+ magnetized:{video:'/films/magnetized-character-free-v2.mp4',poster:'/films/magnetized-character-free-v2-poster.jpg'}
 };
 function CampaignMedia({campaign,active,reduced,onEnded}){
- const video=useRef(null),[blocked,setBlocked]=useState(false),[failed,setFailed]=useState(false);
+ const video=useRef(null),[blocked,setBlocked]=useState(false),[failed,setFailed]=useState(false),[playing,setPlaying]=useState(false);
  useEffect(()=>{
   const el=video.current;if(!el)return;let current=true;
   if(!active){el.pause();return}
@@ -35,7 +36,8 @@ function CampaignMedia({campaign,active,reduced,onEnded}){
  },[active,reduced,campaign.video]);
  return <div className="zh-enso-art campaign-media">
   {campaign.character&&<img className="campaign-video-backdrop" src={mediaURL(campaign.image)} alt=""/>}
-  {campaign.mediaType==='video'&&!failed?<video ref={video} src={mediaURL(campaign.video)} poster={campaign.image?mediaURL(campaign.image):undefined} muted playsInline preload="metadata" controls={active} tabIndex={active?0:-1} aria-label={`${campaign.label} film`} onEnded={()=>{if(active)onEnded()}} onError={()=>setFailed(true)}/>:<img src={mediaURL(campaign.image)} alt={campaign.label}/>}
+  {campaign.mediaType==='video'&&!failed?<video ref={video} src={mediaURL(campaign.video)} poster={campaign.image?mediaURL(campaign.image):undefined} muted playsInline preload="metadata" aria-label={`${campaign.label} film`} onPlay={()=>{setPlaying(true);setBlocked(false)}} onPause={()=>setPlaying(false)} onEnded={()=>{if(active)onEnded()}} onError={()=>setFailed(true)}/>:<img src={mediaURL(campaign.image)} alt={campaign.label}/>}
+  {campaign.mediaType==='video'&&!failed&&<button className="campaign-playback" tabIndex={active?0:-1} aria-label={`${playing?'Pause':'Play'} ${campaign.label} film`} onClick={()=>{const el=video.current;if(!el)return;if(el.paused)el.play().catch(()=>setBlocked(true));else el.pause()}}><span aria-hidden="true">{playing?'Ⅱ':'▶'}</span><span>{playing?'Pause film':'Play film'}</span></button>}
   {active&&blocked&&!failed&&<span className="film-hint">Press play to watch this fragrance film</span>}
   {failed&&active&&<button className="film-retry" onClick={onEnded}>Film unavailable. Next fragrance →</button>}
  </div>

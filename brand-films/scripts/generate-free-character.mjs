@@ -4,11 +4,15 @@ import {spawnSync} from 'node:child_process';
 import {resolve,basename} from 'node:path';
 import {fileURLToPath} from 'node:url';
 const root=resolve(fileURLToPath(new URL('../..',import.meta.url)));
-const output=resolve(root,'../../design-review/fragrance-free-oct22');
+const take=process.argv.find(arg=>arg.startsWith('--take='))?.slice(7);
+if(take&&!/^[a-z0-9-]+$/.test(take))throw Error('Invalid take name');
+const output=resolve(root,'../../design-review/fragrance-free-oct22'+(take?'-'+take:''));
 const slug=process.argv[2]||'focused';
 const light=process.argv.includes('--light-test');
 const preview=process.argv.includes('--free-preview');
 const wan=process.argv.includes('--wan');
+const heroQuality=process.argv.includes('--hero-quality');
+const source=process.argv.find(arg=>arg.startsWith('--source='))?.slice(9);
 const base=wan?'https://zerogpu-aoti-wan2-2-fp8da-aoti-faster.hf.space':'https://lightricks-ltx-video-distilled.hf.space';
 const jobs={
  focused:{image:'brand-films/artwork/original-focused.png',width:896,height:512,prompt:'A cinematic live action fragrance scene. The adult man in the blue linen shirt calmly lowers his perfume bottle onto the desk and opens his eyes. His expression shifts from contemplation to attentive focus. He gently leans toward the architectural sketch and draws a deliberate pencil line, then pauses with a small satisfied exhale. Natural blinking, breathing and coordinated hand movement. Preserve the same face, room, outfit, Zanshin bottle label and bottle geometry. The bottle rests upright and remains still. The camera makes a very slow lateral move; the person must genuinely move, not remain a still photograph. Bright natural light, realistic skin texture.'},
@@ -18,8 +22,10 @@ const jobs={
 };
 const job=jobs[slug];if(!job)throw Error('Unknown fragrance');
 if(light||preview){if(slug==='energised')job.image=resolve(output,'energised-input.png');job.width=slug==='energised'?512:768;job.height=slug==='energised'?768:448;}
+if(heroQuality){job.width=1088;job.height=608;}
+if(source)job.image=source;
 await mkdir(output,{recursive:true});
-if(slug==='energised'&&(light||preview)){
+if(slug==='energised'&&(light||preview)&&!source){
  const converted=spawnSync(resolve(root,'brand-films/node_modules/@remotion/compositor-win32-x64-msvc/ffmpeg.exe'),['-y','-v','error','-i',resolve(root,'client/public/assets/enso-home/sku-energised-v2.webp'),job.image],{stdio:'inherit'});
  if(converted.status!==0)throw Error('Could not prepare PNG input');
 }
@@ -33,7 +39,7 @@ try{
  if(!upload.ok)throw Error('Upload failed '+upload.status+': '+(await upload.text()).slice(0,1200));
  const paths=await upload.json();if(!paths[0])throw Error('No uploaded file path');
  const image={path:paths[0],orig_name:basename(job.image),meta:{_type:'gradio.FileData'}};
- const data=[job.prompt,'still image, frozen person, slideshow, zoom only, distorted faces, warped fingers, extra limbs, bottle morphing, captions, watermark',image,null,job.height,job.width,'image-to-video',light?4:preview?6:8,9,42,false,1,!(light||preview)];
+ const data=[job.prompt,'still image, frozen person, slideshow, zoom only, distorted faces, warped fingers, extra limbs, bottle morphing, captions, watermark',image,null,job.height,job.width,'image-to-video',light?4:preview?6:8,heroQuality?12:9,42,false,1,!(light||preview)];
  const endpoint=wan?'generate_video':'image_to_video';
  const requestData=wan?[image,job.prompt,6,'static still image, slideshow, zoom only, deformed fingers, distorted face, warped bottle, captions',5,1,1,42,false]:data;
  const response=await fetch(base+'/gradio_api/call/'+endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({data:requestData}),signal:AbortSignal.timeout(60000)});

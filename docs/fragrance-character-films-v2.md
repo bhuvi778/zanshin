@@ -1,6 +1,6 @@
 # Zanshin — four character films v2
 
-Status updated 22 October 2026: three short character-motion previews were generated using the free Lightricks demo. Magnetized and the full 15-second campaign edits remain outstanding. See free-character-previews-oct22.md for exact files, durations, quality limits and failed attempts. HeyGen was not used.
+Status updated 22 October 2026: all four fragrance slides now have character-motion clips. Focused uses a new 1088 × 608 take, Magnetized has a new 768 × 448 take, and Energised/Connected retain their earlier clips after replacement generation errors. Full 15-second campaign edits remain outstanding. See free-character-previews-oct22.md for exact files, durations, quality limits and failed attempts. HeyGen was not used.
 
 Deliver four separate 15-second films with natural facial expressions, acted movement and a visible product. Inspect beginning, middle and ending for hand, face and label defects, then create separately framed mobile versions. Website titles remain real HTML. Only integrate actual generated footage after QA.
 
