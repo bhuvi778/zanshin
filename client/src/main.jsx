@@ -15,3 +15,5 @@ import './home-october-update.css';
 import './japanese-pages.css';
 
 import './reference-oct18.css';
+
+import './philosophy-film.css';
