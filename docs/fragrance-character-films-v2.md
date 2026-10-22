@@ -1,6 +1,6 @@
 # Zanshin — four character films v2
 
-Status: scripts and references ready; new videos NOT generated. HeyGen is installed, but asset import returned USER_NOT_LOGGED_IN on 22 October 2026. Connect HeyGen in Codex Apps/Plugins before generation. No generation request was submitted.
+Status updated 22 October 2026: three short character-motion previews were generated using the free Lightricks demo. Magnetized and the full 15-second campaign edits remain outstanding. See free-character-previews-oct22.md for exact files, durations, quality limits and failed attempts. HeyGen was not used.
 
 Deliver four separate 15-second films with natural facial expressions, acted movement and a visible product. Inspect beginning, middle and ending for hand, face and label defects, then create separately framed mobile versions. Website titles remain real HTML. Only integrate actual generated footage after QA.
 
