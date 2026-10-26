@@ -73,3 +73,16 @@
 .moment-your-moment>img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top}
 .moment-enso-art-frame{position:relative;flex:1 1 0;min-height:0;width:100%;overflow:hidden}
 .moment-enso-art-frame .moment-bookmark-art{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;object-position:center;background:#e5ece4}
+
+/* Keep the ink circle clear, with short readings at either edge. */
+.zanshin-home .zh-sculpture.zh-composed{border-radius:48px 48px 12px 12px}
+.duality-content{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56%;align-items:center;min-height:500px;padding:28px 5% 48px}
+.duality-content article{width:auto;max-width:none;min-width:0}
+.duality-japanese{display:block;font:400 25px/1.4 'Yu Mincho','Noto Serif JP',serif;letter-spacing:.2em;margin-bottom:14px}
+.zanshin-home .duality-content h2{font-size:clamp(30px,3vw,46px)}
+.zanshin-home .duality-content h3{font-size:12px;letter-spacing:.13em;margin-bottom:20px}
+.zanshin-home .duality-content p{font-size:16px;line-height:1.7;margin-bottom:20px}
+.duality-content em{font-size:18px;line-height:1.5}
+.duality-link{font-size:10px;line-height:1.5;letter-spacing:.07em;gap:12px;padding:13px 14px;margin-top:6px}
+@media(min-width:701px) and (max-width:1000px){.duality-content{column-gap:50%;padding-inline:4%}.duality-content article{width:auto}.zanshin-home .duality-content h2{font-size:30px}.zanshin-home .duality-content p{font-size:15px}.duality-link{font-size:9px;padding:12px 10px;gap:8px}}
+@media(max-width:700px){.enso-duality{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 280px auto}.duality-eyebrow{grid-row:1}.duality-content{display:contents;min-height:0}.duality-content article{width:auto;padding:24px 8%}.duality-content .duality-enso{grid-row:2}.duality-content .duality-zanshin{grid-row:4;margin:0;border:0;padding:24px 8% 38px}.duality-art{object-fit:contain;object-position:center 52%}.enso-duality:after{background:linear-gradient(#f6f1e9ed,transparent 34%,transparent 68%,#f6f1e9ed)}.zanshin-home .duality-content h2{font-size:36px}.duality-japanese{font-size:23px;margin-bottom:10px}.duality-link{font-size:10px}}
