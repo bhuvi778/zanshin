@@ -1,3 +1,21 @@
 import {asset} from '../data';
 import './LabelPack.css';
-export default function LabelPack({product:p,bottleOnly=false,priority=false}){if(!p)return null;if(p.image)return <div className="label-pack"><img style={{width:'100%',height:'100%',objectFit:'contain',position:'absolute',inset:0}} src={asset(p.image)} alt={`${p.name} fragrance presentation`} loading={priority?'eager':'lazy'}/></div>;return <div className={`label-pack ${bottleOnly?'bottle-only':''}`} style={{'--pack-color':p.color}}>{!bottleOnly&&<div className="label-pack-carton"><img src={asset(p.label)} alt={`${p.name} presentation carton concept`} loading={priority?'eager':'lazy'}/></div>}<div className="label-pack-bottle"><img className="label-pack-glass" src={asset('concept-bottle.webp')} alt="" loading={priority?'eager':'lazy'}/><img className="label-pack-label" src={asset(p.label)} alt={`${p.name} — ${p.descriptor}`} loading={priority?'eager':'lazy'}/></div></div>}
+// Keep the supplied brand artwork, with approved presentation copy as sharp UI text.
+function PresentationLabel({product:p,className='',priority}){
+ const approved=p.label===`${p.slug}-label.png`;
+ if(!approved)return <img className={className} src={asset(p.label)} alt={`${p.name} — ${p.descriptor}`} loading={priority?'eager':'lazy'}/>;
+ return <div className={`approved-label ${className}`} role="img" aria-label={`${p.name}. ${p.descriptor} Extrait de Parfum. 51 ml / 1.7 fl oz.`}>
+  <img src={asset(p.label)} alt="" loading={priority?'eager':'lazy'}/>
+  <span className="approved-label-cover" aria-hidden="true"/>
+  <span className="approved-label-format" aria-hidden="true">EXTRAIT DE PARFUM</span>
+  <span className="approved-label-size" aria-hidden="true">51ml ℮ 1.7 FL.OZ.</span>
+ </div>
+}
+export default function LabelPack({product:p,bottleOnly=false,priority=false}){
+ if(!p)return null;
+ if(p.image)return <div className="label-pack"><img style={{width:'100%',height:'100%',objectFit:'contain',position:'absolute',inset:0}} src={asset(p.image)} alt={`${p.name} fragrance presentation`} loading={priority?'eager':'lazy'}/></div>;
+ return <div className={`label-pack ${bottleOnly?'bottle-only':''}`} style={{'--pack-color':p.color}}>
+  {!bottleOnly&&<div className="label-pack-carton"><PresentationLabel product={p} priority={priority}/></div>}
+  <div className="label-pack-bottle"><img className="label-pack-glass" src={asset('concept-bottle.webp')} alt="" loading={priority?'eager':'lazy'}/><PresentationLabel product={p} className="label-pack-label" priority={priority}/></div>
+ </div>
+}

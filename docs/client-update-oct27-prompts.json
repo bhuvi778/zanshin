@@ -1,0 +1,27 @@
+[
+  {
+    "asset": "client/public/assets/enso-home/discovery-focused-v3.webp",
+    "mode": "built-in imagegen",
+    "prompt": "Create a premium editorial photograph for Zanshin Focused fragrance, vertical 4:5. Japanese Ryoan-ji-inspired rock garden at early morning, a low pale cedar writing desk with an open architectural sketchbook and one carefully placed black pencil beside a shoji window. Raked white gravel and a solitary moss stone beyond, soft blue-grey morning light, a single branch casting a crisp shadow. No person, no face, no bottle, no text, no logo. A different scene from a man at a desk: the objects and deliberate composition express clarity, discipline and deep work. Leave the bottom central 25 percent a quiet pale stone foreground for a real product overlay. Photoreal material detail, restrained Japanese luxury, natural ivory, cool teal, warm cedar; no collage, no graphic border."
+  },
+  {
+    "asset": "client/public/assets/enso-home/discovery-energised-v3.webp",
+    "mode": "built-in imagegen",
+    "prompt": "Create a premium editorial photograph for Zanshin Energised fragrance, vertical 4:5. A winding Japanese mountain trail climbs above a pine forest toward Mount Fuji at bright sunrise, fresh blue sky, warm sunlight striking the path, grasses moving gently. A rolled indigo exercise mat and running shoes sit neatly on a pale stone ledge near the foreground, an invitation to begin moving. No people, no faces, no bottle, no text, no logo. Convey physical energy, momentum and vitality, not a calm bedroom or a repeat of the gym athlete. Leave the bottom central 25 percent a simple pale stone surface for a real product overlay. Photoreal editorial travel and sports photography, crisp and bright, Japanese landscape, indigo and amber accents; no collage or graphic frame."
+  },
+  {
+    "asset": "client/public/assets/enso-home/discovery-connected-v3.webp",
+    "mode": "built-in imagegen",
+    "prompt": "Create a premium editorial photograph for Zanshin Connected fragrance, vertical 4:5. Two handmade ceramic tea cups gently steaming on a low Japanese cedar table, two linen floor cushions side by side on a veranda, a green Arashiyama-inspired bamboo garden and a small water stream beyond. Warm late afternoon light, a quiet inviting composition suggests a conversation about to begin. No people, no faces, no bottle, no text, no logo. The feeling is harmony, relationships and belonging, a scene different from the existing portrait of a laughing couple. Leave bottom central 25 percent pale stone or a quiet empty portion of table for a real product overlay. Photoreal tactile ceramic and wood, subtle sage green, ivory, natural amber; refined Japanese editorial photography, no collage, no borders."
+  },
+  {
+    "asset": "client/public/assets/enso-home/discovery-magnetized-v3.webp",
+    "mode": "built-in imagegen",
+    "prompt": "Create a premium editorial photograph for Zanshin Magnetized fragrance, vertical 4:5. A dramatic path through vermilion Fushimi Inari-inspired torii gates at early evening, one warm paper lantern glowing nearby, restrained red maple leaves at the edge, the repeated gates lead the eye toward a warm open horizon. No people, no faces, no bottle, no text, no logo. Express magnetic presence, attraction and quiet self confidence without nightclub lighting, without a couple portrait. Leave bottom central 25 percent a broad simple pale stone plinth for a real product overlay. Photoreal architectural photography, warm ivory light, deep burgundy accents, realistic timber texture, refined Japanese luxury; no collage, no graphic border."
+  },
+  {
+    "asset": "client/public/assets/enso-home/enso-story-direction-v3.webp",
+    "mode": "built-in imagegen",
+    "prompt": "Edit the first landscape artwork while using the second tiny image ONLY as the reference for the ink circle's stroke direction and opening. Produce a high resolution horizontal 3:2 Japanese sumi-e landscape on warm ivory washi. The dominant dark teal-black Enso brush circle is centered, with its thick rounded finishing stroke at lower left around seven o'clock and a visible open gap at the bottom/right around five to six o'clock, matching the second reference. Do not make it a closed ring or an open-right letter C. Inside and around it, layered misty blue-grey mountains, a still lake, subtle rising sunlight and a restrained Japanese pine branch on the right. Keep the LEFT and RIGHT outer quarters very pale with generous empty areas for actual website text. Preserve the calm mountain/lake spirit of the first image. Sharp expressive brush fibres, tactile paper grain, clear readable stroke direction. Absolutely no text, no logos, no people, no labels, no border."
+  }
+]
