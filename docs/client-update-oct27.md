@@ -30,3 +30,5 @@ The story hero uses a sharper generated Magnetized bottle presentation at `clien
 ## Verification
 
 Production build and existing route/auth/data regression checks pass. Browser checks cover all four distinct discovery sources, four USP cards, the working disclaimer, 51 ml product copy, story anchor links, loaded packaging/closing creatives, one shared navbar/footer and 390px mobile layout without horizontal overflow. Screenshots are saved in the task workspace at outputs/design-review/client-update-oct27/.
+
+Shared layout navigation now handles fragment targets after React has mounted the page, instead of sending fragment navigation back to the top. Scroll-reveal animation remains local to the story content.

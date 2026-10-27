@@ -19,7 +19,7 @@ export default function BrandStory(){
       <div className="eyebrow">A philosophy of feeling</div>
       <h1>Some moments<br/>pass.<br/><em>Their feeling stays.</em></h1>
       <p className="lead">A scent can bring us back to how a moment felt — the calm before a new beginning, the warmth of a familiar embrace, or the joy of being fully there.</p>
-      <a className="tagline" href="#story-origin">Begin with the Moment</a>
+      <Link className="tagline" to="#story-origin">Begin with the Moment</Link>
       <div className="hero-foot"><span>Presence</span><span className="dot"></span><span>Intention</span><span className="dot"></span><span>Feeling</span></div>
     </div>
     <div className="hero-stage" aria-label="Zanshin fragrance and packaging">
@@ -99,7 +99,7 @@ export default function BrandStory(){
         <p>Fragrance doesn't create a moment for you. It becomes part of it — adding confidence before you begin, warmth when you draw close, or a memory you can return to.</p>
         <p>Like the final note in a melody, a scent doesn't need to take over. It can simply bring the experience together.</p>
       </div>
-      <a className="tagline" href="#story-closing">Begin with the Moment</a>
+      <Link className="tagline" to="#story-closing">Begin with the Moment</Link>
     </div>
     <div className="packaging-spread" aria-label="Zanshin fragrance packaging inspired by places and feelings in Japan">
       <img className="package-card" src={asset('story-v2/magnetized-carton.png')} alt="Certified Rizz — Magnetized, inspired by Fushimi Inari, Kyoto" loading="lazy"/>
