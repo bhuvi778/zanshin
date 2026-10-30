@@ -64,7 +64,7 @@
 .zh-composed .sculpture-invitation{position:relative;width:100%;text-align:center}
 .zh-composed .sculpture-invitation p{font-size:13px;margin:0 0 14px;color:#364338}
 .zh-composed .sculpture-invitation .zh-pill{width:100%;background:#283c35e8;color:#fffdf0;border-color:transparent}
-@media(min-width:601px) and (max-width:1000px){.zh-composed .sculpture-composed-art{object-position:25% center}}
+.zh-composed .sculpture-composed-art{object-position:50% center}
 @media(max-width:600px){.zanshin-home .zh-sculpture.zh-composed{min-height:580px;padding:30px 24px 24px}.zanshin-home .zh-composed .sculpture-heading h2{font-size:34px}.sculpture-composed-art{object-position:50% center}}
 
 /* All faces stay mounted so the final image is loaded before the 800ms hover turn. */

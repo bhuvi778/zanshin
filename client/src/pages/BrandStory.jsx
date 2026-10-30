@@ -1,121 +1,95 @@
-import {useEffect,useRef} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import {Link} from 'react-router-dom';
-import {asset} from '../data';
+import {asset,fallbackProducts} from '../data';
+import {fragranceDirection} from '../brandDirection';
 import './BrandStoryEditorial.css';
 
-// Client-supplied story content; the storefront owns the shared navigation and footer.
+const philosophy=[
+ {name:'Ensō',jp:'円相',caption:'The moment, complete.',title:'Nothing to perfect. Everything to feel.',copy:'A single brushstroke. An open circle. In Zen, Ensō embraces the beauty of a moment as it is: imperfect, present and complete.',second:'Its stroke holds movement; the space within it holds stillness. Together, they remind us that being fully there can be enough.',note:'Our foundation: presence, before perfection.',art:'enso-home/enso-story-direction-v3.webp',alt:'An open dark teal Ensō brushstroke above a Japanese mountain lake'},
+ {name:'Zanshin',jp:'残心',caption:'What remains.',title:'The moment passes. Its feeling stays.',copy:'In Japanese martial traditions, Zanshin describes the awareness that continues after an action is complete. Zan: what remains. Shin: the heart, the mind.',second:'We see a connection in fragrance. The conversation ends, the evening becomes a memory, yet something of how it felt stays with you.',note:'Our expression: capture the moment. Carry it with you.',art:'enso-home/landscape-connected.webp',alt:'A misty Japanese landscape with pine trees and a quiet river'}
+];
+
 export default function BrandStory(){
- const page=useRef(null);
+ const page=useRef(null),tabs=useRef([]);
+ const [chapter,setChapter]=useState(0);
+ const current=philosophy[chapter];
  useEffect(()=>{
-  const items=page.current.querySelectorAll('.fade');
-  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(el=>el.classList.add('visible'));return}
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});
+  const items=page.current.querySelectorAll('[data-story-reveal]');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){items.forEach(el=>el.classList.add('is-visible'));return}
+  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target)}}),{threshold:.08});
   items.forEach(el=>observer.observe(el));return()=>observer.disconnect();
  },[]);
- return <div className="story-editorial" ref={page}>
-  <section className="hero" id="story-top" aria-label="Zanshin introduction">
-    <div className="hero-copy">
-      <div className="jp-line">残心 &nbsp; / &nbsp; ZANSHIN</div>
-      <div className="eyebrow">A philosophy of feeling</div>
-      <h1>Some moments<br/>pass.<br/><em>Their feeling stays.</em></h1>
-      <p className="lead">A scent can bring us back to how a moment felt — the calm before a new beginning, the warmth of a familiar embrace, or the joy of being fully there.</p>
-      <Link className="tagline" to="#story-origin">Begin with the Moment</Link>
-      <div className="hero-foot"><span>Presence</span><span className="dot"></span><span>Intention</span><span className="dot"></span><span>Feeling</span></div>
-    </div>
-    <div className="hero-stage" aria-label="Zanshin fragrance and packaging">
-      <img className="hero-enso" src={asset('enso-home/enso-story-direction-v3.webp')} alt="" aria-hidden="true"/>
-      <img className="hero-bottle" src={asset('story-v2/magnetized-bottle-v2.webp')} alt="Zanshin Magnetized Extrait de Parfum, 51 ml, with a warm wooden spherical cap"/>
-      <img className="hero-package" src={asset('story-v2/magnetized-carton.png')} alt="Zanshin Certified Rizz fragrance packaging inspired by Fushimi Inari, Kyoto"/>
-      <div className="hero-stamp"><span className="kanji">残心</span><span>THE FEELING REMAINS</span></div>
-    </div>
-    <div className="scroll-cue">Scroll to discover</div>
+ function moveTab(event){
+  if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
+  event.preventDefault();
+  const next=event.key==='Home'?0:event.key==='End'?1:1-chapter;
+  setChapter(next);tabs.current[next]?.focus();
+ }
+ return <div className="zs-story" ref={page}>
+  <section className="zs-opening" id="story-top" aria-labelledby="zs-story-title">
+   <img className="zs-opening-art" src={asset('enso-home/story-promise-sunrise.webp')} alt="Mount Fuji at sunrise, seen through a Japanese veranda with cherry blossoms" fetchPriority="high"/>
+   <div className="zs-opening-copy">
+    <span className="zs-kicker">Our story / Begin with the moment</span>
+    <h1 id="zs-story-title">The moment<br/>is yours.<br/><em>The feeling stays.</em></h1>
+    <p>Before a fragrance, there is a feeling.<br/>A little clarity. A spark of possibility.<br/>A moment that feels like you.</p>
+    <Link className="zs-link" to="#story-origin">Where it all began <span aria-hidden="true">↘</span></Link>
+   </div>
+   <span className="zs-opening-seal" lang="ja" aria-label="Zanshin">残心</span>
+   <div className="zs-opening-foot"><span>A Japanese inspiration. A personal expression.</span><span>01 — 04 / A story of presence</span></div>
   </section>
 
-  <section className="full-bleed" aria-label="A Kyoto street at a quiet moment">
-    <img src={asset('story-v2/kyoto-street.jpg')} alt="Historic wooden street in Kyoto, Japan" loading="lazy"/>
-    <div className="bleed-copy fade">
-      <div className="eyebrow">Where our thinking took shape</div>
-      <h2>The little things<br/>are never little.</h2>
-      <p>Sometimes, it is a quiet ritual, a thoughtful detail, or a moment of stillness that makes an experience stay with us.</p>
+  <nav className="zs-chapters" aria-label="Explore our story">
+   {[['origin','01','The beginning'],['enlightenment','02','A different question'],['enso','03','Ensō to Zanshin'],['fragrance','04','Your expression']].map(([id,n,label])=><Link key={id} to={'#story-'+id}><span>{n}</span>{label}<b aria-hidden="true">↓</b></Link>)}
+  </nav>
+
+  <section className="zs-origin zs-wrap" id="story-origin" aria-labelledby="zs-origin-title">
+   <header className="zs-origin-heading" data-story-reveal>
+    <span className="zs-kicker">01 / The beginning</span>
+    <h2 id="zs-origin-title">We went looking.<br/><em>We learned to notice.</em></h2>
+   </header>
+   <div className="zs-origin-layout">
+    <figure className="zs-origin-main" data-story-reveal><img src={asset('story-v2/kyoto-street.jpg')} alt="A quiet historic street lined with traditional wooden buildings in Kyoto" loading="lazy"/><figcaption>Japan / Beauty in the everyday</figcaption></figure>
+    <div className="zs-origin-notes" data-story-reveal>
+     <p className="zs-intro">Our answer took us to the Land of the Rising Sun.</p>
+     <p>Our team's experiences in Japanese companies and travels across Japan drew us to a way of living rooted in presence, simplicity and the beauty of imperfection.</p>
+     <p>A quiet ritual. A considered detail. Space to pause. We began to notice how these small things could change the feeling of an ordinary day.</p>
+     <figure><img src={asset('story-v2/shoji-room.jpg')} alt="Soft daylight falling through shoji screens in a Japanese room" loading="lazy"/><figcaption>The little things are never little.</figcaption></figure>
     </div>
+   </div>
   </section>
 
-  <section className="section origin fade" id="story-origin">
-    <div className="origin-image-wrap">
-      <img src={asset('story-v2/shoji-room.jpg')} alt="Sunlight passing through a traditional Japanese room with shoji screens" loading="lazy"/>
-      <div className="image-index">A moment of stillness &nbsp; / &nbsp; Japan</div>
-    </div>
-    <div className="origin-copy">
-      <div className="section-kicker"><span className="number">01 /</span> Our beginnings</div>
-      <h2>A different<br/>way of seeing.</h2>
-      <div className="copy">
-        <p>Our team's experiences in Japanese companies and travels across Japan taught us to notice the beauty in simplicity, thoughtful rituals, and being fully present.</p>
-        <p>We began to see how a small detail could change the way an ordinary moment feels. We wanted to bring that thought into fragrance.</p>
-      </div>
-      <div className="signature">That feeling stayed with us.</div>
-    </div>
+  <section className="zs-question" id="story-enlightenment" aria-labelledby="zs-question-title">
+   <div className="zs-wrap" data-story-reveal>
+    <div className="zs-question-top"><span className="zs-kicker">02 / A different question</span><span className="zs-question-jp" aria-hidden="true">心</span></div>
+    <h2 id="zs-question-title">So we changed where<br/><em>fragrance begins.</em></h2>
+    <div className="zs-question-compare"><p><span>The familiar question</span>“What does it smell like?”</p><p><span>Our starting point</span>“How do you want to feel?”</p></div>
+    <p className="zs-question-note">Before an important meeting, you might want clarity. After a long week, you might want to reconnect. We start there — with the person, the intention and the moment. A more human, intuitive and personal way to choose fragrance.</p>
+   </div>
   </section>
 
-  <section className="enso-section fade" id="story-enso" aria-label="Enso philosophy">
-    <div className="enso-art" aria-hidden="true">
-
-      <img className="story-enso-landscape" src={asset('enso-home/enso-story-direction-v3.webp')} alt=""/>
-      <div className="seal">円相</div>
+  <section className="zs-philosophy zs-wrap" id="story-enso" aria-labelledby="zs-philosophy-title">
+   <header className="zs-section-heading" data-story-reveal><div><span className="zs-kicker">03 / The philosophy behind the feeling</span><h2 id="zs-philosophy-title">From a single stroke<br/><em>to something that stays.</em></h2></div><p>Two ideas from Japan.<br/>One way of seeing the moment.</p></header>
+   <div className="zs-philosophy-frame" data-story-reveal>
+    <div className={`zs-philosophy-art ${chapter===0?'is-enso':''}`}><img key={current.art} src={asset(current.art)} alt={current.alt} loading="lazy"/><span className="zs-art-caption">{current.jp} / {current.name.toUpperCase()}</span></div>
+    <div className="zs-philosophy-reading">
+     <div className="zs-tabs" role="tablist" aria-label="Read the philosophy" onKeyDown={moveTab}>{philosophy.map((item,i)=><button key={item.name} ref={el=>tabs.current[i]=el} id={'zs-tab-'+i} type="button" role="tab" aria-selected={chapter===i} aria-controls={'zs-panel-'+i} tabIndex={chapter===i?0:-1} onClick={()=>setChapter(i)}><span lang="ja">{item.jp}</span>{item.name}<span aria-hidden="true">↗</span></button>)}</div>
+     {philosophy.map((item,i)=><div className="zs-reading-panel" key={item.name} id={'zs-panel-'+i} role="tabpanel" aria-labelledby={'zs-tab-'+i} hidden={chapter!==i} tabIndex={0}>
+      <span className="zs-kicker">{item.caption}</span><h3>{item.title}</h3><p>{item.copy}</p><p>{item.second}</p><div className="zs-reading-note">{item.note}</div>
+     </div>)}
     </div>
-    <div className="enso-copy">
-      <div className="section-kicker"><span className="number">02 /</span> The philosophy</div>
-      <div className="enso-title-line"><span className="jp">円相</span><span className="en">Enso</span></div>
-      <h2>A circle.<br/>A reminder.</h2>
-      <div className="copy">
-        <p>In Zen, an <em>Enso</em> is a circle drawn in one brushstroke. Its open, imperfect form can speak to wholeness and the beauty of the present moment.</p>
-        <p>It reminds us that a moment doesn't need to be perfect to feel complete. Sometimes, being fully there is enough.</p>
-      </div>
-      <div className="enso-aside">円相 / ENSO &nbsp; — &nbsp; A symbol that inspires our way of seeing, not a rule for how to live.</div>
-    </div>
+   </div>
   </section>
 
-  <section className="zanshin-section fade" aria-label="The meaning of Zanshin">
-    <div className="zanshin-copy">
-      <div className="section-kicker">03 / The meaning behind our name</div>
-      <div className="zanshin-jp">残心</div>
-      <h2>The feeling<br/>that remains.</h2>
-      <div className="copy">
-        <p>In Japanese martial traditions, <em>Zanshin</em> describes the awareness that continues after an action is complete.</p>
-        <p>We find a beautiful connection in fragrance: a moment may pass, yet its feeling can linger. That is the thought we carry in our name.</p>
-      </div>
-      <div className="zanshin-caption">ZANSHIN &nbsp; / &nbsp; LINGERING AWARENESS</div>
-    </div>
-    <div className="zanshin-visual">
-      <img className="room" src={asset('story-v2/zen-garden.jpg')} alt="A quiet Zen garden in Kyoto, Japan" loading="lazy"/>
-      <img className="logo-light" src={asset('story-v2/logo-light.png')} alt="Zanshin logo in ivory and antique gold"/>
-    </div>
+  <section className="zs-expressions" id="story-fragrance" aria-labelledby="zs-expressions-title">
+   <div className="zs-wrap">
+    <header className="zs-section-heading" data-story-reveal><div><span className="zs-kicker">04 / Made personal</span><h2 id="zs-expressions-title">One philosophy.<br/><em>Four ways to feel it.</em></h2></div><p>Fragrance becomes part of the moment.<br/>Choose the intention you want to carry.</p></header>
+    <div className="zs-expression-grid">{fallbackProducts.map(p=><Link data-story-reveal className="zs-expression" key={p.slug} to={'/collection/'+p.slug} style={{'--expression-color':p.color}}><div className="zs-expression-image"><img src={asset('enso-home/landscape-'+p.slug+'.webp')} alt={fragranceDirection[p.slug].setting} loading="lazy"/><span>{fragranceDirection[p.slug].shift}</span></div><div className="zs-expression-label"><h3>{p.name}</h3><span aria-hidden="true">↗</span></div><p>{p.mood}</p></Link>)}</div>
+   </div>
   </section>
 
-  <section className="fragrance-section fade" id="story-fragrance" aria-label="Why Zanshin creates fragrance">
-    <div className="fragrance-copy">
-      <div className="section-kicker"><span className="number">04 /</span> Why fragrance</div>
-      <h2>A small detail.<br/>A fuller moment.</h2>
-      <div className="copy">
-        <p>Fragrance doesn't create a moment for you. It becomes part of it — adding confidence before you begin, warmth when you draw close, or a memory you can return to.</p>
-        <p>Like the final note in a melody, a scent doesn't need to take over. It can simply bring the experience together.</p>
-      </div>
-      <Link className="tagline" to="#story-closing">Begin with the Moment</Link>
-    </div>
-    <div className="packaging-spread" aria-label="Zanshin fragrance packaging inspired by places and feelings in Japan">
-      <img className="package-card" src={asset('story-v2/magnetized-carton.png')} alt="Certified Rizz — Magnetized, inspired by Fushimi Inari, Kyoto" loading="lazy"/>
-      <img className="package-card" src={asset('story-v2/focused-carton.png')} alt="Keep Your Head in the Game — Focused, inspired by Ryoan-ji, Kyoto" loading="lazy"/>
-      <div className="package-note">A place. A feeling. A fragrance.</div>
-    </div>
+  <section className="zs-closing zs-wrap" id="story-closing" aria-labelledby="zs-closing-title">
+   <div className="zs-closing-copy" data-story-reveal><span className="zs-kicker">Our promise to the moment</span><h2 id="zs-closing-title">Be here.<br/>Be yourself.<br/><em>Begin with the moment.</em></h2><p>A fragrance doesn't need to take over.<br/>Just become a little part of what makes it yours.</p><Link className="zs-button" to="/collection">Explore Zanshin <span aria-hidden="true">→</span></Link></div>
+   <div className="zs-closing-visual" data-story-reveal><img className="zs-closing-garden" src={asset('enso-home/landscape-magnetized.webp')} alt="Warm sunset over a Japanese mountain lake" loading="lazy"/><img className="zs-closing-bottle" src={asset('story-v2/magnetized-bottle-v2.webp')} alt="Zanshin Magnetized, Extrait de Parfum, 51 ml" loading="lazy"/><span>残心 / A feeling to carry with you.</span></div>
   </section>
-
-  <section className="closing fade" id="story-closing">
-    <div className="closing-content">
-      <div className="jp-line">残心 &nbsp; / &nbsp; ZANSHIN</div>
-      <h2>Be there for it.<br/><em>Feel all of it.</em></h2>
-      <div className="copy">For the moments you live, and the feelings that stay.</div>
-      <img className="logo-img" src={asset('story-v2/logo-dark.png')} alt="Zanshin — Begin with the Moment logo" loading="lazy"/>
-      <Link className="tagline" to="/collection">Explore Zanshin <span aria-hidden="true">→</span></Link>
-    </div>
-  </section>
-</div>;
+ </div>;
 }
