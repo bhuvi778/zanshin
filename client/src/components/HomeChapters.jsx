@@ -1,3 +1,4 @@
+import {campaignMoments} from '../campaignMedia';
 import {useContent} from '../context/PlatformContext';
 import {mediaURL} from '../platform';
 import LiveTestimonials from './LiveTestimonials';
@@ -13,6 +14,8 @@ const moods=[['focused','A quieter kind of clarity.','Clarity for the task in fr
 export {default as MomentInvitation} from './MomentTriptych';
 export {default as QualityPromise} from './QualityPromise';
 export {default as BuildYourBag} from './GiftPairBuilder';
-// Replace demo entries with approved, permission-cleared creator and customer media.
-// Campaign films are deliberately identified as samples, never customer endorsements.
-export function Testimonials({onFilm}){const {content,reviews}=useContent();if(content)return <LiveTestimonials creators={content.creators} reviews={reviews} onFilm={onFilm}/>;return <section className="hv-stories" aria-labelledby="hc-voices-title"><header className="za-heading"><div><span className="za-eyebrow">The people behind the moments</span><h2 id="hc-voices-title">Fragrance, in real life.</h2></div><p>Small rituals. Personal perspectives.</p></header><div className="hv-creator-heading"><h3>Creator stories</h3><span>Sample campaign films</span></div><div className="hv-films">{[['A quieter kind of morning.','A moment to pause before the day begins.','focused'],['A fresh start, on your terms.','A little energy for wherever the day takes you.','energised']].map(([title,copy,slug],i)=><button key={slug} onClick={()=>onFilm({title,photo:`/films/${slug}-original-poster.png`,film:`/films/${slug}-original-motion.mp4`,to:slug})}><div className="hv-film-image"><img src={`/films/${slug}-original-poster.png`} alt="" loading="lazy"/><span className="hv-play" aria-hidden="true">&#9654;</span></div><div className="hv-film-copy"><span className="za-eyebrow">Film 0{i+1} / {slug}</span><h3>{title}</h3><p>{copy}</p><span className="hv-watch">Watch the film <span aria-hidden="true">&#8599;</span></span></div></button>)}</div><div className="hv-customers"><header><div><span className="za-eyebrow">Customer moments</span><h3>The little things<br/><em>that stay with you.</em></h3></div><p>Illustrative sample testimonials.<br/>Verified customer stories will take their place.</p></header><div className="hv-quotes">{[['Focused','A moment for myself.','Before the day gets busy, I like to take a minute that is just mine.'],['Connected','Back to being present.','My favourite part of the evening is leaving work behind and catching up with my people.'],['Magnetized','Feeling like myself.','Getting ready is a ritual. Choosing my fragrance is the finishing touch.']].map(([name,title,quote],i)=><figure key={name} style={{'--quote-tone':['#456883','#505b37','#6b2d39'][i]}}><span className="hv-quote-mark" aria-hidden="true">&#8220;</span><h4>{title}</h4><blockquote>{quote}</blockquote><figcaption><span>{name}</span><small>Sample testimonial</small></figcaption></figure>)}</div></div></section>}
+// Campaign scenes are distinct from customer-submitted reviews.
+export function Testimonials({onFilm}) {
+ const {content,reviews}=useContent();
+ return <LiveTestimonials creators={content?.creators??campaignMoments.slice(0,2)} reviews={reviews} onFilm={onFilm}/>;
+}

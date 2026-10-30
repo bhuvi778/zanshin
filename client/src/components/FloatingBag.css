@@ -1,0 +1,8 @@
+.floating-bag{position:fixed;right:max(22px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:80;display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 17px;background:#293d33;color:#fff9ed;border:1px solid #b6a07b;border-radius:40px;box-shadow:0 7px 24px #18302538;text-decoration:none;font:500 14px/1.2 Poppins,Arial,sans-serif}
+.floating-bag svg{width:25px;height:25px}
+.floating-bag strong{display:grid;place-items:center;min-width:28px;height:28px;padding:0 6px;background:#f1e7d2;color:#293d33;border-radius:50%;font-size:13px}
+.floating-bag:hover{background:#405749}
+.floating-bag:focus-visible{outline:3px solid #9b7745;outline-offset:4px}
+.bag-announcement{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+body:has(dialog[open]) .floating-bag{visibility:hidden}
+@media(max-width:600px){.floating-bag{right:max(14px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));min-height:50px;padding:10px 13px;gap:9px}.footer{padding-bottom:85px}}
