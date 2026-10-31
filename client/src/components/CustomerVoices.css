@@ -1,0 +1,46 @@
+.zanshin-home .zv-testimonials{margin:80px 0 0;padding:48px 0 0;background:#f8f5ed;border-top:1px solid #c8bda7;color:#304638}
+.zv-testimonials .zv-heading{align-items:end;text-align:left;margin-bottom:36px;gap:25px}
+.zv-testimonials .zv-heading h2{font:400 clamp(38px,4.5vw,65px)/1.08 Georgia,serif;letter-spacing:-.04em}
+.zv-testimonials .zv-heading>p{font:italic 19px/1.5 Georgia,serif;text-align:right;color:#89704c}
+.zv-testimonials .hv-creator-heading{margin:0;padding:16px 0;border-block:1px solid #d7cebc;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.zv-testimonials .hv-creator-heading h3{font:400 18px/1.4 Georgia,serif;margin:0}
+.zv-testimonials .hv-creator-heading>span{font:10px/1.5 Poppins,Arial,sans-serif;letter-spacing:.16em;color:#7b7767}
+.zv-testimonials .zv-creator-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:28px 0 50px}
+.zv-testimonials .zv-story{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);text-align:left;background:#efeadd;border:1px solid #d6cbb7;color:inherit;padding:0;text-decoration:none;overflow:hidden}
+.zv-testimonials .hv-film-image{position:relative;aspect-ratio:auto;min-height:310px;overflow:hidden}
+.zv-testimonials .hv-film-image>img{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s ease}
+.zv-testimonials .zv-story:hover .hv-film-image>img{transform:scale(1.03)}
+.zv-story-index{position:absolute;bottom:16px;left:16px;font:italic 26px Georgia,serif;color:#fffaf0;text-shadow:0 1px 8px #203529}
+.zv-testimonials .hv-film-copy{padding:28px 22px;display:flex;flex-direction:column;justify-content:center;align-items:start;min-width:0}
+.zv-testimonials .hv-film-copy h3{font:400 clamp(25px,2.4vw,36px)/1.08 Georgia,serif;margin:10px 0 16px;color:#344734}
+.zv-testimonials .hv-film-copy p{font:13px/1.8 Poppins,Arial,sans-serif;color:#686b5d;margin:0 0 20px}
+.zv-testimonials .hv-film-copy .za-eyebrow{font-size:9px;letter-spacing:.15em}
+.zv-testimonials .hv-watch{display:flex;gap:15px;align-items:center;font-size:11px;border-bottom:1px solid #8b927d;padding-bottom:6px;margin-top:auto}
+.zv-testimonials .zv-customer-panel{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,70px);background:#263e32;color:#f4efe1;padding:clamp(28px,4vw,56px);border:1px solid #3e5444;margin:0;position:relative;overflow:hidden}
+.zv-testimonials .zv-customer-heading{display:block;border:0;margin:0;padding:0;position:relative}
+.zv-customer-heading>.za-eyebrow{color:#cbb68e;font-size:10px}
+.zv-brush-mark{display:block;font:140px/.7 Georgia,serif;color:#bcaa7e;margin:35px 0 -15px;opacity:.8}
+.zv-testimonials .zv-customer-heading h3{font:400 clamp(33px,3vw,46px)/1.1 Georgia,serif;color:#f7f0dc;margin:12px 0 22px}
+.zv-testimonials .zv-customer-heading h3 em{color:#d4bb8b}
+.zv-testimonials .zv-customer-heading>p{font:13px/1.9 Poppins,Arial,sans-serif;color:#d8d7c8;margin:0 0 25px}
+.zv-testimonials .zv-share{display:inline-flex;align-items:center;gap:25px;border-bottom:1px solid #c1b38f;color:#fff4da;padding:8px 0;font:12px/1.5 Poppins,Arial,sans-serif}
+.zv-first-story{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:center;align-items:start;border:1px solid #c8b17a80;padding:34px;background:#f7f1e508;min-height:310px}
+.zv-first-story>.za-eyebrow{font-size:10px;color:#d2c5a1}
+.zv-testimonials .zv-first-story h4{font:400 clamp(35px,3.8vw,54px)/1.06 Georgia,serif;margin:20px 0;color:#f3eddd}
+.zv-testimonials .zv-first-story p{font:14px/1.8 Poppins,Arial,sans-serif;color:#dddacb;margin:0 0 20px}
+.zv-story-seal{position:absolute;right:22px;top:20px;color:#c9b17c4d;font:27px Georgia,serif;z-index:-1;writing-mode:vertical-rl;letter-spacing:.15em}
+.zv-testimonials .zv-review-list{display:flex;flex-direction:column;gap:20px;margin:0;max-height:650px;overflow:auto;scrollbar-color:#b6a67f #263e32}
+.zv-testimonials .zv-review{margin:0;padding:27px;background:#f7f0e5;color:#354334;border:1px solid #d8c7a3;min-width:0}
+.zv-rating{display:flex;justify-content:space-between;gap:15px;color:#8c6c36;font:12px Poppins,Arial,sans-serif}
+.zv-rating>span:first-child{letter-spacing:.15em}
+.zv-testimonials .zv-review h4{font:27px/1.2 Georgia,serif;margin:20px 0 12px;color:#334731}
+.zv-testimonials .zv-review blockquote{font:17px/1.7 Georgia,serif;margin:0 0 22px;color:#535c4e}
+.zv-review>img,.zv-review>video{width:100%;max-height:270px;object-fit:contain;margin:0 0 20px}
+.zv-review figcaption{display:flex;gap:12px;align-items:center;padding-top:18px;border-top:1px solid #d4cbb7;font-size:13px}
+.zv-review figcaption small{display:block;margin-top:4px;text-transform:capitalize;font-size:10px;color:#7b7e6d}
+.zv-avatar{display:grid;place-items:center;border:1px solid #b4bea8;border-radius:50%;width:40px;height:40px;font:20px Georgia,serif;flex-shrink:0}
+.zv-closing-line{display:flex;justify-content:space-between;gap:18px;padding:22px 0;font:italic 16px Georgia,serif;color:#8d7754;border-bottom:1px solid #c8bda7}
+.zv-testimonials a:focus-visible,.zv-testimonials button:focus-visible{outline:3px solid #af9860;outline-offset:4px}
+@media(max-width:1050px){.zv-testimonials .zv-story{grid-template-columns:1fr}.zv-testimonials .hv-film-image{min-height:280px}.zv-testimonials .hv-film-copy{min-height:240px}}
+@media(max-width:650px){.zanshin-home .zv-testimonials{margin-top:42px;padding-top:30px}.zv-testimonials .zv-heading{display:block}.zv-testimonials .zv-heading>p{text-align:left;margin-top:20px}.zv-testimonials .hv-creator-heading{align-items:start}.zv-testimonials .hv-creator-heading h3{font-size:16px}.zv-testimonials .hv-creator-heading>span{font-size:9px;max-width:95px}.zv-testimonials .zv-creator-grid{grid-template-columns:1fr;gap:20px;margin-bottom:30px}.zv-testimonials .hv-film-image{min-height:300px}.zv-testimonials .hv-film-copy{min-height:230px}.zv-testimonials .zv-customer-panel{grid-template-columns:1fr;padding:26px 20px;gap:25px}.zv-first-story{padding:26px 22px}.zv-testimonials .zv-first-story h4{font-size:40px}.zv-testimonials .zv-customer-heading h3{font-size:36px}.zv-closing-line{flex-direction:column;gap:10px;font-size:15px}.zv-testimonials .zv-review{padding:22px}.zv-testimonials .zv-review-list{max-height:none;overflow:visible}}
+@media(prefers-reduced-motion:reduce){.zv-testimonials .hv-film-image>img{transition:none}}

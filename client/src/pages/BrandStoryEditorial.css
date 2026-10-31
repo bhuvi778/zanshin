@@ -30,7 +30,7 @@
 .zs-story .zs-origin{padding-block:100px 110px}
 .zs-story .zs-origin-heading{margin-bottom:45px;max-width:770px}
 .zs-story .zs-origin-layout{display:grid;grid-template-columns:1.05fr 1fr;gap:9%;align-items:start}
-.zs-story .zs-origin-main{height:600px;position:relative}
+.zs-story .zs-origin-main{height:440px;position:relative}
 .zs-story .zs-origin-main img{object-position:50% 50%}
 .zs-story figcaption{font-size:11px;letter-spacing:.07em;line-height:1.6;color:var(--zs-muted)}
 .zs-story .zs-origin-main figcaption{padding:14px 0}

@@ -53,7 +53,6 @@ export default function BrandStory(){
      <p className="zs-intro">Our answer took us to the Land of the Rising Sun.</p>
      <p>Our team's experiences in Japanese companies and travels across Japan drew us to a way of living rooted in presence, simplicity and the beauty of imperfection.</p>
      <p>A quiet ritual. A considered detail. Space to pause. We began to notice how these small things could change the feeling of an ordinary day.</p>
-     <figure><img src={asset('story-v2/shoji-room.jpg')} alt="Soft daylight falling through shoji screens in a Japanese room" loading="lazy"/><figcaption>The little things are never little.</figcaption></figure>
     </div>
    </div>
   </section>
@@ -89,7 +88,7 @@ export default function BrandStory(){
 
   <section className="zs-closing zs-wrap" id="story-closing" aria-labelledby="zs-closing-title">
    <div className="zs-closing-copy" data-story-reveal><span className="zs-kicker">Our promise to the moment</span><h2 id="zs-closing-title">Be here.<br/>Be yourself.<br/><em>Begin with the moment.</em></h2><p>A fragrance doesn't need to take over.<br/>Just become a little part of what makes it yours.</p><Link className="zs-button" to="/collection">Explore Zanshin <span aria-hidden="true">→</span></Link></div>
-   <div className="zs-closing-visual" data-story-reveal><img className="zs-closing-garden" src={asset('enso-home/landscape-magnetized.webp')} alt="Warm sunset over a Japanese mountain lake" loading="lazy"/><img className="zs-closing-bottle" src={asset('story-v2/magnetized-bottle-v2.webp')} alt="Zanshin Magnetized, Extrait de Parfum, 51 ml" loading="lazy"/><span>残心 / A feeling to carry with you.</span></div>
+   <div className="zs-closing-visual" data-story-reveal><img className="zs-closing-garden" src={asset('enso-home/landscape-magnetized.webp')} alt="Warm sunset over a Japanese mountain lake" loading="lazy"/><img className="zs-closing-bottle" src={asset('client-approved/bottle-magnetized-hd.webp')} alt="Zanshin Magnetized with its wooden cap, Extrait de Parfum, 51 ml" loading="lazy"/><span>残心 / A feeling to carry with you.</span></div>
   </section>
  </div>;
 }

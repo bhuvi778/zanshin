@@ -1,0 +1,104 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "name": "bottle-focused-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-e7ab26fd-5d08-484f-b520-cbbe5c08b2f6.png",
+      "prompt": "Edit target: the provided Zanshin focused bottle photograph. Supporting reference: none. Use case product-mockup. Create a clean high resolution e-commerce cutout of exactly this same single bottle. Remove ALL the white outside background to true alpha transparency, including outside the round wooden cap, between neck and shoulders, and outside the bottle. Retain the bottle's amber/gold glass, natural spherical wood cap, and entire cream paper front label as opaque. Preserve exact bottle geometry, exact brand emblem colour, exact existing label words and layout. Improve sharpness without redesigning. Entire bottle fully in frame with 4 percent transparent margin all around. 1024x1536 portrait output, highest practical resolution. No scene, ground, box, extra text, no white matte, no fake checkerboard, no floor reflection. Deliver transparent RGBA PNG. Label text must remain FOCUSED, ZANSHIN, BEGIN WITH THE MOMENT, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ.; keep the original descriptor as in reference. Do not invent any new wording.",
+      "transparent": true,
+      "file": "client/public/assets/client-approved/bottle-focused-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "bottle-energised-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-be8275ba-a5b8-4af9-a642-f6d9e5081de5.png",
+      "prompt": "Edit target: the provided Zanshin energised bottle photograph. Supporting reference: none. Use case product-mockup. Create a clean high resolution e-commerce cutout of exactly this same single bottle. Remove ALL the white outside background to true alpha transparency, including outside the round wooden cap, between neck and shoulders, and outside the bottle. Retain the bottle's amber/gold glass, natural spherical wood cap, and entire cream paper front label as opaque. Preserve exact bottle geometry, exact brand emblem colour, exact existing label words and layout. Improve sharpness without redesigning. Entire bottle fully in frame with 4 percent transparent margin all around. 1024x1536 portrait output, highest practical resolution. No scene, ground, box, extra text, no white matte, no fake checkerboard, no floor reflection. Deliver transparent RGBA PNG. Label text must remain ENERGISED, ZANSHIN, BEGIN WITH THE MOMENT, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ.; keep the original descriptor as in reference. Do not invent any new wording.",
+      "transparent": true,
+      "file": "client/public/assets/client-approved/bottle-energised-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "bottle-connected-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-8fa888c1-ae24-480b-9c24-cdbc7dddaf53.png",
+      "prompt": "Edit target: the provided Zanshin connected bottle photograph. Supporting reference: none. Use case product-mockup. Create a clean high resolution e-commerce cutout of exactly this same single bottle. Remove ALL the white outside background to true alpha transparency, including outside the round wooden cap, between neck and shoulders, and outside the bottle. Retain the bottle's amber/gold glass, natural spherical wood cap, and entire cream paper front label as opaque. Preserve exact bottle geometry, exact brand emblem colour, exact existing label words and layout. Improve sharpness without redesigning. Entire bottle fully in frame with 4 percent transparent margin all around. 1024x1536 portrait output, highest practical resolution. No scene, ground, box, extra text, no white matte, no fake checkerboard, no floor reflection. Deliver transparent RGBA PNG. Label text must remain CONNECTED, ZANSHIN, BEGIN WITH THE MOMENT, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ.; keep the original descriptor as in reference. Do not invent any new wording.",
+      "transparent": true,
+      "file": "client/public/assets/client-approved/bottle-connected-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "bottle-magnetized-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-f17cb410-4fa1-4b1e-b665-eb8f2a026f17.png",
+      "prompt": "Edit target: the provided Zanshin magnetized bottle photograph. Supporting reference: none. Use case product-mockup. Create a clean high resolution e-commerce cutout of exactly this same single bottle. Remove ALL the white outside background to true alpha transparency, including outside the round wooden cap, between neck and shoulders, and outside the bottle. Retain the bottle's amber/gold glass, natural spherical wood cap, and entire cream paper front label as opaque. Preserve exact bottle geometry, exact brand emblem colour, exact existing label words and layout. Improve sharpness without redesigning. Entire bottle fully in frame with 4 percent transparent margin all around. 1024x1536 portrait output, highest practical resolution. No scene, ground, box, extra text, no white matte, no fake checkerboard, no floor reflection. Deliver transparent RGBA PNG. Label text must remain MAGNETIZED, ZANSHIN, BEGIN WITH THE MOMENT, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ.; keep the original descriptor as in reference. Do not invent any new wording.",
+      "transparent": true,
+      "file": "client/public/assets/client-approved/bottle-magnetized-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "hero-tea-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-d9c9c117-1041-4103-a52e-c1d714fd5f60.png",
+      "prompt": "Use case product-mockup. Edit the supplied low-resolution hero reference into a crisp high-resolution 1536x1024 Japanese tea-room photograph, preserving composition and framing: single Zanshin perfume bottle on pale stone at left, shoji window behind, ceramic tea cup and folded dark linen at right, bamboo upper left and cherry blossom upper right. Warm natural sun shadows. Preserve recognizable Zanshin cream label and amber glass. Upgrade this scene to a premium 50mm editorial product photograph with sharp wood, glass, stone and plant textures. Do not add any UI, text, watermarks or borders. Keep entire bottle clearly visible. This is a reconstruction of the supplied scene, not a new layout.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/hero-tea-hd.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "name": "enso-center-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-daa8b88b-9603-4fb5-9e1f-9653b3ae6dc0.png",
+      "prompt": "Use case illustration. Enhance the provided cropped Japanese Enso scene to a crisp high-resolution landscape artwork 1536x1024. Preserve the exact visual concept and composition: one centered black brush-painted circle, left half monochrome ink Japanese mountains, right half blue-green water and warm golden sunset, cherry blossoms coming from upper right. Fine textured ivory washi paper. Full circle fully in frame, 8 percent breathing room. Delicate clear brush texture and mountain layers, beautiful reflected light. No text, no captions, no UI, no border. Preserve original colour division and style. No letterforms anywhere.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/enso-center-hd.webp",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "name": "join-circle-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-7a4fb5fe-258e-4e18-ace5-a0cf0a32fecc.png",
+      "prompt": "Use case illustration/product-mockup. Reconstruct the supplied low resolution Zanshin Circle banner at 2400x900 high-resolution, preserving the original composition, lighting and relative object positions. Warm ivory Japanese shoji wall, central hand-painted black Enso circle with open pale cream interior for later HTML text, cherry blossom branches at upper left and right, a blossom branch crossing the circle at its left side, drifting pink petals, dark natural rocks lower left and right, calm shallow reflecting water at bottom. Premium realistic blossoms with softly glowing natural sun shadows and crisp textures. IMPORTANT REMOVE ALL EXISTING WORDS AND THE ENTIRE BUTTON AND INSTAGRAM ICON from the artwork. The central circle interior must remain empty, no text anywhere. Text and CTA will be added as exact HTML separately. Keep composition quiet, elegant, visually match source. Wide banner.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/join-circle-hd.webp",
+      "width": 2048,
+      "height": 768
+    },
+    {
+      "name": "fragrance-focused-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-7489347c-729a-4e55-ae53-42e6aa15ea55.png",
+      "prompt": "Use case product-mockup. Enhance and reconstruct the supplied focused Zanshin botanical product photograph as a crisp high-resolution 1024x1536 portrait. Preserve the EXACT original composition, single bottle, spherical wooden cap, cream label, teal Zanshin emblem, rocks, water reflection, branches, fruit and flowers already present. Keep their positions and the Japanese still life look. Preserve original label text: ZANSHIN, BEGIN WITH THE MOMENT, FOCUSED, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ. and original descriptor. Enhance material detail, realistic glass edges, wood grain, natural fruit skin, petals and stone. Premium sharp 50mm product photography with soft natural sunshine. Do not add any scene elements or text, no UI, no captions or border. Reconstruct the provided small scene carefully without changing its mood or brand. Bottle fully in frame, prominent.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/fragrance-focused-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "fragrance-energised-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-445c7158-dd9c-4ee1-96ba-793aaff92808.png",
+      "prompt": "Use case product-mockup. Enhance and reconstruct the supplied energised Zanshin botanical product photograph as a crisp high-resolution 1024x1536 portrait. Preserve the EXACT original composition, single bottle, spherical wooden cap, cream label, navy Zanshin emblem, rocks, water reflection, branches, fruit and flowers already present. Keep their positions and the Japanese still life look. Preserve original label text: ZANSHIN, BEGIN WITH THE MOMENT, ENERGISED, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ. and original descriptor. Enhance material detail, realistic glass edges, wood grain, natural fruit skin, petals and stone. Premium sharp 50mm product photography with soft natural sunshine. Do not add any scene elements or text, no UI, no captions or border. Reconstruct the provided small scene carefully without changing its mood or brand. Bottle fully in frame, prominent.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/fragrance-energised-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "fragrance-connected-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-08fcf51c-a5e6-40f9-87f2-1bb55a18c9b2.png",
+      "prompt": "Use case product-mockup. Enhance and reconstruct the supplied connected Zanshin botanical product photograph as a crisp high-resolution 1024x1536 portrait. Preserve the EXACT original composition, single bottle, spherical wooden cap, cream label, olive green Zanshin emblem, rocks, water reflection, branches, fruit and flowers already present. Keep their positions and the Japanese still life look. Preserve original label text: ZANSHIN, BEGIN WITH THE MOMENT, CONNECTED, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ. and original descriptor. Enhance material detail, realistic glass edges, wood grain, natural fruit skin, petals and stone. Premium sharp 50mm product photography with soft natural sunshine. Do not add any scene elements or text, no UI, no captions or border. Reconstruct the provided small scene carefully without changing its mood or brand. Bottle fully in frame, prominent.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/fragrance-connected-hd.webp",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "name": "fragrance-magnetized-hd",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-1ff7a69f-80ee-4f8a-898d-f5afa66e62d9.png",
+      "prompt": "Use case product-mockup. Enhance and reconstruct the supplied magnetized Zanshin botanical product photograph as a crisp high-resolution 1024x1536 portrait. Preserve the EXACT original composition, single bottle, spherical wooden cap, cream label, red Zanshin emblem, rocks, water reflection, branches, fruit and flowers already present. Keep their positions and the Japanese still life look. Preserve original label text: ZANSHIN, BEGIN WITH THE MOMENT, MAGNETIZED, EXTRAIT DE PARFUM, 51ml \u212e 1.7 FL.OZ. and original descriptor. Enhance material detail, realistic glass edges, wood grain, natural fruit skin, petals and stone. Premium sharp 50mm product photography with soft natural sunshine. Do not add any scene elements or text, no UI, no captions or border. Reconstruct the provided small scene carefully without changing its mood or brand. Bottle fully in frame, prominent.",
+      "transparent": false,
+      "file": "client/public/assets/client-approved/fragrance-magnetized-hd.webp",
+      "width": 1024,
+      "height": 1536
+    }
+  ]
+}

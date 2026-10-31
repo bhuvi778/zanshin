@@ -31,7 +31,7 @@ function MomentCard({p}) {
       <button className={`moment-face moment-stage-${stage}`} onClick={()=>choose((stage+1)%3)} aria-label={`${p.name}: ${names[stage]}. Show next view`}>
         <div className="moment-face-inner">
           <div className="moment-your-moment" hidden={stage!==0}><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/></div>
-          <div className="moment-bottle-face client-fragrance-face" hidden={stage!==1}><img src={asset(`client-approved/fragrance-${p.slug}.webp`)} alt={`${p.name} fragrance in a Japanese botanical setting`}/></div>
+          <div className="moment-bottle-face client-fragrance-face" hidden={stage!==1}><img src={asset(`client-approved/fragrance-${p.slug}-hd.webp`)} alt={`${p.name} fragrance in a Japanese botanical setting`}/></div>
           <div className="moment-enso-shift" hidden={stage!==2}><BookmarkArtwork product={p} direction={direction}/><span>{direction.place}</span></div>
         </div>
         <span className="moment-flip-hint">Explore the moment ↻</span>

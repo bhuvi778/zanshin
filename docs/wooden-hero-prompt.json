@@ -1,0 +1,6 @@
+{
+  "mode": "built-in image_gen",
+  "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-ffe32b6b-aec1-4e88-9c92-f10d549d8a80.png",
+  "prompt": "Use case product-mockup. Edit target: first image, the Zanshin tea room hero photograph. Supporting insert: second image is the approved EXACT bottle design. Replace ONLY the perfume bottle in the first photograph with the approved Focused bottle from second image, including its spherical wooden cap, rectangular amber glass, cream label, teal brand crescent and exact printed label text. Preserve the tea room, stone pedestal, tea cup, bamboo, cherry blossoms, light, camera angle and composition. The replacement bottle must be fully visible on the same left stone plinth, realistically integrated with matching warm light and contact shadow. Do not retain the old cylindrical cap. Do not add more bottles or change anything else. Sharp 1536x1024 photograph. No UI, no overlay text, no frame. The second image has true alpha transparency; ignore invisible RGB data outside its bottle.",
+  "file": "client/public/assets/client-approved/hero-tea-wooden-hd.webp"
+}

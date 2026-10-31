@@ -1,3 +1,4 @@
+import {clientCopy} from '../clientCopy';
 import PromiseIcon from './PromiseIcon';
 import './QualityPromise.css';
 
@@ -9,11 +10,11 @@ const facts=[
 ];
 
 export default function QualityPromise(){return <section className="quality-approach" aria-labelledby="hc-quality-title">
- <header><span className="za-eyebrow">The details matter</span><h2 id="hc-quality-title">Our approach.<br/><em>Intention, in every detail.</em></h2><p>NOT JUST MADE. THOUGHTFULLY CONSIDERED.</p></header>
+ <header><span className="za-eyebrow">The details matter</span><h2 id="hc-quality-title">Our approach.<br/><em>Intention, in every detail.</em></h2><p>{clientCopy.approach}</p></header>
  <div className="quality-four">{facts.map((fact,i)=><article className="quality-card" key={fact.title}>
   <div className="quality-card-top"><span className="quality-icon"><PromiseIcon index={fact.icon}/></span><h3>{fact.title}</h3><span className="quality-index" aria-hidden="true">0{i+1}</span></div>
   <p className="quality-subtitle">{fact.subtitle}</p>
-  {fact.senses?<div className="quality-senses-inline"><h4>Why 51 ml? Five senses + one mind.</h4><p>The five senses bring a moment to life, while the mind gives it meaning through memories, emotions and personal connection.</p></div>:<p className="quality-card-copy">{fact.copy}</p>}
+  {fact.senses?<div className="quality-senses-inline"><h4>{clientCopy.whySize}</h4><p>{clientCopy.sizeMeaning}</p></div>:<p className="quality-card-copy">{fact.copy}</p>}
  </article>)}</div>
  <aside className="quality-disclaimer" aria-labelledby="quality-disclaimer-title"><h3 id="quality-disclaimer-title">The finer details</h3><ul><li>Cruelty Free</li><li>No Synthetic Dyes</li><li>No Parabens or Preservatives</li></ul><details><summary>Formula &amp; presentation disclaimer</summary><p>Japanese-inspired fragrance. Vegan formulas. Sustainability is an ongoing consideration; specific material and packaging details will be shared as they are confirmed. Phthalate-free status is still being confirmed.</p></details></aside>
  </section>}
