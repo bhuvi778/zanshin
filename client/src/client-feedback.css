@@ -1,0 +1,56 @@
+/* Client-supplied October review: composition and responsive finishing. */
+.client-label-pack .label-pack-bottle{aspect-ratio:254/475;mix-blend-mode:multiply;filter:drop-shadow(3px 9px 7px #392b201c)}
+.client-label-pack .label-pack-glass{object-fit:contain}
+.zanshin-home .zh-composed{border-radius:48px 48px 12px 12px}
+.zanshin-home .zh-composed .sculpture-composed-art{position:relative;inset:auto;width:100%;height:100%;min-height:0;object-fit:cover;object-position:left center;z-index:0}
+.zanshin-home .zh-sculpture.zh-composed{display:grid;grid-template-rows:auto minmax(0,1fr) auto;padding:0;background:#f4eddf}
+.zh-composed:after{display:none}
+.zh-composed .sculpture-heading{grid-row:1;padding:28px 22px 22px;background:#f5efe4}
+.zh-composed .sculpture-composed-art{grid-row:2}
+.zanshin-home .zh-composed .sculpture-heading h2{font-size:clamp(25px,2.35vw,38px);margin:0;line-height:1.15}
+.zh-composed .sculpture-invitation{grid-row:3;padding:20px 24px 24px;background:#f5efe4}
+.zh-composed .sculpture-invitation p{font-size:14px;line-height:1.65;margin-bottom:15px}
+.zanshin-home .enso-duality{background:#f4f0e7;min-height:520px}
+.enso-duality:after{display:none}
+.enso-duality>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.moment-triptych-grid{padding:14px 12px 20px;gap:24px}
+.enso-duality .duality-art{position:absolute;inset:0 28%;width:44%;height:100%;object-fit:cover;object-position:center;mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);opacity:1}
+.enso-duality .duality-content{min-height:520px;grid-template-columns:1fr 1fr;column-gap:44%;padding:35px 4%}
+.zanshin-home .duality-content p{font-size:15px;line-height:1.65;margin-bottom:16px}
+.zanshin-home .duality-content .duality-source{font-size:14px}
+.duality-content em{display:block;font-size:17px}
+.duality-content .duality-link{white-space:normal;font-size:10px;padding:12px 15px;gap:10px}
+.moment-triptych .client-fragrance-face{padding:0;background:#ece6db}
+.client-fragrance-face>img{display:block;width:100%;height:100%;object-fit:cover}
+.zanshin-home .moment-card-footer{min-height:230px}
+.zanshin-home .moment-card-footer .moment-fragrance-copy{font-size:14px;line-height:1.65;margin:0 0 20px}
+.quality-senses-inline{border-top:1px solid #d7d0bf;padding-top:12px}
+.quality-senses-inline h4{font:500 14px/1.6 Poppins,Arial,sans-serif;color:#465a48;margin:0 0 9px}
+.quality-senses-inline p{font-size:14px;line-height:1.65;margin:0;color:#63695e}
+.quality-four{align-items:stretch}
+.quality-approach>header>p{max-width:none;font-size:13px;letter-spacing:.09em;color:#675437}
+.client-circle{margin:64px 0;background:#f5e8d5;border:1px solid #d9c7ad}
+.client-circle>a{display:block}
+.client-circle img{display:block;width:100%;height:auto}
+.client-circle a:focus-visible{outline:3px solid #304e3a;outline-offset:5px}
+.hv-stories{display:block}
+.hv-creator-heading{display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.hv-films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.hv-creator-heading>span{white-space:normal}
+.site-nav a,.footer-links a{overflow-wrap:normal}
+@media(min-width:701px) and (max-width:1000px){.enso-duality .duality-content{column-gap:38%;padding-inline:3%}.enso-duality .duality-art{inset-inline:27%;width:46%}.zanshin-home .duality-content p{font-size:14px}.zanshin-home .duality-content h2{font-size:28px}}
+@media(max-width:700px){
+ .zanshin-home .enso-duality{display:grid;grid-template-rows:auto 290px auto;min-height:0}
+ .enso-duality .duality-content{display:contents;min-height:0}
+ .enso-duality .duality-art{position:relative;inset:auto;grid-row:2;width:100%;height:290px;object-fit:contain;mask-image:none}
+ .enso-duality .duality-content .duality-enso{grid-row:1;padding:30px 7% 22px}
+ .enso-duality .duality-content .duality-zanshin{grid-row:3;padding:22px 7% 32px}
+ .client-circle{margin:40px 0}
+ .client-circle img{min-height:220px;object-fit:cover;object-position:center}
+ .hv-films{grid-template-columns:1fr}
+ .hv-creator-heading{gap:8px}
+ .zanshin-home .moment-card-footer{min-height:220px}
+ .zanshin-home .zh-sculpture.zh-composed{min-height:570px;grid-template-rows:auto 310px auto;padding:0}
+ .zanshin-home .zh-composed .sculpture-heading h2{font-size:30px}
+}
+@media(max-width:380px){.zanshin-home .zh-composed .sculpture-heading h2{font-size:26px}.client-circle img{min-height:190px}.quality-card h3{overflow-wrap:anywhere}.quality-index{font-size:13px}.quality-card-top{gap:8px}.quality-icon{width:34px;height:34px;flex-basis:34px}}

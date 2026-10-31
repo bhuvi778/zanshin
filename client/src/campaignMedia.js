@@ -1,7 +1,7 @@
 import {asset} from './data';
 import {fragranceDirection} from './brandDirection';
 
-export const campaignImage = slug => asset(`enso-home/${fragranceDirection[slug].discoveryScene}.webp`);
+export const campaignImage = slug => asset(fragranceDirection[slug].discoveryImage||`enso-home/${fragranceDirection[slug].discoveryScene}.webp`);
 export const campaignMoments = [
   ['focused', 'A clearer morning', 'A little clarity for the work in front of you.'],
   ['energised', 'New energy', 'Find your rhythm. Keep moving.'],

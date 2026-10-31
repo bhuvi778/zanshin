@@ -31,14 +31,14 @@ function MomentCard({p}) {
       <button className={`moment-face moment-stage-${stage}`} onClick={()=>choose((stage+1)%3)} aria-label={`${p.name}: ${names[stage]}. Show next view`}>
         <div className="moment-face-inner">
           <div className="moment-your-moment" hidden={stage!==0}><img src={asset(`enso-home/${direction.photo}.webp`)} alt={`${p.name}: ${direction.moment} in a Japanese setting`}/></div>
-          <div className="moment-bottle-face" hidden={stage!==1}><span>BEGIN WITH THE MOMENT</span><LabelPack product={p} bottleOnly/><h3>{p.name}</h3><p>{p.descriptor}</p></div>
+          <div className="moment-bottle-face client-fragrance-face" hidden={stage!==1}><img src={asset(`client-approved/fragrance-${p.slug}.webp`)} alt={`${p.name} fragrance in a Japanese botanical setting`}/></div>
           <div className="moment-enso-shift" hidden={stage!==2}><BookmarkArtwork product={p} direction={direction}/><span>{direction.place}</span></div>
         </div>
         <span className="moment-flip-hint">Explore the moment ↻</span>
       </button>
       <div className="moment-view-controls" role="group" aria-label={`${p.name} views`}>{names.map((n,i)=><button key={n} aria-pressed={stage===i} onClick={()=>choose(i)}>{n}</button>)}</div>
-      <div className="moment-card-footer"><h3>{stage===0?direction.moment:stage===2?direction.shift:p.name}</h3>{stage===2&&<p className="moment-shift-note">{direction.setting}</p>}<Link to={`/collection/${p.slug}`}>Explore {p.name} ↗</Link></div>
+      <div className="moment-card-footer"><h3>{stage===0?direction.moment:stage===2?direction.shift:direction.fragranceTitle}</h3>{stage===1&&<p className="moment-fragrance-copy">{direction.fragranceCopy}</p>}{stage===2&&<p className="moment-shift-note">{direction.setting}</p>}<Link to={`/collection/${p.slug}`}>Explore {p.name} ↗</Link></div>
     </div>
   </article>
 }
-export default function MomentTriptych(){const {products}=useStore();return <section className="hc-moments" aria-labelledby="hc-moments-title"><header className="za-heading"><h2 id="hc-moments-title">What are you stepping into?</h2><Link className="zh-pill" to="/find-your-moment">Take the quiz ↗</Link></header><div className="moment-triptych-grid">{products.map(p=><MomentCard key={p.slug} p={p}/>)}</div></section>}
+export default function MomentTriptych(){const {products}=useStore();return <section className="hc-moments" aria-labelledby="hc-moments-title"><header className="za-heading"><h2 id="hc-moments-title">What are you stepping into?</h2><Link className="za-link" to="/collection">Explore Zanshin ↗</Link></header><div className="moment-triptych-grid">{products.map(p=><MomentCard key={p.slug} p={p}/>)}</div></section>}

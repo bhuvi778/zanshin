@@ -1,0 +1,112 @@
+[
+  {
+    "file": "bottle-magnetized.webp",
+    "source": "codex-clipboard-c9e36ab2-e941-4176-9e35-fcd035050568.png",
+    "crop": [
+      18,
+      49,
+      274,
+      524
+    ]
+  },
+  {
+    "file": "bottle-focused.webp",
+    "source": "codex-clipboard-c9e36ab2-e941-4176-9e35-fcd035050568.png",
+    "crop": [
+      282,
+      49,
+      536,
+      524
+    ]
+  },
+  {
+    "file": "bottle-connected.webp",
+    "source": "codex-clipboard-c9e36ab2-e941-4176-9e35-fcd035050568.png",
+    "crop": [
+      543,
+      49,
+      797,
+      524
+    ]
+  },
+  {
+    "file": "bottle-energised.webp",
+    "source": "codex-clipboard-c9e36ab2-e941-4176-9e35-fcd035050568.png",
+    "crop": [
+      805,
+      49,
+      1058,
+      524
+    ]
+  },
+  {
+    "file": "hero-tea.webp",
+    "source": "codex-clipboard-191bbda7-4fb3-482a-836e-23d8b724f06c.png",
+    "crop": [
+      586,
+      425,
+      946,
+      665
+    ]
+  },
+  {
+    "file": "fragrance-magnetized.webp",
+    "source": "codex-clipboard-c2a481c5-90f2-47ef-a179-aa92588d9ace.png",
+    "crop": [
+      46,
+      179,
+      420,
+      645
+    ]
+  },
+  {
+    "file": "fragrance-focused.webp",
+    "source": "codex-clipboard-7fb7916e-f09b-487f-92d4-6e979879ab60.png",
+    "crop": [
+      35,
+      171,
+      370,
+      591
+    ]
+  },
+  {
+    "file": "fragrance-energised.webp",
+    "source": "codex-clipboard-b3d2a7d4-a376-4189-8269-dec393a443a3.png",
+    "crop": [
+      51,
+      162,
+      423,
+      626
+    ]
+  },
+  {
+    "file": "fragrance-connected.webp",
+    "source": "codex-clipboard-96dea586-2b90-46fc-bc4f-937216e1a137.png",
+    "crop": [
+      36,
+      140,
+      413,
+      613
+    ]
+  },
+  {
+    "file": "join-circle.webp",
+    "source": "codex-clipboard-b333b2ea-291b-49d3-bc10-df098b93e2d5.png",
+    "crop": [
+      96,
+      212,
+      1084,
+      564
+    ]
+  },
+  {
+    "file": "enso-center.webp",
+    "source": "codex-clipboard-55c4a72c-eb37-48d0-bd97-48a6cdd1982c.png",
+    "crop": [
+      368,
+      58,
+      789,
+      410
+    ]
+  }
+]
