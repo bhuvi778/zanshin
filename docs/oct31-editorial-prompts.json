@@ -1,0 +1,25 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "file": "client/public/assets/enso-home/community-studio-jp-v1.webp",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-8430ff81-26d8-4c2f-8774-6f003b38bc70.png",
+      "prompt": "Use case: photorealistic-natural. Website editorial photograph for Zanshin fragrance brand. Reference is for character identity only; preserve the described person's face and Japanese identity in this different scene. Landscape 1536x1024. The same three Japanese adult friends from reference image making simple clay cups together at a Kyoto pottery studio. Wooden worktable, clay on fingers, one person gently laughing, the others concentrating. Natural side window light, linen clothes in olive, cream and navy. A candid everyday gathering, medium wide shot, faces fully visible. No posed group photo. Realistic candid 35mm photography, believable proportions, natural skin pores, understated Japanese surroundings. Simple single composition. No illustration, no CGI, no collage, no dramatic mist, no perfume bottle, no text, no watermark."
+    },
+    {
+      "file": "client/public/assets/enso-home/contact-conversation-jp-v1.webp",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-ce93281a-7813-4570-9557-372a9ebdacf2.png",
+      "prompt": "Use case: photorealistic-natural. Website editorial photograph for Zanshin fragrance brand. Reference is for character identity only; preserve the described person's face and Japanese identity in this different scene. Portrait 1024x1536. The same Japanese woman with a bob and cream shirt from the reference scene sitting by an open shoji window in a real Kyoto cafe, speaking on a smartphone with a subtle warm smile, tea on an oak table, quiet green garden beyond. Relaxed everyday moment, medium shot with entire head and hands comfortably in frame. Natural skin texture, no headset or corporate office. Realistic candid 35mm photography, believable proportions, natural skin pores, understated Japanese surroundings. Simple single composition. No illustration, no CGI, no collage, no dramatic mist, no perfume bottle, no text, no watermark."
+    },
+    {
+      "file": "client/public/assets/enso-home/journal-morning-jp-v1.webp",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-c5341860-2170-4c6b-8c16-95077307fdf2.png",
+      "prompt": "Use case: photorealistic-natural. Website editorial photograph for Zanshin fragrance brand. Reference is for character identity only; preserve the described person's face and Japanese identity in this different scene. Landscape 1536x1024. The same Japanese man from reference sitting beside an open shoji screen in a modest Japanese home, writing in a journal at a low wooden table. Warm morning light, a simple ceramic tea cup, calm thoughtful face. Wider environmental shot, carefully balanced negative space, warm ivory and indigo. No laptop, no fake calligraphy. Realistic candid 35mm photography, believable proportions, natural skin pores, understated Japanese surroundings. Simple single composition. No illustration, no CGI, no collage, no dramatic mist, no perfume bottle, no text, no watermark."
+    },
+    {
+      "file": "client/public/assets/enso-home/journal-enso-studio-jp-v1.webp",
+      "source": "C:\\Users\\The laptop empire\\.codex\\generated_images\\01a0bfb9-7449-7f51-bae3-0f23f5429bb7\\exec-eda4a53d-1adb-45c2-ae98-27ad477c086d.png",
+      "prompt": "Use case: photorealistic-natural. Website editorial photograph for Zanshin fragrance brand. Reference is for character identity only; preserve the described person's face and Japanese identity in this different scene. Landscape 1536x1024. The same Japanese man from reference in a real quiet Japanese art studio, painting one bold black open Enso ink circle on textured paper with a traditional brush. Camera at a natural three-quarter angle, show his focused face in left upper half and hand/paper clearly on the table. Simple cream artist shirt, subtle plants and light through shoji. One authentic continuous circle, imperfect brush texture. Realistic candid 35mm photography, believable proportions, natural skin pores, understated Japanese surroundings. Simple single composition. No illustration, no CGI, no collage, no dramatic mist, no perfume bottle, no text, no watermark."
+    }
+  ]
+}
