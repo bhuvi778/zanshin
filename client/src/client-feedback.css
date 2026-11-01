@@ -81,3 +81,8 @@
 .zanshin-home .circle-invitation-copy h2{font-size:clamp(24px,2.5vw,36px)}
 @media(min-width:701px) and (max-width:1000px){.enso-duality .duality-art{inset-inline:30%;width:40%}}
 @media(max-width:700px){.enso-duality .duality-art{inset:auto;width:100%}.client-circle.hd-circle>img{min-height:320px}.circle-invitation-copy{left:54%;width:70%;top:30%}.zanshin-home .circle-invitation-copy h2{font-size:26px}.hd-circle .circle-enter{bottom:13%}}
+.japanese-interior .ep-pack.ep-photograph{padding:0;background:#ece4d7;overflow:hidden}
+.ep-photograph>img{display:block;width:100%;height:100%;aspect-ratio:4/5;object-fit:cover;object-position:center}
+.zs-story .zs-expression-image>img{object-position:center}
+.zs-story .zs-philosophy-art:not(.is-enso)>img{object-fit:cover;object-position:center 40%}
+@media(max-width:700px){.ep-photograph>img{height:auto;aspect-ratio:4/5}}
