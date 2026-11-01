@@ -1,4 +1,3 @@
-import {campaignMoments} from '../campaignMedia';
 import {useContent} from '../context/PlatformContext';
 import {mediaURL} from '../platform';
 import LiveTestimonials from './CustomerVoices';
@@ -14,8 +13,7 @@ const moods=[['focused','A quieter kind of clarity.','Clarity for the task in fr
 export {default as MomentInvitation} from './MomentTriptych';
 export {default as QualityPromise} from './QualityPromise';
 export {default as BuildYourBag} from './GiftPairBuilder';
-// Campaign scenes are distinct from customer-submitted reviews.
-export function Testimonials({onFilm}) {
- const {content,reviews}=useContent();
- return <LiveTestimonials creators={content?.creators??campaignMoments.slice(0,2)} reviews={reviews} onFilm={onFilm}/>;
+export function Testimonials() {
+ const {reviews}=useContent();
+ return <LiveTestimonials reviews={reviews}/>;
 }

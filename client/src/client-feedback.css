@@ -86,3 +86,11 @@
 .zs-story .zs-expression-image>img{object-position:center}
 .zs-story .zs-philosophy-art:not(.is-enso)>img{object-fit:cover;object-position:center 40%}
 @media(max-width:700px){.ep-photograph>img{height:auto;aspect-ratio:4/5}}
+.pair-photography .pair-photo-editorial figure{background:#eee9de;min-height:520px}
+.pair-photography .pair-photo-editorial figure>img{height:calc(100% - 100px);object-fit:contain;object-position:center;padding:16px;box-sizing:border-box}
+.pair-photography .pair-photo-editorial figcaption{padding:18px 26px 22px;background:#f5f0e5;color:var(--pair-ink);min-height:100px;box-sizing:border-box}
+.za-fragrance[data-fragrance=focused] .za-product{right:auto;left:0;width:28%;background:none}
+.circle-invitation-copy{left:50%;top:41.5%;transform:translate(-50%,-50%)}
+.hd-circle .circle-enter{left:50%}
+@media(max-width:900px){.pair-photography .pair-photo-editorial figure{min-height:0;aspect-ratio:auto}.pair-photography .pair-photo-editorial figure>img{position:relative;inset:auto;height:auto;aspect-ratio:auto;padding:14px}.pair-photography .pair-photo-editorial figcaption{position:relative;inset:auto;min-height:0}}
+@media(max-width:700px){.circle-invitation-copy{left:50%;top:41.5%;transform:translate(-50%,-50%)}.za-fragrance[data-fragrance=focused] .za-product{width:28%}}

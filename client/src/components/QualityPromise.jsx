@@ -16,5 +16,5 @@ export default function QualityPromise(){return <section className="quality-appr
   <p className="quality-subtitle">{fact.subtitle}</p>
   {fact.senses?<div className="quality-senses-inline"><h4>{clientCopy.whySize}</h4><p>{clientCopy.sizeMeaning}</p></div>:<p className="quality-card-copy">{fact.copy}</p>}
  </article>)}</div>
- <aside className="quality-disclaimer" aria-labelledby="quality-disclaimer-title"><h3 id="quality-disclaimer-title">The finer details</h3><ul><li>Cruelty Free</li><li>No Synthetic Dyes</li><li>No Parabens or Preservatives</li></ul><details><summary>Formula &amp; presentation disclaimer</summary><p>Japanese-inspired fragrance. Vegan formulas. Sustainability is an ongoing consideration; specific material and packaging details will be shared as they are confirmed. Phthalate-free status is still being confirmed.</p></details></aside>
+ <aside className="quality-disclaimer" aria-labelledby="quality-disclaimer-title"><h3 id="quality-disclaimer-title">The finer details</h3><ul><li>Cruelty Free</li><li>No Synthetic Dyes</li><li>No Parabens or Preservatives</li></ul></aside>
  </section>}

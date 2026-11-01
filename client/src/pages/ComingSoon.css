@@ -1,0 +1,23 @@
+.launch-page{width:min(1380px,92%);margin:38px auto 70px;display:grid;grid-template-columns:1fr 1fr;min-height:660px;border:1px solid #d5cbb8;background:#f4eee2;color:#304638;overflow:hidden}
+.launch-copy{padding:clamp(28px,4vw,64px);align-self:center}
+.launch-kicker{display:block;font:11px/1.6 Poppins,Arial,sans-serif;text-transform:uppercase;letter-spacing:.22em;margin-bottom:35px;color:#8c7047}
+.launch-badge{display:inline-flex;align-items:center;gap:10px;border:1px solid #bdac8a;border-radius:30px;padding:9px 15px;font:10px/1.4 Poppins,Arial,sans-serif;text-transform:uppercase;letter-spacing:.2em;background:#fffaf2}
+.launch-badge i{width:6px;height:6px;background:#917044;border-radius:50%;box-shadow:0 0 0 4px #91704416}
+.launch-page h1{font:400 clamp(40px,4.4vw,66px)/1.06 Georgia,serif;letter-spacing:-.045em;margin:26px 0}
+.launch-page h1 em{font-weight:400;color:#997b4b}
+.launch-copy>p{font:15px/1.9 Poppins,Arial,sans-serif;max-width:440px;color:#676d60;margin:0 0 30px}
+.launch-actions{display:flex;gap:18px 28px;align-items:center;flex-wrap:wrap}
+.launch-actions a{display:inline-flex;align-items:center;gap:25px;font:12px/1.6 Poppins,Arial,sans-serif;color:inherit;text-decoration:none;border-bottom:1px solid #9a9f88;padding:10px 0}
+.launch-actions a:focus-visible{outline:2px solid #8d7345;outline-offset:4px}
+.launch-signature{display:block;margin-top:45px;font:9px/1.5 Poppins,Arial,sans-serif;letter-spacing:.24em;color:#9b8b6c}
+.launch-art{position:relative;min-height:550px;background:#eee5d5}
+.launch-art>img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.launch-art>span{position:absolute;right:25px;bottom:25px;background:#fbf7eceb;color:#8b7045;padding:15px 18px;font:24px Georgia,serif;letter-spacing:.2em}
+.launch-community{background:#283f34;color:#f5efdf;border-color:#455a47}
+.launch-community .launch-kicker,.launch-community .launch-signature{color:#c8b18b}
+.launch-community .launch-copy>p{color:#d3d6c7}
+.launch-community h1 em{color:#d6ba8a}
+.launch-community .launch-badge{background:#f3ead9;color:#42513e}
+.launch-community .launch-art>img{object-position:51% center}
+@media(max-width:750px){.launch-page{grid-template-columns:1fr;margin:24px auto 42px;min-height:0}.launch-copy{padding:32px 25px 38px}.launch-page h1{font-size:45px}.launch-kicker{margin-bottom:25px}.launch-art{min-height:300px}.launch-signature{margin-top:30px}.launch-art>img{object-fit:cover}.launch-actions{gap:12px 25px}}
+@media(max-width:380px){.launch-page h1{font-size:39px}.launch-copy{padding:28px 20px}.launch-copy>p{font-size:14px}}
