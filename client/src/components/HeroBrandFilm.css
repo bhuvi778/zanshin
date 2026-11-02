@@ -1,0 +1,10 @@
+/* Keep the complete film, including its copy, inside the existing split hero. */
+.zanshin-home .zh-opening .zh-brand-teaser {background:#142017; min-width:0;}
+.zh-brand-teaser > video {display:block; width:100%; height:100%; object-fit:contain;}
+.hero-film-error {position:absolute; inset:auto 20px 60px; padding:16px; text-align:center; background:#f8f2e6; color:#272b27; border-radius:8px;}
+.hero-film-error p {margin:0 0 10px;}
+.hero-film-error button {border:1px solid currentColor; border-radius:24px; padding:8px 18px; color:inherit; background:transparent;}
+@media(max-width:600px) {
+  .zanshin-home .zh-opening .zh-brand-teaser {aspect-ratio:16/9; height:auto; min-height:0; max-height:none;}
+  .zh-brand-teaser > video {position:absolute; inset:0;}
+}

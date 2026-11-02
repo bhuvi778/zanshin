@@ -7,6 +7,8 @@ coverage/
 brand-films/temp-*.png
 mobile-home*.png
 brand-films/source-footage/
+brand-films/teaser/out/
+brand-films/teaser/.remotion/
 backend/.venv/
 backend/data/
 backend/.env
