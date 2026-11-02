@@ -14,7 +14,7 @@ export default function HeroBrandFilm() {
       const player = video.current;
       if (!player) return;
       if (preference.matches) player.pause();
-      else player.play().catch(() => {}); // Native controls remain available if autoplay is blocked.
+      else player.play().catch(() => {}); // Keep the poster visible if autoplay is blocked.
     };
     update();
     preference.addEventListener('change', update);
@@ -29,7 +29,7 @@ export default function HeroBrandFilm() {
       muted
       playsInline
       loop
-      controls
+      disablePictureInPicture
       preload="auto"
       aria-label="Some Moments Deserve a Story. Zanshin brand film teaser"
       aria-describedby="hero-brand-film-description"

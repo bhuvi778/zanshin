@@ -15,6 +15,6 @@ npx remotion render Zanshin-Brand-Teaser ../../client/public/films/zanshin-brand
 npx remotion still Zanshin-Brand-Teaser ../../client/public/films/zanshin-brand-teaser-poster.jpg --frame=300 --image-format=jpeg
 ```
 
-The homepage uses one looping, muted, inline video with native playback/fullscreen controls. Reduced-motion preferences pause automatic playback; visitors can still play manually. All text is baked into the video, with a matching accessible description. The complete frame is preserved using `object-fit: contain`.
+The homepage uses one looping, muted, inline video without a playback controls bar or picture-in-picture button. Reduced-motion preferences pause automatic playback and preserve the poster. All text is baked into the video, with a matching accessible description. The complete frame is preserved using `object-fit: contain`.
 
 The artwork and local font required to reproduce the composition are included in `public/`. No Pinterest footage is redistributed.
