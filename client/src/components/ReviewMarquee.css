@@ -25,3 +25,6 @@
 .zanshin-home .review-marquee .review-card .review-quote-mark{font:80px/1 Georgia,serif;letter-spacing:0}.zanshin-home .review-stars>span{font-size:13px;letter-spacing:.15em}
 @media(max-width:650px){.zanshin-home .review-marquee{margin-top:36px;padding-top:25px}.review-heading{padding:0 20px 22px;align-items:center;gap:15px}.review-actions{margin:0;gap:0}.zanshin-home .review-heading h2{font-size:34px}.review-marquee .review-card{width:290px;padding:24px;min-height:300px}}
 @media(prefers-reduced-motion:reduce){.review-track{animation:none!important;will-change:auto}.review-window{overflow-x:auto}.review-group-copy,.review-card.is-repeat{display:none}}
+.zanshin-home .review-status{font:13px/1.7 Poppins,Arial,sans-serif;margin:15px 0 0;color:#757a68}
+
+.review-sample-label{display:block;width:fit-content;border:1px solid #d5c9b0;padding:4px 8px;margin-bottom:14px;font:9px/1.4 Poppins,Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#91805e}
