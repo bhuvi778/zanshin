@@ -89,8 +89,10 @@
 .pair-photography .pair-photo-editorial figure{background:#eee9de;min-height:520px}
 .pair-photography .pair-photo-editorial figure>img{height:calc(100% - 100px);object-fit:contain;object-position:center;padding:16px;box-sizing:border-box}
 .pair-photography .pair-photo-editorial figcaption{padding:18px 26px 22px;background:#f5f0e5;color:var(--pair-ink);min-height:100px;box-sizing:border-box}
-.za-fragrance[data-fragrance=focused] .za-product{right:auto;left:0;width:28%;background:none}
+.za-fragrance[data-fragrance=focused] .za-product{right:0;left:auto;width:34%}
+.za-fragrance[data-fragrance=focused] .za-lifestyle{object-position:right center!important}
 .circle-invitation-copy{left:50%;top:41.5%;transform:translate(-50%,-50%)}
 .hd-circle .circle-enter{left:50%}
 @media(max-width:900px){.pair-photography .pair-photo-editorial figure{min-height:0;aspect-ratio:auto}.pair-photography .pair-photo-editorial figure>img{position:relative;inset:auto;height:auto;aspect-ratio:auto;padding:14px}.pair-photography .pair-photo-editorial figcaption{position:relative;inset:auto;min-height:0}}
-@media(max-width:700px){.circle-invitation-copy{left:50%;top:41.5%;transform:translate(-50%,-50%)}.za-fragrance[data-fragrance=focused] .za-product{width:28%}}
+@media(max-width:700px){.circle-invitation-copy{left:50%;top:41.5%;transform:translate(-50%,-50%)}}
+.circle-notice h2{font-size:clamp(38px,6vw,54px)}

@@ -5,7 +5,7 @@ function InstagramIcon(){return <svg width="23" height="23" viewBox="0 0 24 24" 
 function CircleNotice({onClose}){
  const ref=useRef(null);
  useEffect(()=>{const previous=document.activeElement;ref.current.showModal();return()=>previous?.focus()},[]);
- return <dialog ref={ref} className="circle-notice" aria-labelledby="circle-notice-title" onClose={onClose} onClick={e=>{if(e.target===e.currentTarget)ref.current.close()}}><button className="circle-notice-close" aria-label="Close" onClick={()=>ref.current.close()}>×</button><span lang="ja">残心</span><h2 id="circle-notice-title">Our next chapter<br/><em>is coming soon.</em></h2><p>Our social circle opens soon.<br/>Come back for the next moment.</p><button className="circle-enter" onClick={()=>ref.current.close()}>Stay in the moment</button></dialog>
+ return <dialog ref={ref} className="circle-notice" aria-labelledby="circle-notice-title" onClose={onClose} onClick={e=>{if(e.target===e.currentTarget)ref.current.close()}}><button className="circle-notice-close" aria-label="Close" onClick={()=>ref.current.close()}>×</button><span lang="ja">残心</span><h2 id="circle-notice-title">Coming soon.</h2><p>Our social circle opens soon.<br/>Come back for the next moment.</p><button className="circle-enter" onClick={()=>ref.current.close()}>Stay in the moment</button></dialog>
 }
 export default function CircleInvitation(){
  const [notice,setNotice]=useState(false),destination=socialDestination();

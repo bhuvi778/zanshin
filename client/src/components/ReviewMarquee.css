@@ -4,13 +4,12 @@
 .zanshin-home .review-heading h2{font:400 clamp(35px,4vw,58px)/1.08 Georgia,serif;margin:17px 0 0;letter-spacing:-.04em}
 .review-heading h2 em{font-weight:400;color:#93764a}
 .review-actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.review-actions>a,.review-pending>a{display:inline-flex;align-items:center;gap:22px;font:12px/1.5 Poppins,Arial,sans-serif;color:#344b39;border-bottom:1px solid #89967d;text-decoration:none;padding:10px 0}
 .review-actions button{display:inline-flex;gap:8px;align-items:center;border:1px solid #b8b69f;background:transparent;border-radius:25px;padding:10px 15px;font:11px/1.4 Poppins,Arial,sans-serif;color:#3b503d;cursor:pointer}
 .review-window{overflow:hidden;padding:12px 0 24px}
-.review-track{display:flex;width:max-content;animation:review-flow-right 36s linear infinite;will-change:transform}
+.review-track{display:flex;width:max-content;animation:review-flow-left 36s linear infinite;will-change:transform}
 .review-group{display:flex;flex:none;gap:20px;padding-right:20px;align-items:stretch}
 .review-marquee[data-paused=true] .review-track,.review-window:hover .review-track,.review-window:focus-within .review-track{animation-play-state:paused}
-@keyframes review-flow-right{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@keyframes review-flow-left{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .review-marquee .review-card{position:relative;display:flex;flex-direction:column;width:340px;min-height:320px;margin:0;padding:28px;background:#fffcf3;border:1px solid #cfc5ad;color:#344b39;box-sizing:border-box;overflow:hidden}
 .review-quote-mark{position:absolute;right:20px;top:5px;font:100px Georgia,serif;line-height:1;color:#b29b6538;pointer-events:none}
 .review-stars{display:flex;align-items:center;gap:12px;font:13px/1.5 Poppins,Arial,sans-serif;color:#9b7941;padding-right:40px}
@@ -22,16 +21,7 @@
 .review-card figcaption{display:flex;align-items:center;gap:12px;margin-top:auto;border-top:1px solid #d4cbb8;padding-top:17px;font:12px/1.5 Poppins,Arial,sans-serif}
 .review-card figcaption small{display:block;font-size:10px;text-transform:capitalize;color:#8b8d79;margin-top:4px}
 .review-avatar{display:grid;place-items:center;width:38px;height:38px;border:1px solid #abb39b;border-radius:50%;font:19px Georgia,serif;background:#efefdf}
-.review-pending{display:grid;grid-template-columns:auto 1fr auto;gap:25px;align-items:center;margin:10px 30px 22px;border:1px solid #c8bda4;padding:28px;background:#faf7ef}
-.review-pending-seal{writing-mode:vertical-rl;font:32px Georgia,serif;color:#a18a5f;letter-spacing:.15em}
-.zanshin-home .review-pending h3{font:400 30px/1.2 Georgia,serif;margin:12px 0;color:#3d513c}
-.review-pending p{font:13px/1.8 Poppins,Arial,sans-serif;color:#6e7567;max-width:560px;margin:0}
-.review-word-track{animation-duration:35s;color:#65734f}
-.review-word-track .review-group{gap:30px;padding-right:30px}
-.review-word-track .review-group>span{font:400 clamp(28px,3vw,45px)/1.4 Georgia,serif;white-space:nowrap}
-.review-word-track em{font-weight:400;color:#a28a5b}
-.review-word-track b{font-size:20px;color:#c6b38d;margin-left:30px}
-.review-footnote{display:flex;justify-content:space-between;gap:20px;padding:20px 30px;border-top:1px solid #d0c4ab;font:italic 15px Georgia,serif;color:#8a7652}
 .review-marquee :focus-visible{outline:3px solid #81916d;outline-offset:4px}
-@media(max-width:650px){.zanshin-home .review-marquee{margin-top:36px;padding-top:25px}.review-heading{display:block;padding:0 20px 22px}.review-actions{margin-top:22px;justify-content:space-between;gap:15px}.review-marquee .review-card{width:290px;padding:24px;min-height:300px}.review-pending{margin:0 20px 20px;padding:24px 20px;grid-template-columns:1fr;gap:16px}.review-pending-seal{display:none}.review-pending>a{width:fit-content}.review-footnote{padding:20px;flex-direction:column;gap:10px}.zanshin-home .review-pending h3{font-size:29px}}
-@media(prefers-reduced-motion:reduce){.review-track{animation:none!important;will-change:auto}.review-window{overflow-x:auto}.review-group-copy,.review-card.is-repeat{display:none}.review-empty-window{display:none}}
+.zanshin-home .review-marquee .review-card .review-quote-mark{font:80px/1 Georgia,serif;letter-spacing:0}.zanshin-home .review-stars>span{font-size:13px;letter-spacing:.15em}
+@media(max-width:650px){.zanshin-home .review-marquee{margin-top:36px;padding-top:25px}.review-heading{padding:0 20px 22px;align-items:center;gap:15px}.review-actions{margin:0;gap:0}.zanshin-home .review-heading h2{font-size:34px}.review-marquee .review-card{width:290px;padding:24px;min-height:300px}}
+@media(prefers-reduced-motion:reduce){.review-track{animation:none!important;will-change:auto}.review-window{overflow-x:auto}.review-group-copy,.review-card.is-repeat{display:none}}

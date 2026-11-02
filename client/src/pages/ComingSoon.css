@@ -21,3 +21,9 @@
 .launch-community .launch-art>img{object-position:51% center}
 @media(max-width:750px){.launch-page{grid-template-columns:1fr;margin:24px auto 42px;min-height:0}.launch-copy{padding:32px 25px 38px}.launch-page h1{font-size:45px}.launch-kicker{margin-bottom:25px}.launch-art{min-height:300px}.launch-signature{margin-top:30px}.launch-art>img{object-fit:cover}.launch-actions{gap:12px 25px}}
 @media(max-width:380px){.launch-page h1{font-size:39px}.launch-copy{padding:28px 20px}.launch-copy>p{font-size:14px}}
+.launch-announcement{grid-column:1/-1;background:#263f33;color:#faf3e2;border-top:1px solid #ab9061;padding:32px 25px;text-align:center}
+.launch-announcement>span{display:block;font:400 clamp(48px,7vw,108px)/1.05 Georgia,serif;letter-spacing:.08em;white-space:nowrap}
+.launch-announcement em{color:#d2b37a;font-weight:400}
+.launch-announcement>p{font:12px/1.7 Poppins,Arial,sans-serif;margin:16px 0 0;letter-spacing:.1em;color:#d5d9c7}
+.launch-community .launch-announcement{background:#f2e8d6;color:#2f4937}.launch-community .launch-announcement em{color:#977548}.launch-community .launch-announcement>p{color:#777b65}
+@media(max-width:650px){.launch-announcement{padding:29px 16px}.launch-announcement>span{font-size:clamp(35px,9vw,58px);letter-spacing:.06em}.launch-announcement>p{font-size:11px;letter-spacing:.03em}}
